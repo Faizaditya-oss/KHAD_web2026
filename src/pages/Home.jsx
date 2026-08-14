@@ -266,8 +266,8 @@ const Home = () => {
           
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="text-left">
-              <p className="text-emerald-500 font-semibold tracking-widest uppercase text-sm mb-2">Updates</p>
-              <h2 className="text-3xl md:text-5xl font-bold text-white">Latest News & Progress</h2>
+              <p className="text-slate-400 font-semibold tracking-widest uppercase text-sm mb-2">Updates</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">News & Progress</h2>
             </div>
             <Link to="/news" className="group flex items-center gap-2 px-6 py-3 rounded-full border border-khad-border bg-khad-card hover:border-emerald-500/50 hover:bg-emerald-500/10 text-slate-300 hover:text-emerald-400 transition-all duration-300 font-medium text-sm">
               View All News
@@ -352,9 +352,9 @@ const Home = () => {
 
       {/* 3. Featured Vehicles Preview */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Our Innovations</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Our Innovations</h2>
+          <p className="text-slate-400 max-w-4xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -416,6 +416,8 @@ const Home = () => {
         </div>
       </section>
 
+    
+
       {/* 4. Sponsors Marquee Section */}
       <section className="py-16 bg-khad-dark/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
@@ -444,6 +446,31 @@ const Home = () => {
           </div>
         </div>
 
+      </section>
+
+        {/* Contact Banner Section */}
+      <section className="py-8 px-6 md:px-10 rounded-[2rem] bg-gradient-to-br from-[#0B2A1E] via-khad-border to-[#061E14] relative overflow-hidden border border-emerald-500/20 mt-12 mb-16 max-w-5xl mx-4 lg:mx-auto shadow-2xl ">
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="absolute -top-16 -right-16 w-48 h-48 bg-emerald-500/20 rounded-full blur-[60px] pointer-events-none"></div>
+        <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-cyan-500/20 rounded-full blur-[60px] pointer-events-none"></div>
+
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-center md:text-left md:w-2/3">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Collaborate with us</h2>
+            <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto md:mx-0">
+              Join us in our mission to develop cutting-edge, energy-efficient vehicles. We are always open to new sponsorships, media partnerships, and technical collaborations.
+            </p>
+          </div>
+          <div className="md:w-1/3 flex justify-center md:justify-center w-full mt-2 md:mt-0">
+            <a href="https://instagram.com/khadteam.umy" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-6 py-3 font-bold text-khad-dark bg-emerald-400 rounded-full overflow-hidden transition-all duration-300 hover:bg-white w-full sm:w-auto text-sm">
+              <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+              <span className="relative flex items-center gap-2">
+                Get In Touch
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Footer Section */}
