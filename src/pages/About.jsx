@@ -60,11 +60,11 @@ const About = () => {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold font-heading text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-6 tracking-tight">
-            Innovation  <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500"> every period</span>
+            <h1 className="text-2xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+           Innovation <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Every Period</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed mb-8">
+          <p className="max-w-4xl mx-auto text-lg text-slate-400 leading-relaxed mb-8">
             A closer look at how the KHAD Team transforms abstract ideas into world class, ultra-efficient vehicles through a process of precision design and manufacturing.
           </p>
         </div>
@@ -207,7 +207,9 @@ const About = () => {
       {/* 3. Engineering Phases Section */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-4">Building The Future</h2>
+          <h1 className="text-2xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+           Building The Future <br className="hidden md:block" />
+          </h1>
           <p className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
         </div>
 
@@ -284,7 +286,9 @@ const About = () => {
 
       {/* 4. Bottom CTA Banner */}
       <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-khad-border">
-        <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Be Part of the Future</h2>
+        <h1 className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+           Be Part of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">the Future</span> <br className="hidden md:block" />
+          </h1>
         <p className="text-lg text-slate-400 mb-10">
           Tertarik untuk mengetahui spesifikasi kendaraan kami lebih detail atau ingin berkolaborasi sebagai partner sponsor?
         </p>

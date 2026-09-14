@@ -203,7 +203,7 @@ const Vehicles = () => {
       </section>
 
       {/* 3. General Specifications Grid */}
-      <section className="bg-[#0B2A1E]/40 border-y border-[#133E2B] py-16">
+      <section className="bg-[#0B2A1E] border-y border-[#133E2B] py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-wider text-white mb-2">General Specifications</h2>

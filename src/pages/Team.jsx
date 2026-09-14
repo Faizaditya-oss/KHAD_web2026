@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Users, ArrowRight, 
-  Cpu, Wrench, Shield, Award, Sparkles, Layers
+  Cpu, Wrench, Shield, Award, Sparkles, Layers, Phone,
+  Video,
+  Cog,
+  BrickWallFire,
+  Handshake,
+  Zap
 } from 'lucide-react';
 
 const GithubIcon = ({ className }) => (
@@ -38,7 +43,7 @@ const LinkedinIcon = ({ className }) => (
   </svg>
 );
 import bgHome from '../assets/bgHome/LandPage.jpg';
-import khadTeamGroup from '../assets/khad_team_group.png';
+import khadTeamGroup from '../assets/divisions/Team.JPG';
 
 // TechAvatar fallback component for professional look
 const TechAvatar = ({ initials, accentClass }) => {
@@ -226,10 +231,13 @@ const teamMembers = [
 
 const divisionData = [
   { name: 'All', icon: Layers },
-  { name: 'Executive', icon: Shield },
-  { name: 'Mechanical', icon: Wrench },
-  { name: 'Electrical & Telemetry', icon: Cpu },
-  { name: 'Non-Technical', icon: Users }
+  { name: 'Managers', icon: Shield },
+  { name: 'Engine', icon: Wrench },
+  { name: 'Electrical ', icon: Zap },
+  { name: 'Mechanic', icon: Wrench },
+  { name: 'Manufacturing', icon: BrickWallFire },
+  { name: 'Sponsorship', icon: Handshake },
+  { name: 'Media', icon: Video }
 ];
 
 const Team = () => {
@@ -257,14 +265,14 @@ const Team = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-7xl font-heading font-extrabold uppercase tracking-wider text-white">
+            <h1 className="text-2xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
               Meet the Engineers <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-100 to-white">
                 & Innovators
               </span>
             </h1>
-            <p className="max-w-2xl mx-auto text-base md:text-lg text-slate-400 leading-relaxed">
-              Kolaborasi mahasiswa lintas disiplin di Universitas Muhammadiyah Yogyakarta yang mendedikasikan ilmu dan kreativitas mereka untuk merancang kendaraan ramah lingkungan masa depan.
+            <p className="max-w-4xl mx-auto text-lg md:text-md text-slate-400 mb-12 leading-relaxed">
+             A cross disciplinary collaboration of students at Universitas Muhammadiyah Yogyakarta who are dedicating their knowledge and creativity to designing eco-friendly vehicles for the future.
             </p>
           </div>
 
@@ -299,13 +307,13 @@ const Team = () => {
               <button
                 key={div.name}
                 onClick={() => setActiveDivision(div.name)}
-                className={`flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all duration-300 border ${
+                className={`group flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all duration-300 border ${
                   isSelected
-                    ? 'bg-emerald-500 text-[#061E14] border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)]'
-                    : 'bg-[#0B2A1E] text-slate-400 hover:text-slate-200 border-[#133E2B] hover:border-emerald-500/30'
+                    ? 'bg-emerald-500 text-[#061E14] border-white shadow-[0_0_20px_rgba(16,185,129,0.3)]'
+                    : 'bg-[#0B2A1E] text-slate-400 hover:text-white border-[#133E2B] hover:border-white'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isSelected ? 'text-[#061E14]' : 'text-emerald-500/70'}`} />
+                <Icon className={`w-4 h-4 transition-colors duration-300 ${isSelected ? 'text-[#061E14]' : 'text-emerald-500/70 group-hover:text-white'}`} />
                 {div.name}
               </button>
             );
@@ -331,10 +339,10 @@ const Team = () => {
                   className="relative bg-[#0B2A1E] border border-[#133E2B] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:items-center hover:border-emerald-500/40 hover:-translate-y-1.5 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all duration-300 group"
                 >
                   {/* Glowing corners on hover */}
-                  <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-transparent group-hover:border-emerald-500/50 transition-all duration-300 rounded-tl-3xl"></div>
-                  <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-transparent group-hover:border-emerald-500/50 transition-all duration-300 rounded-tr-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-transparent group-hover:border-emerald-500/50 transition-all duration-300 rounded-bl-3xl"></div>
-                  <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-transparent group-hover:border-emerald-500/50 transition-all duration-300 rounded-br-3xl"></div>
+                  <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-transparent group-hover:border-white transition-all duration-300 rounded-tl-3xl"></div>
+                  <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-transparent group-hover:border-white transition-all duration-300 rounded-tr-3xl"></div>
+                  <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-transparent group-hover:border-white transition-all duration-300 rounded-bl-3xl"></div>
+                  <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-transparent group-hover:border-white transition-all duration-300 rounded-br-3xl"></div>
 
                   {/* Photo Frame */}
                   <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden flex-shrink-0 border border-[#133E2B]/80 relative bg-[#061E14] group-hover:border-emerald-500/25 transition-colors duration-300">

@@ -10,7 +10,7 @@ const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.defau
 import bgHome from '../assets/bgHome/LandPage.jpg';
 import lingsarBg from '../assets/mobil/vision.JPG';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
-import khadTeamGroup from '../assets/khad_team_group.png';
+import khadTeamGroup from '../assets/divisions/Managers.jpg';
 
 import sponsor1 from '../assets/sponsor/sponsor1bnr.png';
 import sponsor2 from '../assets/sponsor/sponsor2.png';
@@ -278,71 +278,125 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* News Card 1 */}
-            <div className="group bg-khad-card border border-khad-border rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-500 flex flex-col h-full">
-              <div className="relative h-48 overflow-hidden">
-                <img src={arunaBg} alt="News 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-emerald-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Technical</span>
-                </div>
+            <div className="group relative rounded-[2rem] overflow-hidden h-[400px] border border-khad-border hover:border-emerald-500/50 transition-all duration-500 cursor-pointer">
+              <img src={arunaBg} alt="News 1" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              
+              <div className="absolute top-5 left-5 z-20 transition-opacity duration-300 group-hover:opacity-0">
+                <span className="px-3 py-1 bg-emerald-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Technical</span>
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <p className="text-slate-500 text-xs font-mono mb-3">AUGUST 12, 2026</p>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors duration-300 line-clamp-2">
+
+              <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
+                <p className="text-emerald-400 text-xs font-mono mb-2">AUGUST 12, 2026</p>
+                <h3 className="text-xl font-bold text-white line-clamp-2">
                   Aruna Diesel Completes First Track Test Successfully
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                  Our team has successfully tested the Aruna Diesel prototype on the main circuit. The powertrain modifications resulted in a 15% increase in efficiency compared to previous simulations.
-                </p>
-                <Link to="/news" className="mt-auto inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 font-semibold text-sm transition-colors duration-300">
-                  Read Article
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#061E14]/95 to-emerald-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col p-6 md:p-8 z-30">
+                <div className="flex flex-col h-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <div className="flex justify-between items-center mb-6">
+                    <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-full uppercase tracking-wider">Technical</span>
+                    <span className="text-emerald-400/80 text-xs font-mono">AUG 12</span>
+                  </div>
+                  <div className="mt-2">
+                    <h3 className="text-xl font-bold text-white mb-3">Aruna Diesel Completes First Track Test</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                      Our team has successfully tested the Aruna Diesel prototype on the main circuit. The powertrain modifications resulted in a 15% increase in efficiency compared to previous simulations.
+                    </p>
+                  </div>
+                  <div className="mt-auto border-t border-emerald-500/20 pt-4">
+                    <Link to="/news" className="flex items-center justify-between text-emerald-400 hover:text-white font-semibold text-sm transition-colors duration-300 group/btn">
+                      Read Full Article
+                      <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center group-hover/btn:bg-emerald-500 group-hover/btn:text-khad-dark transition-all duration-300">
+                        <ArrowRight className="w-5 h-5 group-hover/btn:-rotate-45 transition-transform duration-300" />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* News Card 2 */}
-            <div className="group bg-khad-card border border-khad-border rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 flex flex-col h-full">
-              <div className="relative h-48 overflow-hidden">
-                <img src={lingsarBg} alt="News 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-cyan-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Technical</span>
-                </div>
+            <div className="group relative rounded-[2rem] overflow-hidden h-[400px] border border-khad-border hover:border-cyan-500/50 transition-all duration-500 cursor-pointer">
+              <img src={lingsarBg} alt="News 2" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              
+              <div className="absolute top-5 left-5 z-20 transition-opacity duration-300 group-hover:opacity-0">
+                <span className="px-3 py-1 bg-cyan-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Technical</span>
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <p className="text-slate-500 text-xs font-mono mb-3">AUGUST 05, 2026</p>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300 line-clamp-2">
+
+              <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
+                <p className="text-cyan-400 text-xs font-mono mb-2">AUGUST 05, 2026</p>
+                <h3 className="text-xl font-bold text-white line-clamp-2">
                   New Aerodynamic Chassis Unveiled for Lingsar EV
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                  Following months of intensive CFD simulations, the technical division has finalized the new carbon-fiber chassis design for the Lingsar EV, significantly reducing drag coefficient.
-                </p>
-                <Link to="/news" className="mt-auto inline-flex items-center gap-2 text-cyan-500 hover:text-cyan-400 font-semibold text-sm transition-colors duration-300">
-                  Read Article
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#061E14]/95 to-cyan-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col p-6 md:p-8 z-30">
+                <div className="flex flex-col h-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <div className="flex justify-between items-center mb-6">
+                    <span className="px-3 py-1 bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-xs font-bold rounded-full uppercase tracking-wider">Technical</span>
+                    <span className="text-cyan-400/80 text-xs font-mono">AUG 05</span>
+                  </div>
+                  <div className="mt-2">
+                    <h3 className="text-xl font-bold text-white mb-3">New Aerodynamic Chassis Unveiled</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                      Following months of intensive CFD simulations, the technical division has finalized the new carbon-fiber chassis design for the Lingsar EV, significantly reducing drag coefficient.
+                    </p>
+                  </div>
+                  <div className="mt-auto border-t border-cyan-500/20 pt-4">
+                    <Link to="/news" className="flex items-center justify-between text-cyan-400 hover:text-white font-semibold text-sm transition-colors duration-300 group/btn">
+                      Read Full Article
+                      <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center group-hover/btn:bg-cyan-500 group-hover/btn:text-khad-dark transition-all duration-300">
+                        <ArrowRight className="w-5 h-5 group-hover/btn:-rotate-45 transition-transform duration-300" />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* News Card 3 */}
-            <div className="group bg-khad-card border border-khad-border rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all duration-500 flex flex-col h-full">
-              <div className="relative h-48 overflow-hidden">
-                <img src={khadTeamGroup} alt="News 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-violet-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Sponsorship</span>
-                </div>
+            <div className="group relative rounded-[2rem] overflow-hidden h-[400px] border border-khad-border hover:border-violet-500/50 transition-all duration-500 cursor-pointer">
+              <img src={khadTeamGroup} alt="News 3" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              
+              <div className="absolute top-5 left-5 z-20 transition-opacity duration-300 group-hover:opacity-0">
+                <span className="px-3 py-1 bg-violet-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Sponsorship</span>
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <p className="text-slate-500 text-xs font-mono mb-3">JULY 28, 2026</p>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors duration-300 line-clamp-2">
+
+              <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
+                <p className="text-violet-400 text-xs font-mono mb-2">JULY 28, 2026</p>
+                <h3 className="text-xl font-bold text-white line-clamp-2">
                   Partnership Secured with Leading Telemetry Tech Provider
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                  We are thrilled to announce a new strategic partnership that will equip our vehicles with state-of-the-art real-time telemetry tracking and data analysis systems for the upcoming race season.
-                </p>
-                <Link to="/news" className="mt-auto inline-flex items-center gap-2 text-violet-500 hover:text-violet-400 font-semibold text-sm transition-colors duration-300">
-                  Read Article
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#061E14]/95 to-violet-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col p-6 md:p-8 z-30">
+                <div className="flex flex-col h-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <div className="flex justify-between items-center mb-6">
+                    <span className="px-3 py-1 bg-violet-500/20 border border-violet-500/30 text-violet-400 text-xs font-bold rounded-full uppercase tracking-wider">Sponsorship</span>
+                    <span className="text-violet-400/80 text-xs font-mono">JUL 28</span>
+                  </div>
+                  <div className="mt-2">
+                    <h3 className="text-xl font-bold text-white mb-3">Partnership Secured with Telemetry Tech</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                      We are thrilled to announce a new strategic partnership that will equip our vehicles with state-of-the-art real-time telemetry tracking and data analysis systems for the upcoming race season.
+                    </p>
+                  </div>
+                  <div className="mt-auto border-t border-violet-500/20 pt-4">
+                    <Link to="/news" className="flex items-center justify-between text-violet-400 hover:text-white font-semibold text-sm transition-colors duration-300 group/btn">
+                      Read Full Article
+                      <div className="w-10 h-10 rounded-full bg-violet-500/10 flex items-center justify-center group-hover/btn:bg-violet-500 group-hover/btn:text-khad-dark transition-all duration-300">
+                        <ArrowRight className="w-5 h-5 group-hover/btn:-rotate-45 transition-transform duration-300" />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
 
