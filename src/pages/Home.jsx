@@ -12,6 +12,9 @@ import lingsarBg from '../assets/mobil/vision.JPG';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
 import khadTeamGroup from '../assets/divisions/Managers.jpg';
 
+import lingsarImage from '../assets/sponsor/lingsar26-removebg.png';
+import arunaImage from '../assets/sponsor/aruna-removebg.png';
+
 import sponsor1 from '../assets/sponsor/sponsor1bnr.png';
 import sponsor2 from '../assets/sponsor/sponsor2.png';
 import sponsor3 from '../assets/sponsor/sponsor3.png';
@@ -411,57 +414,49 @@ const Home = () => {
           <p className="text-slate-400 max-w-4xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Electric Prototype Card */}
-          <div className="group relative bg-khad-card rounded-3xl border border-khad-border overflow-hidden hover:border-blue-500/50 transition-all duration-500 h-[380px] flex flex-col">
-            <img src={lingsarBg} alt="Lingsar EV" className="absolute inset-0 w-full h-full object-cover  transition-opacity duration-500" />
-            
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative p-8 z-10 h-full flex flex-col justify-between">
-              <div className="flex justify-between items-start mb-12">
-                <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-500/20">
-                    <Battery className="w-3.5 h-3.5" />
-                    Electric Class
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Lingsar EV</h3>
-                </div>
-                <div className="w-16 h-16 rounded-full bg-khad-dark border border-khad-border flex items-center justify-center">
-                  <Zap className="w-8 h-8 text-blue-400" />
-                </div>
+        <div className="flex flex-col gap-24 mt-16">
+          {/* Electric Prototype - Lingsar EV (Desc Left, Image Right) */}
+          <div className="flex flex-col-reverse md:flex-row items-center gap-12 group">
+            {/* Description (Left) */}
+            <div className="w-full md:w-1/2 flex flex-col items-start justify-center">
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-500/20">
+                <Battery className="w-4 h-4" />
+                Electric Class
               </div>
-
-             
-
-              <Link to="/vehicles" state={{ activeTab: 'lingsar' }} className="w-full py-4 rounded-xl bg-khad-dark group-hover:bg-blue-500 text-white group-hover:text-khad-dark font-semibold transition-all duration-300 flex items-center justify-center gap-2 ">
+              <h3 className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Lingsar EV</h3>
+              <p className="text-slate-300 text-md leading-relaxed mb-10">
+                Our flagship electric vehicle, designed with state-of-the-art aerodynamics and an ultra-efficient electric powertrain. Lingsar EV pushes the boundaries of battery-powered mobility.
+              </p>
+              <Link to="/vehicles" state={{ activeTab: 'lingsar' }} className="w-full md:w-auto px-4 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
                 View Specifications
                 <MoveRight className="w-5 h-5" />
               </Link>
             </div>
+            {/* Image (Right) */}
+            <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px]">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/30 transition-all duration-700"></div>
+              <img src={lingsarImage} alt="Lingsar EV" className="relative z-10 w-full max-w-[500px] h-auto object-contain group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
+            </div>
           </div>
 
-          {/* ICE/Diesel Prototype Card */}
-          <div className="group relative bg-khad-card rounded-3xl border border-khad-border overflow-hidden hover:border-red-500/50 transition-all duration-500 h-[380px] flex flex-col">
-            <img src={arunaBg} alt="Aruna Diesel" className="absolute inset-0 w-full h-full object-cover  transition-opacity duration-500" />
-            
-            <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative p-8 z-10 h-full flex flex-col justify-between">
-              <div className="flex justify-between items-start mb-12">
-                <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider mb-4 border border-red-500/20">
-                    <Cpu className="w-3.5 h-3.5" />
-                    Diesel Class
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Aruna Diesel</h3>
-                </div>
-                <div className="w-16 h-16 rounded-full bg-khad-dark border border-khad-border flex items-center justify-center">
-                  <Droplets className="w-8 h-8 text-red-400" />
-                </div>
+          {/* ICE/Diesel Prototype - Aruna Diesel (Image Left, Desc Right) */}
+          <div className="flex flex-col md:flex-row items-center gap-12 group">
+            {/* Image (Left) */}
+            <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] order-1 md:order-none">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-red-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-red-500/30 transition-all duration-700"></div>
+              <img src={arunaImage} alt="Aruna Diesel" className="relative z-10 w-full max-w-[500px] h-auto object-contain group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
+            </div>
+            {/* Description (Right) */}
+            <div className="w-full md:w-1/2 flex flex-col items-start justify-center order-2 md:order-none">
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider mb-6 border border-red-500/20">
+                <Cpu className="w-4 h-4" />
+                Diesel Class
               </div>
-
-              
-
-              <Link to="/vehicles" state={{ activeTab: 'aruna' }} className="w-full py-4 rounded-xl bg-khad-dark group-hover:bg-red-500 text-white group-hover:text-khad-dark font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+              <h3 className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Aruna Diesel</h3>
+              <p className="text-slate-300 text-md leading-relaxed mb-10">
+                A masterpiece of internal combustion engineering. Aruna Diesel utilizes advanced tuning and thermal management to squeeze every last drop of energy from its fuel.
+              </p>
+              <Link to="/vehicles" state={{ activeTab: 'aruna' }} className="w-full md:w-auto px-8 py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white shadow-[0_0_20px_rgba(239,68,68,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
                 View Specifications
                 <MoveRight className="w-5 h-5" />
               </Link>
