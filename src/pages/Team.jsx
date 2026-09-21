@@ -271,7 +271,7 @@ const Team = () => {
             {/* Ambient Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-emerald-800 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-700"></div>
 
-            {/* Image Border frame */}
+            {/* Image Border framee */}
             <div className="relative bg-[#0B2A1E] rounded-3xl border border-[#133E2B] overflow-hidden shadow-2xl">
               <img
                 src={khadTeamGroup}
