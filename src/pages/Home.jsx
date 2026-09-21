@@ -60,10 +60,10 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-khad-dark">
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-32">
+      <section data-aos="fade-up" className="relative overflow-hidden pt-32 pb-32">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <img src={bgHome} alt="Hero Background" className="w-full h-full object-cover object-[center_80%] opacity-100" />
+          <img data-aos="fade-up" src={bgHome} alt="Hero Background" className="w-full h-full object-cover object-[center_80%] opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-khad-dark/40 to-khad-dark"></div>
         </div>
 
@@ -75,12 +75,12 @@ const Home = () => {
             </span>
           </div>
 
-          <h1 className={`text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight transition-all duration-700 ease-out drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h1 data-aos="fade-up" className={`text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight transition-all duration-700 ease-out drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Pushing the Ultimate Boundaries <br className="hidden md:block" />
             of <span className="text-emerald-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">Vehicle Efficiency</span>
           </h1>
 
-          <p className={`max-w-xl mx-auto text-lg md:text-xl text-slate-100 font-medium mb-12 leading-relaxed transition-all duration-900 ease-out drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p data-aos="fade-up" className={`max-w-xl mx-auto text-lg md:text-xl text-slate-100 font-medium mb-12 leading-relaxed transition-all duration-900 ease-out drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Pioneering the future of sustainable mobility through advanced research
             and development of ultra-efficient prototype vehicles.
           </p>
@@ -102,7 +102,7 @@ const Home = () => {
       </section>
 
       {/* 2. Key Metrics Banner */}
-      <section className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 md:-mt-12 mb-12">
+      <section data-aos="fade-up" className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 md:-mt-12 mb-12">
         <div className="bg-khad-card/60 backdrop-blur-xl border border-khad-border/50 shadow-2xl rounded-3xl py-5 md:py-6" ref={metricsRef}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 md:gap-6">
             {metrics.map((metric, idx) => (
@@ -135,7 +135,7 @@ const Home = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20 bg-gradient-to-b from-khad-card/30 via-khad-card/65 to-khad-card/30 border-y border-khad-border/40 relative overflow-hidden">
+      <section data-aos="fade-up" className="py-20 bg-gradient-to-b from-khad-card/30 via-khad-card/65 to-khad-card/30 border-y border-khad-border/40 relative overflow-hidden">
         {/* Abstract Tech Grid Background */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#10B981_1px,transparent_1px),linear-gradient(to_bottom,#10B981_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
@@ -146,11 +146,11 @@ const Home = () => {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
 
-          <h2 className="text-2xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
+          <h2 data-aos="fade-up" className="text-2xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
             What is KHAD TEAM ?
           </h2>
 
-          <p className="font-body text-base md:text-md text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12">
+          <p data-aos="fade-up" className="font-body text-base md:text-md text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12">
             K.H Ahmad Dahlan TEAM UMY is the energy efficient vehicle research and development team at Universitas Muhammadiyah Yogyakarta. We serve as a collaborative platform for multidisciplinary students to translate scientific and technological innovations into tangible, eco-friendly vehicles of the future.
           </p>
 
@@ -165,9 +165,9 @@ const Home = () => {
 
               <div className="flex items-center gap-4 mb-6">
 
-                <h3 className="text-xl font-bold text-white tracking-wide">Student Research</h3>
+                <h3 data-aos="fade-up" className="text-xl font-bold text-white tracking-wide">Student Research</h3>
               </div>
-              <p className="text-slate-300 leading-relaxed text-sm md:text-base">
+              <p data-aos="fade-up" className="text-slate-300 leading-relaxed text-sm md:text-base">
                 To become a leading center for student research and innovation in energy efficient vehicles at both national and international levels, grounded in the knowledge acquired.
               </p>
             </div>
@@ -179,9 +179,9 @@ const Home = () => {
 
               <div className="flex items-center gap-4 mb-6">
 
-                <h3 className="text-xl font-bold text-white tracking-wide">Innovation and Technology</h3>
+                <h3 data-aos="fade-up" className="text-xl font-bold text-white tracking-wide">Innovation and Technology</h3>
               </div>
-              <p className="text-slate-300 leading-relaxed text-sm md:text-base">
+              <p data-aos="fade-up" className="text-slate-300 leading-relaxed text-sm md:text-base">
                 To test the ability to design, build, and test motorized vehicles that are safe, efficient, and environmentally friendly and to spur automotive technology creativity in order to address the challenges of the global energy crisis.
               </p>
             </div>
@@ -195,10 +195,10 @@ const Home = () => {
       </section>
 
       {/* 3. Featured Vehicles Preview */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section data-aos="fade-up" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Our Innovations</h2>
-          <p className="text-slate-400 max-w-4xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
+          <h2 data-aos="fade-up" className="text-3xl md:text-4xl font-bold text-white mb-2">Our Innovations</h2>
+          <p data-aos="fade-up" className="text-slate-400 max-w-4xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
         </div>
 
         <div className="flex flex-col gap-24 mt-16">
@@ -210,8 +210,8 @@ const Home = () => {
                 <Battery className="w-4 h-4" />
                 Electric Class
               </div>
-              <h3 className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Lingsar EV 3.0</h3>
-              <p className="text-slate-300 text-md leading-relaxed mb-10">
+              <h3 data-aos="fade-up" className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Lingsar EV 3.0</h3>
+              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-10">
                 Our flagship electric vehicle, designed with state-of-the-art aerodynamics and an ultra-efficient electric powertrain. Lingsar EV pushes the boundaries of battery-powered mobility.
               </p>
               <Link to="/vehicles" state={{ activeTab: 'lingsar' }} className="w-full md:w-auto px-4 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
@@ -222,7 +222,7 @@ const Home = () => {
             {/* Image (Right) */}
             <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px]">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/30 transition-all duration-700"></div>
-              <img src={lingsarImage} alt="Lingsar EV" className="relative z-10 w-full max-w-[500px] h-auto object-contain group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
+              <img data-aos="fade-up" src={lingsarImage} alt="Lingsar EV" className="relative z-10 w-full max-w-[500px] h-auto object-contain group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
             </div>
           </div>
 
@@ -231,7 +231,7 @@ const Home = () => {
             {/* Image (Left) */}
             <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] order-1 md:order-none">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-red-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-red-500/30 transition-all duration-700"></div>
-              <img src={arunaImage} alt="Aruna Diesel" className="relative z-10 w-full max-w-[600px] scale-110 h-auto object-contain group-hover:scale-125 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
+              <img data-aos="fade-up" src={arunaImage} alt="Aruna Diesel" className="relative z-10 w-full max-w-[600px] scale-110 h-auto object-contain group-hover:scale-125 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
             </div>
             {/* Description (Right) */}
             <div className="w-full md:w-1/2 flex flex-col items-start justify-center order-2 md:order-none">
@@ -239,8 +239,8 @@ const Home = () => {
                 <Cpu className="w-4 h-4" />
                 Diesel Class
               </div>
-              <h3 className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Aruna Diesel</h3>
-              <p className="text-slate-300 text-md leading-relaxed mb-10">
+              <h3 data-aos="fade-up" className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Aruna Diesel</h3>
+              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-10">
                 A masterpiece of internal combustion engineering. Aruna Diesel utilizes advanced tuning and thermal management to squeeze every last drop of energy from its fuel.
               </p>
               <Link to="/vehicles" state={{ activeTab: 'aruna' }} className="w-full md:w-auto px-8 py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white shadow-[0_0_20px_rgba(239,68,68,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
@@ -253,22 +253,22 @@ const Home = () => {
       </section>
 
       {/* Our Divisions Section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section data-aos="fade-up" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg md:text-md">Organizational Structure</p><hr className="border-violet-500"></hr>
+          <p data-aos="fade-up" className="text-slate-400 max-w-2xl mx-auto text-lg md:text-md">Organizational Structure</p><hr className="border-violet-500"></hr>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           {/* Managers Card */}
           <div className="group relative rounded-2xl border border-khad-border bg-khad-dark p-8 overflow-hidden hover:border-amber-500/40 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
-            <img src={khadTeamGroup} alt="Managers Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
+            <img data-aos="fade-up" src={khadTeamGroup} alt="Managers Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/80 to-transparent"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl group-hover:bg-amber-500/10 transition-colors duration-500"></div>
             <div className="relative z-10 mt-auto">
 
-              <h3 className="text-xl font-bold text-white mb-2">Managers</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              <h3 data-aos="fade-up" className="text-xl font-bold text-white mb-2">Managers</h3>
+              <p data-aos="fade-up" className="text-slate-400 text-sm leading-relaxed mb-6">
                 Strategic leadership driving project direction, resource coordination, and competition planning across all teams.
               </p>
               <div className="flex justify-between items-end gap-4">
@@ -287,13 +287,13 @@ const Home = () => {
 
           {/* Technical Card */}
           <div className="group relative rounded-2xl border border-khad-border bg-khad-dark p-8 overflow-hidden hover:border-cyan-500/40 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
-            <img src={khadTeamGroup} alt="Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
+            <img data-aos="fade-up" src={khadTeamGroup} alt="Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/80 to-transparent"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl group-hover:bg-cyan-500/10 transition-colors duration-500"></div>
             <div className="relative z-10 mt-auto">
 
-              <h3 className="text-xl font-bold text-white mb-2">Technical</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              <h3 data-aos="fade-up" className="text-xl font-bold text-white mb-2">Technical</h3>
+              <p data-aos="fade-up" className="text-slate-400 text-sm leading-relaxed mb-6">
                 Engineering the heart of our prototypes from chassis design and powertrain to telemetry systems and CFD simulation.
               </p>
               <div className="flex justify-between items-end gap-4">
@@ -313,13 +313,13 @@ const Home = () => {
 
           {/* Non Technical Card */}
           <div className="group relative rounded-2xl border border-khad-border bg-khad-dark p-8 overflow-hidden hover:border-violet-500/40 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
-            <img src={khadTeamGroup} alt="Non Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
+            <img data-aos="fade-up" src={khadTeamGroup} alt="Non Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/80 to-transparent"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-3xl group-hover:bg-violet-500/10 transition-colors duration-500"></div>
             <div className="relative z-10 mt-auto">
 
-              <h3 className="text-xl font-bold text-white mb-2">Non Technical</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              <h3 data-aos="fade-up" className="text-xl font-bold text-white mb-2">Non Technical</h3>
+              <p data-aos="fade-up" className="text-slate-400 text-sm leading-relaxed mb-6">
                 Building our brand through media production, sponsorship acquisition, event management, and public relations.
               </p>
               <div className="flex justify-between items-end gap-4">
@@ -339,14 +339,14 @@ const Home = () => {
       </section>
 
       {/* Latest News & Progress Section */}
-      <section className="py-24 bg-khad-dark border-t border-khad-border/30 relative">
+      <section data-aos="fade-up" className="py-24 bg-khad-dark border-t border-khad-border/30 relative">
         <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-500 via-transparent to-transparent pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="text-left">
-              <p className="text-slate-400 font-semibold tracking-widest uppercase text-sm mb-2">Updates</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">News & Progress</h2>
+              <p data-aos="fade-up" className="text-slate-400 font-semibold tracking-widest uppercase text-sm mb-2">Updates</p>
+              <h2 data-aos="fade-up" className="text-3xl md:text-4xl font-bold text-white">News & Progress</h2>
             </div>
             <Link to="/news" className="group flex items-center gap-2 px-6 py-3 rounded-full border border-khad-border bg-khad-card hover:border-emerald-500/50 hover:bg-emerald-500/10 text-slate-300 hover:text-emerald-400 transition-all duration-300 font-medium text-sm">
               View All News
@@ -358,7 +358,7 @@ const Home = () => {
 
             {/* News Card 1 */}
             <div className="group relative rounded-[2rem] overflow-hidden h-[400px] border border-khad-border hover:border-emerald-500/50 transition-all duration-500 cursor-pointer">
-              <img src={arunaBg} alt="News 1" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <img data-aos="fade-up" src={arunaBg} alt="News 1" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
 
               <div className="absolute top-5 left-5 z-20 transition-opacity duration-300 group-hover:opacity-0">
                 <span className="px-3 py-1 bg-emerald-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Technical</span>
@@ -366,8 +366,8 @@ const Home = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
-                <p className="text-emerald-400 text-xs font-mono mb-2">AUGUST 12, 2026</p>
-                <h3 className="text-xl font-bold text-white line-clamp-2">
+                <p data-aos="fade-up" className="text-emerald-400 text-xs font-mono mb-2">AUGUST 12, 2026</p>
+                <h3 data-aos="fade-up" className="text-xl font-bold text-white line-clamp-2">
                   Aruna Diesel Completes First Track Test Successfully
                 </h3>
               </div>
@@ -380,8 +380,8 @@ const Home = () => {
                     <span className="text-emerald-400/80 text-xs font-mono">AUG 12</span>
                   </div>
                   <div className="mt-2">
-                    <h3 className="text-xl font-bold text-white mb-3">Aruna Diesel Completes First Track Test</h3>
-                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                    <h3 data-aos="fade-up" className="text-xl font-bold text-white mb-3">Aruna Diesel Completes First Track Test</h3>
+                    <p data-aos="fade-up" className="text-slate-300 text-sm leading-relaxed line-clamp-4">
                       Our team has successfully tested the Aruna Diesel prototype on the main circuit. The powertrain modifications resulted in a 15% increase in efficiency compared to previous simulations.
                     </p>
                   </div>
@@ -399,7 +399,7 @@ const Home = () => {
 
             {/* News Card 2 */}
             <div className="group relative rounded-[2rem] overflow-hidden h-[400px] border border-khad-border hover:border-cyan-500/50 transition-all duration-500 cursor-pointer">
-              <img src={lingsarBg} alt="News 2" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <img data-aos="fade-up" src={lingsarBg} alt="News 2" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
 
               <div className="absolute top-5 left-5 z-20 transition-opacity duration-300 group-hover:opacity-0">
                 <span className="px-3 py-1 bg-cyan-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Technical</span>
@@ -407,8 +407,8 @@ const Home = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
-                <p className="text-cyan-400 text-xs font-mono mb-2">AUGUST 05, 2026</p>
-                <h3 className="text-xl font-bold text-white line-clamp-2">
+                <p data-aos="fade-up" className="text-cyan-400 text-xs font-mono mb-2">AUGUST 05, 2026</p>
+                <h3 data-aos="fade-up" className="text-xl font-bold text-white line-clamp-2">
                   New Aerodynamic Chassis Unveiled for Lingsar EV
                 </h3>
               </div>
@@ -421,8 +421,8 @@ const Home = () => {
                     <span className="text-cyan-400/80 text-xs font-mono">AUG 05</span>
                   </div>
                   <div className="mt-2">
-                    <h3 className="text-xl font-bold text-white mb-3">New Aerodynamic Chassis Unveiled</h3>
-                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                    <h3 data-aos="fade-up" className="text-xl font-bold text-white mb-3">New Aerodynamic Chassis Unveiled</h3>
+                    <p data-aos="fade-up" className="text-slate-300 text-sm leading-relaxed line-clamp-4">
                       Following months of intensive CFD simulations, the technical division has finalized the new carbon-fiber chassis design for the Lingsar EV, significantly reducing drag coefficient.
                     </p>
                   </div>
@@ -440,7 +440,7 @@ const Home = () => {
 
             {/* News Card 3 */}
             <div className="group relative rounded-[2rem] overflow-hidden h-[400px] border border-khad-border hover:border-violet-500/50 transition-all duration-500 cursor-pointer">
-              <img src={khadTeamGroup} alt="News 3" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <img data-aos="fade-up" src={khadTeamGroup} alt="News 3" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
 
               <div className="absolute top-5 left-5 z-20 transition-opacity duration-300 group-hover:opacity-0">
                 <span className="px-3 py-1 bg-violet-500 text-khad-dark text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">Sponsorship</span>
@@ -448,8 +448,8 @@ const Home = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 opacity-100 group-hover:opacity-0 transition-opacity duration-500">
-                <p className="text-violet-400 text-xs font-mono mb-2">JULY 28, 2026</p>
-                <h3 className="text-xl font-bold text-white line-clamp-2">
+                <p data-aos="fade-up" className="text-violet-400 text-xs font-mono mb-2">JULY 28, 2026</p>
+                <h3 data-aos="fade-up" className="text-xl font-bold text-white line-clamp-2">
                   Partnership Secured with Leading Telemetry Tech Provider
                 </h3>
               </div>
@@ -462,8 +462,8 @@ const Home = () => {
                     <span className="text-violet-400/80 text-xs font-mono">JUL 28</span>
                   </div>
                   <div className="mt-2">
-                    <h3 className="text-xl font-bold text-white mb-3">Partnership Secured with Telemetry Tech</h3>
-                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                    <h3 data-aos="fade-up" className="text-xl font-bold text-white mb-3">Partnership Secured with Telemetry Tech</h3>
+                    <p data-aos="fade-up" className="text-slate-300 text-sm leading-relaxed line-clamp-4">
                       We are thrilled to announce a new strategic partnership that will equip our vehicles with state-of-the-art real-time telemetry tracking and data analysis systems for the upcoming race season.
                     </p>
                   </div>
@@ -487,9 +487,9 @@ const Home = () => {
 
 
       {/* 4. Sponsors Marquee Section */}
-      <section className="py-16 bg-khad-dark/50">
+      <section data-aos="fade-up" className="py-16 bg-khad-dark/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest">Trusted by Industry Leaders & Partners</p>
+          <p data-aos="fade-up" className="text-sm font-semibold text-slate-400 uppercase tracking-widest">Trusted by Industry Leaders & Partners</p>
         </div>
 
         {/* Simple Marquee Implementation */}
@@ -501,14 +501,14 @@ const Home = () => {
           <div className="flex animate-[marquee_25s_linear_infinite] items-center gap-8 md:gap-16 pr-8 md:pr-16 flex-shrink-0">
             {sponsorImages.map((src, idx) => (
               <div key={`sponsor-1-${idx}`} className="flex-shrink-0 flex items-center justify-center h-24 w-52 md:h-32 md:w-72 bg-transparent transition-all duration-300 cursor-default p-4 md:p-6 hover:scale-105">
-                <img src={src} alt={`Sponsor ${idx + 1}`} className="max-h-full max-w-full object-contain drop-shadow-md" />
+                <img data-aos="fade-up" src={src} alt={`Sponsor ${idx + 1}`} className="max-h-full max-w-full object-contain drop-shadow-md" />
               </div>
             ))}
           </div>
           <div className="flex animate-[marquee_25s_linear_infinite] items-center gap-8 md:gap-16 pr-8 md:pr-16 flex-shrink-0" aria-hidden="true">
             {sponsorImages.map((src, idx) => (
               <div key={`sponsor-2-${idx}`} className="flex-shrink-0 flex items-center justify-center h-24 w-52 md:h-32 md:w-72 bg-transparent transition-all duration-300 cursor-default p-4 md:p-6 hover:scale-105">
-                <img src={src} alt={`Sponsor ${idx + 1}`} className="max-h-full max-w-full object-contain drop-shadow-md" />
+                <img data-aos="fade-up" src={src} alt={`Sponsor ${idx + 1}`} className="max-h-full max-w-full object-contain drop-shadow-md" />
               </div>
             ))}
           </div>
@@ -517,15 +517,15 @@ const Home = () => {
       </section>
 
       {/* Contact Banner Section */}
-      <section className="py-8 px-6 md:px-10 rounded-[2rem] bg-gradient-to-br from-[#0B2A1E] via-khad-border to-[#061E14] relative overflow-hidden border border-emerald-500/20 mt-12 mb-16 max-w-5xl mx-4 lg:mx-auto shadow-2xl ">
+      <section data-aos="fade-up" className="py-8 px-6 md:px-10 rounded-[2rem] bg-gradient-to-br from-[#0B2A1E] via-khad-border to-[#061E14] relative overflow-hidden border border-emerald-500/20 mt-12 mb-16 max-w-5xl mx-4 lg:mx-auto shadow-2xl ">
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
         <div className="absolute -top-16 -right-16 w-48 h-48 bg-emerald-500/20 rounded-full blur-[60px] pointer-events-none"></div>
         <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-cyan-500/20 rounded-full blur-[60px] pointer-events-none"></div>
 
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left md:w-2/3">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Collaborate with us</h2>
-            <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto md:mx-0">
+            <h2 data-aos="fade-up" className="text-2xl md:text-3xl font-bold text-white mb-2">Collaborate with us</h2>
+            <p data-aos="fade-up" className="text-slate-400 text-sm md:text-base max-w-xl mx-auto md:mx-0">
               Join us in our mission to develop cutting-edge, energy-efficient vehicles. We are always open to new sponsorships, media partnerships, and technical collaborations.
             </p>
           </div>
@@ -549,9 +549,9 @@ const Home = () => {
             {/* Left Side: Logo & Address */}
             <div className="space-y-4 max-w-md">
               <div className="flex items-center gap-3">
-                <img src={navLogo} alt="KHAD TEAM" className="h-10 object-contain" />
+                <img data-aos="fade-up" src={navLogo} alt="KHAD TEAM" className="h-10 object-contain" />
               </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p data-aos="fade-up" className="text-sm text-slate-400 leading-relaxed">
                 K.H Ahmad Dahlan (KHAD) TEAM UMY<br />
                 58RC+M5Q, Geblagan, Tamantirto, Kec. Kasihan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55184
               </p>
@@ -559,7 +559,7 @@ const Home = () => {
 
             {/* Right Side: Social Medias */}
             <div className="flex flex-col items-start md:items-center gap-3">
-              <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-widest">Follow Us</h3>
+              <h3 data-aos="fade-up" className="text-sm font-semibold text-slate-300 uppercase tracking-widest">Follow Us</h3>
               <div className="flex items-center gap-4">
                 <a
                   href="https://instagram.com/khadteam.umy"
@@ -631,7 +631,7 @@ const Home = () => {
 
           {/* Copyright border bottom */}
           <div className="border-t border-khad-border/40 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <p>© {new Date().getFullYear()} KHAD TEAM UMY. All rights reserved.</p>
+            <p data-aos="fade-up">© {new Date().getFullYear()} KHAD TEAM UMY. All rights reserved.</p>
 
           </div>
         </div>

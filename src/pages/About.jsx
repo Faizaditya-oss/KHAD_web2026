@@ -53,20 +53,20 @@ const About = () => {
     <div className="pt-20 min-h-screen bg-khad-dark text-slate-300 font-sans">
 
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden h-screen min-h-[500px] flex items-center justify-center">
+      <section data-aos="fade-up" className="relative overflow-hidden h-screen min-h-[500px] flex items-center justify-center">
         <div className="absolute inset-0 w-full h-full z-0">
-          <img src={bgHome} alt="KHAD Team Hero" className="w-full h-full object-cover" />
+          <img data-aos="fade-up" src={bgHome} alt="KHAD Team Hero" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent"></div>
         </div>
         <div className="relative z-10 px-4 text-center w-full">
-          <h1 className="text-5xl md:text-3xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
+          <h1 data-aos="fade-up" className="text-5xl md:text-3xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
             About Us
           </h1>
         </div>
       </section>
 
       {/* 2. Quick Metrics / Stats Banner - Flowbite Full Width Tabs Card */}
-      <section className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 py-12">
+      <section data-aos="fade-up" className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 py-12">
         <div className="w-full bg-khad-card border border-khad-border rounded-lg shadow-sm">
           <div className="sm:hidden">
             <label htmlFor="tabs" className="sr-only">Select tab</label>
@@ -157,8 +157,8 @@ const About = () => {
 
             <div className={`p-4 bg-khad-dark rounded-b-lg md:p-8 ${activeTab === 'about' ? 'block' : 'hidden'}`} id="about" role="tabpanel" aria-labelledby="about-tab">
               <div className="text-center max-w-3xl mx-auto py-6">
-                <h2 className="mb-4 text-2xl md:text-3xl font-extrabold tracking-tight text-white">K.H Ahmad Dahlan Team</h2>
-                <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                <h2 data-aos="fade-up" className="mb-4 text-2xl md:text-3xl font-extrabold tracking-tight text-white">K.H Ahmad Dahlan Team</h2>
+                <p data-aos="fade-up" className="text-slate-400 text-base md:text-lg leading-relaxed">
                   KHAD Team adalah salah satu Unit Kegiatan Mahasiswa di UMY yang berfokus pada pengembangan penggunaan energi ramah lingkungan, terutama pada kendaraan bertenaga listrik. Oleh karena itu, Tim ini terdiri dari mahasiswa-mahasiswa terpilih yang diharapkan dapat berkontibusi besar untuk dapat menjawab tantangan isu krisis energi yang menjadi kekhawatiran terbesar dunia. Dalam hal ini KHAD Team melakukan pengembangan mobil ramah lingkungan.
                 </p>
               </div>
@@ -171,9 +171,9 @@ const About = () => {
                     <div className="p-2 bg-emerald-500/10 rounded-lg">
                       <Target className="w-6 h-6 text-emerald-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Kontes Mobil Hemat Energi (KMHE)</h3>
+                    <h3 data-aos="fade-up" className="text-xl font-bold text-white">Kontes Mobil Hemat Energi (KMHE)</h3>
                   </div>
-                  <p className="text-slate-400 leading-relaxed">
+                  <p data-aos="fade-up" className="text-slate-400 leading-relaxed">
                     2020 Lingsar EV - 3rd Sistem Kontrol & Kelistrikan <br></br>
                     2021 Lingsar EV -  Penghargaan Kendaraan Paling Handal <br></br>
                     2023 Lingsar EV - 3rd Kontes Mobil Hemat Energi <br></br>
@@ -187,9 +187,9 @@ const About = () => {
                     <div className="p-2 bg-cyan-500/10 rounded-lg">
                       <Zap className="w-6 h-6 text-cyan-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Shell Eco Marathon</h3>
+                    <h3 data-aos="fade-up" className="text-xl font-bold text-white">Shell Eco Marathon</h3>
                   </div>
-                  <p className="text-slate-400 leading-relaxed">
+                  <p data-aos="fade-up" className="text-slate-400 leading-relaxed">
                     2024 Lingsar EV - 3rd Shell Eco-Marathon Asia Pacific & Middle East
                   </p>
                 </div>
@@ -200,12 +200,12 @@ const About = () => {
       </section>
 
       {/* 3. Engineering Phases Section */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section data-aos="fade-up" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-2xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+          <h1 data-aos="fade-up" className="text-2xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
             Building The Future <br className="hidden md:block" />
           </h1>
-          <p className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
+          <p data-aos="fade-up" className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
@@ -234,8 +234,8 @@ const About = () => {
                     0{idx + 1}
                   </div>
                   <div>
-                    <h3 className={`text-lg sm:text-xl font-bold font-heading transition-colors duration-300 leading-tight ${activePhase === idx ? 'text-emerald-400' : 'text-white'}`}>{phase.subtitle}</h3>
-                    <p className={`mt-1 text-xs sm:text-sm font-medium transition-colors duration-300 ${activePhase === idx ? 'text-slate-300' : 'text-slate-500'}`}>{phase.title}</p>
+                    <h3 data-aos="fade-up" className={`text-lg sm:text-xl font-bold font-heading transition-colors duration-300 leading-tight ${activePhase === idx ? 'text-emerald-400' : 'text-white'}`}>{phase.subtitle}</h3>
+                    <p data-aos="fade-up" className={`mt-1 text-xs sm:text-sm font-medium transition-colors duration-300 ${activePhase === idx ? 'text-slate-300' : 'text-slate-500'}`}>{phase.title}</p>
                   </div>
                 </div>
               ))}
@@ -246,7 +246,7 @@ const About = () => {
           <div className="w-full lg:w-7/12 flex flex-col">
             <div className="relative rounded-3xl overflow-hidden bg-khad-card border border-khad-border aspect-[4/3] sm:aspect-video mb-8 group shadow-lg">
               {phases.map((phase, idx) => (
-                <img
+                <img data-aos="fade-up"
                   key={idx}
                   src={phase.image}
                   alt={phase.subtitle}
@@ -269,7 +269,7 @@ const About = () => {
                     Technical Challenge
                   </div>
                   <h4 className="text-xl sm:text-2xl font-bold text-white font-heading mb-3">{phase.subtitle}</h4>
-                  <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                  <p data-aos="fade-up" className="text-slate-400 text-sm sm:text-base leading-relaxed">
                     {phase.description}
                   </p>
                 </div>
@@ -280,11 +280,11 @@ const About = () => {
       </section>
 
       {/* 4. Bottom CTA Banner */}
-      <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-khad-border">
-        <h1 className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+      <section data-aos="fade-up" className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-khad-border">
+        <h1 data-aos="fade-up" className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
           Be Part of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">the Future</span> <br className="hidden md:block" />
         </h1>
-        <p className="text-lg text-slate-400 mb-10">
+        <p data-aos="fade-up" className="text-lg text-slate-400 mb-10">
           Tertarik untuk mengetahui spesifikasi kendaraan kami lebih detail atau ingin berkolaborasi sebagai partner sponsor?
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -174,7 +174,7 @@ const News = () => {
     <div className="pt-20 min-h-screen bg-[#061E14] text-slate-300 font-sans selection:bg-emerald-500/30 selection:text-white">
       
       {/* 1. Hero Header */}
-      <section className="relative overflow-hidden pt-28 pb-16 border-b border-[#133E2B]">
+      <section data-aos="fade-up" className="relative overflow-hidden pt-28 pb-16 border-b border-[#133E2B]">
         {/* Ambient Backlight Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/10 rounded-full blur-[130px] pointer-events-none z-0"></div>
         <div className="absolute inset-0 bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:24px_24px] opacity-5 pointer-events-none"></div>
@@ -185,14 +185,14 @@ const News = () => {
             KHAD TEAM PRESS & INSIGHTS
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 tracking-tight">
+          <h1 data-aos="fade-up" className="text-4xl sm:text-5xl md:text-7xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 tracking-tight">
             Latest News & <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-200 to-cyan-400">
               Technology Innovations
             </span>
           </h1>
 
-          <p className="max-w-3xl mx-auto text-base md:text-lg text-slate-400 leading-relaxed font-sans">
+          <p data-aos="fade-up" className="max-w-3xl mx-auto text-base md:text-lg text-slate-400 leading-relaxed font-sans">
             Ikuti kabar perkembangan riset kendaraan hemat energi, liputan kompetisi nasional & internasional, serta cerita balik layar pengembang KHAD Team UMY.
           </p>
 
@@ -222,7 +222,7 @@ const News = () => {
 
       {/* 2. Featured Article Banner */}
       {searchQuery === '' && selectedCategory === 'All' && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+        <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
           <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest mb-6 flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-emerald-400" />
             Featured Article
@@ -238,7 +238,7 @@ const News = () => {
 
             {/* Image Banner */}
             <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden bg-[#061E14]">
-              <img 
+              <img data-aos="fade-up" 
                 src={featuredArticle.image} 
                 alt={featuredArticle.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
@@ -267,11 +267,11 @@ const News = () => {
                   </span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-sans font-extrabold text-white group-hover:text-emerald-400 transition-colors duration-300 leading-snug">
+                <h2 data-aos="fade-up" className="text-2xl sm:text-3xl font-sans font-extrabold text-white group-hover:text-emerald-400 transition-colors duration-300 leading-snug">
                   {featuredArticle.title}
                 </h2>
 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed line-clamp-3">
+                <p data-aos="fade-up" className="text-sm sm:text-base text-slate-300 leading-relaxed line-clamp-3">
                   {featuredArticle.subtitle}
                 </p>
               </div>
@@ -308,7 +308,7 @@ const News = () => {
       )}
 
       {/* 3. Category Filter Tabs */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#133E2B] pb-6">
           <div className="flex flex-wrap gap-2 sm:gap-3">
             {newsCategories.map((cat) => {
@@ -336,12 +336,12 @@ const News = () => {
       </section>
 
       {/* 4. Articles Grid Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         {filteredArticles.length === 0 ? (
           <div className="text-center py-16 bg-[#0B2A1E] border border-[#133E2B] rounded-3xl p-8 space-y-4">
             <Search className="w-12 h-12 text-slate-500 mx-auto" />
-            <h3 className="text-xl font-bold text-white">Tidak Ada Berita Ditemukan</h3>
-            <p className="text-sm text-slate-400 max-w-md mx-auto">
+            <h3 data-aos="fade-up" className="text-xl font-bold text-white">Tidak Ada Berita Ditemukan</h3>
+            <p data-aos="fade-up" className="text-sm text-slate-400 max-w-md mx-auto">
               Coba kata kunci pencarian lain atau ganti kategori berita untuk menemukan informasi yang Anda cari.
             </p>
             <button
@@ -366,7 +366,7 @@ const News = () => {
                 <div>
                   {/* Card Header Image */}
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#061E14]">
-                    <img 
+                    <img data-aos="fade-up" 
                       src={article.image} 
                       alt={article.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
@@ -394,11 +394,11 @@ const News = () => {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-sans font-extrabold text-white group-hover:text-emerald-400 transition-colors duration-300 leading-snug line-clamp-2">
+                    <h3 data-aos="fade-up" className="text-lg font-sans font-extrabold text-white group-hover:text-emerald-400 transition-colors duration-300 leading-snug line-clamp-2">
                       {article.title}
                     </h3>
 
-                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
+                    <p data-aos="fade-up" className="text-xs text-slate-400 leading-relaxed line-clamp-3">
                       {article.subtitle}
                     </p>
                   </div>
@@ -433,7 +433,7 @@ const News = () => {
       </section>
 
       {/* 5. Newsletter Subscription CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-[#0B2A1E] border border-[#133E2B] p-8 sm:p-14 text-center">
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:16px_16px]"></div>
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -443,11 +443,11 @@ const News = () => {
               <Bell className="w-6 h-6 animate-bounce" />
             </div>
 
-            <h2 className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+            <h2 data-aos="fade-up" className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
            Get Notifications from <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">KHAD Team</span> <br className="hidden md:block" />
           </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p data-aos="fade-up" className="text-sm sm:text-base text-slate-300 leading-relaxed">
               Dapatkan rilis pers resmi, jadwal kompetisi, serta laporan riset teknologi terbaru langsung ke kotak masuk email Anda.
             </p>
 
@@ -509,11 +509,11 @@ const News = () => {
             <div className="p-6 sm:p-10 overflow-y-auto space-y-8">
               {/* Header Info */}
               <div className="space-y-4">
-                <h1 className="text-2xl sm:text-4xl font-sans font-extrabold text-white leading-tight">
+                <h1 data-aos="fade-up" className="text-2xl sm:text-4xl font-sans font-extrabold text-white leading-tight">
                   {activeModalArticle.title}
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+                <p data-aos="fade-up" className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
                   {activeModalArticle.subtitle}
                 </p>
 
@@ -539,7 +539,7 @@ const News = () => {
 
               {/* Main Banner Image */}
               <div className="rounded-2xl overflow-hidden aspect-[16/9] border border-[#133E2B] bg-[#061E14]">
-                <img 
+                <img data-aos="fade-up" 
                   src={activeModalArticle.image} 
                   alt={activeModalArticle.title} 
                   className="w-full h-full object-cover"

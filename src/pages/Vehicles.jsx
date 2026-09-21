@@ -87,7 +87,7 @@ const Vehicles = () => {
     <div className="pt-20 min-h-screen bg-[#061E14] text-slate-300 font-body selection:bg-emerald-500/30 selection:text-white">
 
       {/* 1. Header & Vehicle Switch */}
-      <section className="relative overflow-hidden pt-20 pb-12">
+      <section data-aos="fade-up" className="relative overflow-hidden pt-20 pb-12">
         {/* Background Radial Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
 
@@ -95,10 +95,10 @@ const Vehicles = () => {
           <span className="text-emerald-400 text-xs md:text-sm font-semibold tracking-widest uppercase mb-3 inline-block">
             KHAD TEAM
           </span>
-          <h1 className="text-4xl md:text-6xl font-heading font-extrabold uppercase tracking-wider text-white mb-6">
+          <h1 data-aos="fade-up" className="text-4xl md:text-6xl font-heading font-extrabold uppercase tracking-wider text-white mb-6">
             VEHICLES
           </h1>
-          <p className="font-body leading-relaxed text-slate-300 max-w-2xl mx-auto text-base md:text-lg mb-10">
+          <p data-aos="fade-up" className="font-body leading-relaxed text-slate-300 max-w-2xl mx-auto text-base md:text-lg mb-10">
             Explore the advanced specifications and engineering records of our energy-efficient prototypes designed for world-class competition.
           </p>
 
@@ -131,7 +131,7 @@ const Vehicles = () => {
       </section>
 
       {/* 2. Hero Display Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Info Details (Left) */}
@@ -139,10 +139,10 @@ const Vehicles = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
               {activeData.category}
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-extrabold uppercase tracking-wider text-white">
+            <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-heading font-extrabold uppercase tracking-wider text-white">
               {activeData.name}
             </h2>
-            <p className="font-body leading-relaxed text-slate-300 text-base md:text-lg">
+            <p data-aos="fade-up" className="font-body leading-relaxed text-slate-300 text-base md:text-lg">
               {activeData.tagline}
             </p>
 
@@ -174,7 +174,7 @@ const Vehicles = () => {
             <div className={`relative bg-[#0B2A1E] border border-[#133E2B] p-4 sm:p-6 rounded-[2.5rem] overflow-hidden transition-all duration-500 ${activeData.accentGlow}`}>
               {/* Photo Frame */}
               <div className="relative h-64 sm:h-96 rounded-[1.5rem] overflow-hidden bg-black/40 border border-[#133E2B]/50 group">
-                <img
+                <img data-aos="fade-up"
                   src={activeData.image}
                   alt={activeData.name}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -201,11 +201,11 @@ const Vehicles = () => {
       </section>
 
       {/* 3. General Specifications Grid */}
-      <section className="bg-[#0B2A1E] border-y border-[#133E2B] py-16">
+      <section data-aos="fade-up" className="bg-[#0B2A1E] border-y border-[#133E2B] py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-wider text-white mb-2">General Specifications</h2>
-            <p className="font-body leading-relaxed text-slate-300 text-sm max-w-xl mx-auto">
+            <h2 data-aos="fade-up" className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-wider text-white mb-2">General Specifications</h2>
+            <p data-aos="fade-up" className="font-body leading-relaxed text-slate-300 text-sm max-w-xl mx-auto">
               Overview of the design configuration and chassis components of the vehicle.
             </p>
           </div>
@@ -224,7 +224,7 @@ const Vehicles = () => {
 
 
       {/* 4. Telemetry Showcase Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Telemetry Dashboard Mockup (Left) */}
@@ -317,10 +317,10 @@ const Vehicles = () => {
               <Cpu className="w-3.5 h-3.5 animate-ping" />
               On Progress
             </div>
-            <h2 className="text-3xl md:text-4xl font-heading font-extrabold uppercase tracking-wider text-white">
+            <h2 data-aos="fade-up" className="text-3xl md:text-4xl font-heading font-extrabold uppercase tracking-wider text-white">
               Telemetry Ecosystem
             </h2>
-            <p className="font-body leading-relaxed text-slate-300 text-base">
+            <p data-aos="fade-up" className="font-body leading-relaxed text-slate-300 text-base">
               We developed our custom telemetry stack internally. It relies on low-power LoRa technology and highly integrated sensor nodes to stream and visualize vital performance telemetry in the pitlane.
             </p>
 
@@ -350,7 +350,7 @@ const Vehicles = () => {
                   </div>
                   <div>
                     <h4 className="font-heading font-bold uppercase tracking-wider text-white text-sm sm:text-base mb-1">{item.title}</h4>
-                    <p className="font-body leading-relaxed text-slate-300 text-xs sm:text-sm">{item.desc}</p>
+                    <p data-aos="fade-up" className="font-body leading-relaxed text-slate-300 text-xs sm:text-sm">{item.desc}</p>
                   </div>
                 </li>
               ))}
@@ -360,17 +360,17 @@ const Vehicles = () => {
       </section>
 
       {/* 5. Bottom Call To Action */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-[#0B2A1E] border border-[#133E2B] p-8 md:p-16">
           {/* Decorative grid pattern */}
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="text-center lg:text-left space-y-4">
-              <h2 className="text-3xl md:text-4xl font-heading font-extrabold uppercase tracking-wider text-white">
+              <h2 data-aos="fade-up" className="text-3xl md:text-4xl font-heading font-extrabold uppercase tracking-wider text-white">
                 Technical Data Sheets
               </h2>
-              <p className="font-body leading-relaxed text-slate-300 max-w-lg">
+              <p data-aos="fade-up" className="font-body leading-relaxed text-slate-300 max-w-lg">
                 Download full blueprints, structural calculations, and mechanical data logs of Lingsar EV & Aruna Diesel.
               </p>
             </div>

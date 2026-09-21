@@ -86,7 +86,7 @@ const MemberImage = ({ src, initials, alt, accentClass }) => {
               <TechAvatar initials={initials} accentClass={accentClass} />
             </div>
           )}
-          <img
+          <img data-aos="fade-up"
             src={src}
             alt={alt}
             onError={() => setHasError(true)}
@@ -256,10 +256,10 @@ const Team = () => {
     <div className="pt-20 min-h-screen bg-[#061E14] text-slate-300 font-sans selection:bg-emerald-500/30 selection:text-white">
 
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden pt-10 pb-20 border-b border-[#133E2B]">
+      <section data-aos="fade-up" className="relative overflow-hidden pt-10 pb-20 border-b border-[#133E2B]">
         {/* Background Grid & Gradient */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <img src={bgHome} alt="KHAD Team Workshop" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
+          <img data-aos="fade-up" src={bgHome} alt="KHAD Team Workshop" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/90 to-transparent"></div>
         </div>
 
@@ -273,7 +273,7 @@ const Team = () => {
 
             {/* Image Border framee */}
             <div className="relative bg-[#0B2A1E] rounded-3xl border border-[#133E2B] overflow-hidden shadow-2xl">
-              <img
+              <img data-aos="fade-up"
                 src={khadTeamGroup}
                 alt="KHAD Team Group Photo"
                 className="w-full aspect-[16/9] md:aspect-[21/9] object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700"
@@ -288,7 +288,7 @@ const Team = () => {
       </section>
 
       {/* 2. Filter Tabs Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="flex flex-wrap justify-center gap-3">
           {divisionData.map((div) => {
             const Icon = div.icon;
@@ -311,12 +311,12 @@ const Team = () => {
       </section>
 
       {/* 3. Members Grid Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
 
         {/* Featured / Division Leads Grid */}
         {featuredMembers.length > 0 && (
           <div className="mb-16">
-            <h3 className="text-xs font-space-mono font-semibold text-emerald-400 tracking-widest uppercase mb-8 flex items-center gap-2">
+            <h3 data-aos="fade-up" className="text-xs font-space-mono font-semibold text-emerald-400 tracking-widest uppercase mb-8 flex items-center gap-2">
               <Award className="w-4 h-4 text-emerald-400" />
               Division Directors & Leads
             </h3>
@@ -359,11 +359,11 @@ const Team = () => {
                       {member.name}
                     </h4>
 
-                    <p className="text-xs sm:text-sm font-space-mono font-bold text-emerald-400/90 uppercase tracking-wide">
+                    <p data-aos="fade-up" className="text-xs sm:text-sm font-space-mono font-bold text-emerald-400/90 uppercase tracking-wide">
                       {member.role}
                     </p>
 
-                    <p className="text-xs sm:text-sm font-sans leading-relaxed text-slate-400">
+                    <p data-aos="fade-up" className="text-xs sm:text-sm font-sans leading-relaxed text-slate-400">
                       {member.bio}
                     </p>
 
@@ -395,7 +395,7 @@ const Team = () => {
         {/* Standard Members Grid */}
         {standardMembers.length > 0 && (
           <div>
-            <h3 className="text-xs font-space-mono font-semibold text-slate-400 tracking-widest uppercase mb-8 flex items-center gap-2">
+            <h3 data-aos="fade-up" className="text-xs font-space-mono font-semibold text-slate-400 tracking-widest uppercase mb-8 flex items-center gap-2">
               <Wrench className="w-4 h-4 text-slate-500" />
               Specialists & Engineers
             </h3>
@@ -436,11 +436,11 @@ const Team = () => {
                         {member.name}
                       </h4>
 
-                      <p className="text-xs font-space-mono font-medium text-slate-400 uppercase tracking-wide">
+                      <p data-aos="fade-up" className="text-xs font-space-mono font-medium text-slate-400 uppercase tracking-wide">
                         {member.role}
                       </p>
 
-                      <p className="text-xs font-sans leading-relaxed text-slate-400">
+                      <p data-aos="fade-up" className="text-xs font-sans leading-relaxed text-slate-400">
                         {member.bio}
                       </p>
                     </div>
@@ -478,7 +478,7 @@ const Team = () => {
       </section>
 
       {/* 4. Bottom CTA Section - Recruitment info */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-[#0B2A1E] border border-[#133E2B] p-8 md:p-16 text-center">
           {/* Decorative grid pattern */}
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:16px_16px]"></div>
@@ -491,11 +491,11 @@ const Team = () => {
               JOIN THE CREW
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-wide text-white">
+            <h2 data-aos="fade-up" className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-wide text-white">
               BUILD THE CARS OF TOMORROW
             </h2>
 
-            <p className="font-sans leading-relaxed text-slate-300 text-sm md:text-base">
+            <p data-aos="fade-up" className="font-sans leading-relaxed text-slate-300 text-sm md:text-base">
               Pendaftaran anggota baru KHAD TEAM UMY dibuka setiap awal semester. Kami mencari talenta terbaik di bidang perancangan sasis, simulasi CFD, pemrograman mikrokontroler, telemetri, serta manajemen relasi sponsor.
             </p>
 
