@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  Zap, Flame, Battery, Cpu, Droplets, Gauge, ShieldCheck, 
-  Trophy, ArrowRight, Download, Radio, Network, Activity, 
+import {
+  Zap, Flame, Battery, Cpu, Droplets, Gauge, ShieldCheck,
+  Trophy, ArrowRight, Download, Radio, Network, Activity,
   Ruler, Eye, Settings, Terminal, Wifi
 } from 'lucide-react';
-import lingsarBg from '../assets/mobil/vision.JPG';
-import arunaBg from '../assets/mobil/DesignBody.jpeg';
+import lingsarBg from '../assets/vehicles/lingsar.JPG';
+import arunaBg from '../assets/sponsor/ArunaDiesel.JPG';
 
 const vehicleData = {
   lingsar: {
@@ -85,7 +85,7 @@ const Vehicles = () => {
 
   return (
     <div className="pt-20 min-h-screen bg-[#061E14] text-slate-300 font-body selection:bg-emerald-500/30 selection:text-white">
-      
+
       {/* 1. Header & Vehicle Switch */}
       <section className="relative overflow-hidden pt-20 pb-12">
         {/* Background Radial Glow */}
@@ -93,7 +93,7 @@ const Vehicles = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-emerald-400 text-xs md:text-sm font-semibold tracking-widest uppercase mb-3 inline-block">
-            KHAD TEAM 
+            KHAD TEAM
           </span>
           <h1 className="text-4xl md:text-6xl font-heading font-extrabold uppercase tracking-wider text-white mb-6">
             VEHICLES
@@ -107,22 +107,20 @@ const Vehicles = () => {
             <div className="inline-flex p-1 rounded-full bg-[#0B2A1E] border border-[#133E2B] shadow-2xl">
               <button
                 onClick={() => setActiveTab('lingsar')}
-                className={`px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-sm sm:text-md font-heading font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
-                  activeTab === 'lingsar'
-                    ? 'bg-[#06B6D4] text-[#061E14] shadow-[0_0_20px_rgba(6,182,212,0.4)]'
-                    : 'text-slate-400 hover:text-slate-200'
-                }`}
+                className={`px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-sm sm:text-md font-heading font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${activeTab === 'lingsar'
+                  ? 'bg-[#06B6D4] text-[#061E14] shadow-[0_0_20px_rgba(6,182,212,0.4)]'
+                  : 'text-slate-400 hover:text-slate-200'
+                  }`}
               >
                 <Zap className="w-4 h-4" />
                 Lingsar EV
               </button>
               <button
                 onClick={() => setActiveTab('aruna')}
-                className={`px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-sm sm:text-md font-heading font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
-                  activeTab === 'aruna'
-                    ? 'bg-[#EF4444] text-white shadow-[0_0_20px_rgba(239,68,68,0.4)]'
-                    : 'text-slate-400 hover:text-slate-200'
-                }`}
+                className={`px-6 py-2.5 sm:px-8 sm:py-3 rounded-full text-sm sm:text-md font-heading font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${activeTab === 'aruna'
+                  ? 'bg-[#EF4444] text-white shadow-[0_0_20px_rgba(239,68,68,0.4)]'
+                  : 'text-slate-400 hover:text-slate-200'
+                  }`}
               >
                 <Flame className="w-4 h-4" />
                 Aruna Diesel
@@ -135,7 +133,7 @@ const Vehicles = () => {
       {/* 2. Hero Display Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Info Details (Left) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
@@ -176,12 +174,12 @@ const Vehicles = () => {
             <div className={`relative bg-[#0B2A1E] border border-[#133E2B] p-4 sm:p-6 rounded-[2.5rem] overflow-hidden transition-all duration-500 ${activeData.accentGlow}`}>
               {/* Photo Frame */}
               <div className="relative h-64 sm:h-96 rounded-[1.5rem] overflow-hidden bg-black/40 border border-[#133E2B]/50 group">
-                <img 
-                  src={activeData.image} 
-                  alt={activeData.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                <img
+                  src={activeData.image}
+                  alt={activeData.name}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 {/* Tech HUD Grid overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061E14]/90 via-transparent to-transparent"></div>
                 <div className="absolute top-4 right-4 flex items-center gap-2 bg-[#061E14]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#133E2B] text-[10px] sm:text-xs font-mono font-bold text-emerald-400">
@@ -228,11 +226,11 @@ const Vehicles = () => {
       {/* 4. Telemetry Showcase Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Telemetry Dashboard Mockup (Left) */}
           <div className="lg:col-span-7 relative order-2 lg:order-1">
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-xl opacity-30 pointer-events-none"></div>
-            
+
             <div className="bg-[#0B2A1E] border border-[#133E2B] rounded-3xl p-6 shadow-2xl relative overflow-hidden">
               {/* Header */}
               <div className="flex justify-between items-center border-b border-[#133E2B] pb-4 mb-6">
@@ -240,7 +238,7 @@ const Vehicles = () => {
                   <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
                   <span className="font-mono font-bold text-white text-sm">LIVE_TELEMETRY.LOG</span>
                 </div>
-               
+
               </div>
 
               {/* Grid data */}
@@ -317,7 +315,7 @@ const Vehicles = () => {
           <div className="lg:col-span-5 space-y-6 order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#06B6D4]/20 bg-[#06B6D4]/5 text-[#06B6D4] text-xs font-semibold uppercase tracking-wider">
               <Cpu className="w-3.5 h-3.5 animate-ping" />
-              On Progress 
+              On Progress
             </div>
             <h2 className="text-3xl md:text-4xl font-heading font-extrabold uppercase tracking-wider text-white">
               Telemetry Ecosystem
@@ -378,7 +376,7 @@ const Vehicles = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              
+
               <Link
                 to="/sponsors"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl border border-[#133E2B] hover:border-emerald-500/40 hover:bg-[#061E14] text-slate-300 font-medium transition-all duration-300 flex items-center justify-center gap-2"

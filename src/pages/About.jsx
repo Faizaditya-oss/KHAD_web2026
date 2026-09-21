@@ -53,20 +53,15 @@ const About = () => {
     <div className="pt-20 min-h-screen bg-khad-dark text-slate-300 font-sans">
       
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-24 md:pb-32">
+      <section className="relative overflow-hidden h-screen min-h-[500px] flex items-center justify-center">
         <div className="absolute inset-0 w-full h-full z-0">
-          <img src={bgHome} alt="KHAD Team Hero" className="w-full h-full object-cover opacity-30 mix-blend-luminosity" />
-          <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/80 to-transparent"></div>
+          <img src={bgHome} alt="KHAD Team Hero" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent"></div>
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-2xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
-           Innovation <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Every Period</span>
+        <div className="relative z-10 px-4 text-center w-full">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
+            Our Teams
           </h1>
-          <p className="max-w-4xl mx-auto text-lg text-slate-400 leading-relaxed mb-8">
-            A closer look at how the KHAD Team transforms abstract ideas into world class, ultra-efficient vehicles through a process of precision design and manufacturing.
-          </p>
         </div>
       </section>
 

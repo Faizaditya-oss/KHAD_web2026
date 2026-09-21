@@ -12,8 +12,8 @@ import lingsarBg from '../assets/mobil/vision.JPG';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
 import khadTeamGroup from '../assets/divisions/Managers.jpg';
 
-import lingsarImage from '../assets/sponsor/lingsar26-removebg.png';
-import arunaImage from '../assets/sponsor/aruna-removebg.png';
+import lingsarImage from '../assets/bgHome/LingsarEV.png';
+import arunaImage from '../assets/bgHome/ArunaHD.png';
 
 import sponsor1 from '../assets/sponsor/sponsor1bnr.png';
 import sponsor2 from '../assets/sponsor/sponsor2.png';
@@ -39,6 +39,24 @@ const Home = () => {
     threshold: 0.1,
   });
 
+  // Hero reveal: show text after background image is visible or after a short delay
+  const [heroVisible, setHeroVisible] = React.useState(false);
+  const { ref: heroRef, inView: heroInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  React.useEffect(() => {
+    // If the hero background is in view, reveal immediately; otherwise reveal after 1s
+    let t = null;
+    if (heroInView) {
+      t = setTimeout(() => setHeroVisible(true), 1500); // small delay for nice effect
+    } else {
+      t = setTimeout(() => setHeroVisible(true), 1000);
+    }
+    return () => clearTimeout(t);
+  }, [heroInView]);
+
   return (
     <div className="min-h-screen bg-khad-dark">
       {/* 1. Hero Section */}
@@ -49,7 +67,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-khad-dark/80 to-khad-dark"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-2 py-2 rounded-full border border-khad-border/50 bg-khad-card/50 backdrop-blur-sm mb-8">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span className="text-xs font-semibold text-slate-300 tracking-widest uppercase">
@@ -57,17 +75,17 @@ const Home = () => {
             </span>
           </div>
           
-          <h1 className="text-2xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+          <h1 className={`text-2xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight transition-all duration-700 ease-out ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Pushing the Ultimate Boundaries <br className="hidden md:block" />
             of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Vehicle Efficiency</span>
           </h1>
           
-          <p className="max-w-xl mx-auto text-lg md:text-md text-slate-400 mb-12 leading-relaxed">
+          <p className={`max-w-xl mx-auto text-lg md:text-md text-slate-400 mb-12 leading-relaxed transition-all duration-900 ease-out ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Pioneering the future of sustainable mobility through advanced research 
             and development of ultra-efficient prototype vehicles.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-900 ease-out ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Link to="/vehicles" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-white text-khad-dark font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]  flex items-center justify-center gap-2 group">
               Explore Vehicles
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -444,7 +462,7 @@ const Home = () => {
             {/* Image (Left) */}
             <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] order-1 md:order-none">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-red-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-red-500/30 transition-all duration-700"></div>
-              <img src={arunaImage} alt="Aruna Diesel" className="relative z-10 w-full max-w-[500px] h-auto object-contain group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
+              <img src={arunaImage} alt="Aruna Diesel" className="relative z-10 w-full max-w-[600px] scale-110 h-auto object-contain group-hover:scale-125 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
             </div>
             {/* Description (Right) */}
             <div className="w-full md:w-1/2 flex flex-col items-start justify-center order-2 md:order-none">
@@ -511,13 +529,13 @@ const Home = () => {
             </p>
           </div>
           <div className="md:w-1/3 flex justify-center md:justify-center w-full mt-2 md:mt-0">
-            <a href="https://instagram.com/khadteam.umy" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-6 py-3 font-bold text-khad-dark bg-emerald-400 rounded-full overflow-hidden transition-all duration-300 hover:bg-white w-full sm:w-auto text-sm">
+            <Link to="/sponsors" className="group relative inline-flex items-center justify-center px-6 py-3 font-bold text-khad-dark bg-emerald-400 rounded-full overflow-hidden transition-all duration-300 hover:bg-white w-full sm:w-auto text-sm">
               <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
               <span className="relative flex items-center gap-2">
                 Get In Touch
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
