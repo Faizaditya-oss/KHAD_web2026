@@ -43,7 +43,7 @@ const LinkedinIcon = ({ className }) => (
   </svg>
 );
 import bgHome from '../assets/bgHome/LandPage.jpg';
-import khadTeamGroup from '../assets/divisions/Innovators.jpg';
+import khadTeamGroup from '../assets/divisions/Innovators.JPG';
 
 // TechAvatar fallback component for professional look
 const TechAvatar = ({ initials, accentClass }) => {
