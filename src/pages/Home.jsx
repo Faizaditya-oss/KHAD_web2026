@@ -8,7 +8,7 @@ import navLogo from '../assets/navbar/navbarbenar.png';
 const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.default ? CountUp.default : CountUp;
 
 import bgHome from '../assets/bgHome/LP.png';
-import lingsarBg from '../assets/mobil/vision.JPG';
+import lingsarBg from '../assets/mobil/LingsarNews.png';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
 import khadTeamGroup from '../assets/divisions/Managers.jpg';
 

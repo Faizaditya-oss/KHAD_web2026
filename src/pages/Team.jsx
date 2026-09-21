@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Users, ArrowRight, 
+import {
+  Users, ArrowRight,
   Cpu, Wrench, Shield, Award, Sparkles, Layers, Phone,
   Video,
   Cog,
@@ -11,14 +11,14 @@ import {
 } from 'lucide-react';
 
 const GithubIcon = ({ className }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -27,14 +27,14 @@ const GithubIcon = ({ className }) => (
 );
 
 const LinkedinIcon = ({ className }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -43,7 +43,7 @@ const LinkedinIcon = ({ className }) => (
   </svg>
 );
 import bgHome from '../assets/bgHome/LandPage.jpg';
-import khadTeamGroup from '../assets/divisions/Team.JPG';
+import khadTeamGroup from '../assets/divisions/Innovators.jpg';
 
 // TechAvatar fallback component for professional look
 const TechAvatar = ({ initials, accentClass }) => {
@@ -51,17 +51,17 @@ const TechAvatar = ({ initials, accentClass }) => {
     <div className="w-full h-full bg-[#061E14] relative flex items-center justify-center overflow-hidden">
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#10B981_1px,transparent_1px),linear-gradient(to_bottom,#10B981_1px,transparent_1px)] bg-[size:16px_16px]"></div>
-      
+
       {/* Glow Rings */}
       <div className="absolute w-28 h-28 rounded-full border border-emerald-500/10 animate-[spin_20s_linear_infinite]"></div>
       <div className="absolute w-36 h-36 rounded-full border border-dashed border-emerald-500/5 animate-[spin_30s_linear_infinite_reverse]"></div>
-      
+
       {/* Tech HUD Corner Accents */}
       <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-emerald-500/20"></div>
       <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-emerald-500/20"></div>
       <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-emerald-500/20"></div>
       <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-emerald-500/20"></div>
-      
+
       {/* Center initials */}
       <div className={`text-3xl sm:text-4xl font-heading font-extrabold tracking-widest ${accentClass || 'text-emerald-400'} opacity-80 select-none z-10`}>
         {initials}
@@ -86,9 +86,9 @@ const MemberImage = ({ src, initials, alt, accentClass }) => {
               <TechAvatar initials={initials} accentClass={accentClass} />
             </div>
           )}
-          <img 
-            src={src} 
-            alt={alt} 
+          <img
+            src={src}
+            alt={alt}
             onError={() => setHasError(true)}
             onLoad={() => setIsLoading(false)}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -125,7 +125,7 @@ const teamMembers = [
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
-  
+
   // Mechanical Division
   {
     name: 'Rizky Perdana',
@@ -244,8 +244,8 @@ const Team = () => {
   const [activeDivision, setActiveDivision] = useState('All');
 
   // Filter members based on active division tab
-  const filteredMembers = activeDivision === 'All' 
-    ? teamMembers 
+  const filteredMembers = activeDivision === 'All'
+    ? teamMembers
     : teamMembers.filter(member => member.division === activeDivision);
 
   // Group members into featured (leads) and standard members for layout structure
@@ -254,44 +254,34 @@ const Team = () => {
 
   return (
     <div className="pt-20 min-h-screen bg-[#061E14] text-slate-300 font-sans selection:bg-emerald-500/30 selection:text-white">
-      
+
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-20 border-b border-[#133E2B]">
+      <section className="relative overflow-hidden pt-10 pb-20 border-b border-[#133E2B]">
         {/* Background Grid & Gradient */}
         <div className="absolute inset-0 w-full h-full z-0">
           <img src={bgHome} alt="KHAD Team Workshop" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/90 to-transparent"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-2xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
-              Meet the Engineers <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-100 to-white">
-                & Innovators
-              </span>
-            </h1>
-            <p className="max-w-4xl mx-auto text-lg md:text-md text-slate-400 mb-12 leading-relaxed">
-             A cross disciplinary collaboration of students at Universitas Muhammadiyah Yogyakarta who are dedicating their knowledge and creativity to designing eco-friendly vehicles for the future.
-            </p>
-          </div>
+
 
           {/* Core Team Group Photo */}
           <div className="max-w-5xl mx-auto relative group mt-12">
             {/* Ambient Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-emerald-800 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-700"></div>
-            
+
             {/* Image Border frame */}
             <div className="relative bg-[#0B2A1E] rounded-3xl border border-[#133E2B] overflow-hidden shadow-2xl">
-              <img 
-                src={khadTeamGroup} 
-                alt="KHAD Team Group Photo" 
-                className="w-full aspect-[16/9] md:aspect-[21/9] object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700" 
+              <img
+                src={khadTeamGroup}
+                alt="KHAD Team Group Photo"
+                className="w-full aspect-[16/9] md:aspect-[21/9] object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700"
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              
-              
+
+
             </div>
           </div>
         </div>
@@ -307,11 +297,10 @@ const Team = () => {
               <button
                 key={div.name}
                 onClick={() => setActiveDivision(div.name)}
-                className={`group flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all duration-300 border ${
-                  isSelected
-                    ? 'bg-emerald-500 text-[#061E14] border-white shadow-[0_0_20px_rgba(16,185,129,0.3)]'
-                    : 'bg-[#0B2A1E] text-slate-400 hover:text-white border-[#133E2B] hover:border-white'
-                }`}
+                className={`group flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all duration-300 border ${isSelected
+                  ? 'bg-emerald-500 text-[#061E14] border-white shadow-[0_0_20px_rgba(16,185,129,0.3)]'
+                  : 'bg-[#0B2A1E] text-slate-400 hover:text-white border-[#133E2B] hover:border-white'
+                  }`}
               >
                 <Icon className={`w-4 h-4 transition-colors duration-300 ${isSelected ? 'text-[#061E14]' : 'text-emerald-500/70 group-hover:text-white'}`} />
                 {div.name}
@@ -323,7 +312,7 @@ const Team = () => {
 
       {/* 3. Members Grid Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        
+
         {/* Featured / Division Leads Grid */}
         {featuredMembers.length > 0 && (
           <div className="mb-16">
@@ -331,11 +320,11 @@ const Team = () => {
               <Award className="w-4 h-4 text-emerald-400" />
               Division Directors & Leads
             </h3>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {featuredMembers.map((member, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="relative bg-[#0B2A1E] border border-[#133E2B] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:items-center hover:border-emerald-500/40 hover:-translate-y-1.5 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all duration-300 group"
                 >
                   {/* Glowing corners on hover */}
@@ -346,11 +335,11 @@ const Team = () => {
 
                   {/* Photo Frame */}
                   <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden flex-shrink-0 border border-[#133E2B]/80 relative bg-[#061E14] group-hover:border-emerald-500/25 transition-colors duration-300">
-                    <MemberImage 
-                      src={member.photo} 
-                      initials={member.initials} 
-                      alt={member.name} 
-                      accentClass="text-emerald-400" 
+                    <MemberImage
+                      src={member.photo}
+                      initials={member.initials}
+                      alt={member.name}
+                      accentClass="text-emerald-400"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#061E14]/65 via-transparent to-transparent"></div>
                   </div>
@@ -365,15 +354,15 @@ const Team = () => {
                         LEAD
                       </span>
                     </div>
-                    
+
                     <h4 className="text-xl sm:text-2xl font-heading font-extrabold uppercase tracking-wide text-white">
                       {member.name}
                     </h4>
-                    
+
                     <p className="text-xs sm:text-sm font-space-mono font-bold text-emerald-400/90 uppercase tracking-wide">
                       {member.role}
                     </p>
-                    
+
                     <p className="text-xs sm:text-sm font-sans leading-relaxed text-slate-400">
                       {member.bio}
                     </p>
@@ -410,11 +399,11 @@ const Team = () => {
               <Wrench className="w-4 h-4 text-slate-500" />
               Specialists & Engineers
             </h3>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {standardMembers.map((member, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="relative bg-[#0B2A1E] border border-[#133E2B] rounded-2xl p-5 hover:border-emerald-500/35 hover:-translate-y-1.5 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] transition-all duration-300 flex flex-col justify-between group"
                 >
                   {/* Glowing corners on hover */}
@@ -426,11 +415,11 @@ const Team = () => {
                   <div className="space-y-4">
                     {/* Photo Frame */}
                     <div className="w-full aspect-[4/3] rounded-xl overflow-hidden border border-[#133E2B]/50 relative bg-[#061E14] group-hover:border-emerald-500/20 transition-colors duration-300">
-                      <MemberImage 
-                        src={member.photo} 
-                        initials={member.initials} 
-                        alt={member.name} 
-                        accentClass="text-slate-300" 
+                      <MemberImage
+                        src={member.photo}
+                        initials={member.initials}
+                        alt={member.name}
+                        accentClass="text-slate-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061E14]/80 via-transparent to-transparent"></div>
                     </div>
@@ -442,11 +431,11 @@ const Team = () => {
                           {member.division}
                         </span>
                       </div>
-                      
+
                       <h4 className="text-lg font-heading font-extrabold uppercase tracking-wide text-white group-hover:text-emerald-400 transition-colors duration-300">
                         {member.name}
                       </h4>
-                      
+
                       <p className="text-xs font-space-mono font-medium text-slate-400 uppercase tracking-wide">
                         {member.role}
                       </p>
@@ -493,7 +482,7 @@ const Team = () => {
         <div className="relative overflow-hidden rounded-[2.5rem] bg-[#0B2A1E] border border-[#133E2B] p-8 md:p-16 text-center">
           {/* Decorative grid pattern */}
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:16px_16px]"></div>
-          
+
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
@@ -501,26 +490,26 @@ const Team = () => {
               <Sparkles className="w-3.5 h-3.5 animate-pulse" />
               JOIN THE CREW
             </div>
-            
+
             <h2 className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-wide text-white">
               BUILD THE CARS OF TOMORROW
             </h2>
-            
+
             <p className="font-sans leading-relaxed text-slate-300 text-sm md:text-base">
               Pendaftaran anggota baru KHAD TEAM UMY dibuka setiap awal semester. Kami mencari talenta terbaik di bidang perancangan sasis, simulasi CFD, pemrograman mikrokontroler, telemetri, serta manajemen relasi sponsor.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#061E14] font-heading font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]"
               >
                 Pendaftaran & Info
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <Link 
+              <Link
                 to="/about"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl border border-[#133E2B] hover:border-emerald-500/40 hover:bg-[#061E14] text-slate-300 font-heading font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2"
               >
