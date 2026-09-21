@@ -51,7 +51,7 @@ const About = () => {
 
   return (
     <div className="pt-20 min-h-screen bg-khad-dark text-slate-300 font-sans">
-      
+
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden h-screen min-h-[500px] flex items-center justify-center">
         <div className="absolute inset-0 w-full h-full z-0">
@@ -59,8 +59,8 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent"></div>
         </div>
         <div className="relative z-10 px-4 text-center w-full">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
-            Our Teams
+          <h1 className="text-5xl md:text-3xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
+            About Us
           </h1>
         </div>
       </section>
@@ -70,8 +70,8 @@ const About = () => {
         <div className="w-full bg-khad-card border border-khad-border rounded-lg shadow-sm">
           <div className="sm:hidden">
             <label htmlFor="tabs" className="sr-only">Select tab</label>
-            <select 
-              id="tabs" 
+            <select
+              id="tabs"
               value={activeTab}
               onChange={(e) => setActiveTab(e.target.value)}
               className="bg-khad-dark border-0 border-b border-khad-border text-white text-sm rounded-t-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
@@ -83,46 +83,46 @@ const About = () => {
           </div>
           <ul className="hidden text-sm font-medium text-center text-slate-400 divide-x divide-khad-border rounded-lg sm:flex" id="fullWidthTab" role="tablist">
             <li className="w-full">
-              <button 
-                id="stats-tab" 
+              <button
+                id="stats-tab"
                 onClick={() => setActiveTab('stats')}
-                type="button" 
-                role="tab" 
-                aria-controls="stats" 
-                aria-selected={activeTab === 'stats'} 
+                type="button"
+                role="tab"
+                aria-controls="stats"
+                aria-selected={activeTab === 'stats'}
                 className={`inline-block w-full p-4 rounded-tl-lg focus:outline-none transition-colors ${activeTab === 'stats' ? 'bg-khad-dark text-white' : 'bg-khad-card hover:bg-khad-dark hover:text-white'}`}
               >
                 Statistics
               </button>
             </li>
             <li className="w-full">
-              <button 
-                id="about-tab" 
+              <button
+                id="about-tab"
                 onClick={() => setActiveTab('about')}
-                type="button" 
-                role="tab" 
-                aria-controls="about" 
-                aria-selected={activeTab === 'about'} 
+                type="button"
+                role="tab"
+                aria-controls="about"
+                aria-selected={activeTab === 'about'}
                 className={`inline-block w-full p-4 focus:outline-none transition-colors ${activeTab === 'about' ? 'bg-khad-dark text-white' : 'bg-khad-card hover:bg-khad-dark hover:text-white'}`}
               >
                 About
               </button>
             </li>
             <li className="w-full">
-              <button 
-                id="achievements-tab" 
+              <button
+                id="achievements-tab"
                 onClick={() => setActiveTab('achievements')}
-                type="button" 
-                role="tab" 
-                aria-controls="achievements" 
-                aria-selected={activeTab === 'achievements'} 
+                type="button"
+                role="tab"
+                aria-controls="achievements"
+                aria-selected={activeTab === 'achievements'}
                 className={`inline-block w-full p-4 rounded-tr-lg focus:outline-none transition-colors ${activeTab === 'achievements' ? 'bg-khad-dark text-white' : 'bg-khad-card hover:bg-khad-dark hover:text-white'}`}
               >
                 Achievements
               </button>
             </li>
           </ul>
-          
+
           <div id="fullWidthTabContent" className="border-t border-khad-border">
             <div className={`p-4 bg-khad-dark rounded-b-lg md:p-8 ${activeTab === 'stats' ? 'block' : 'hidden'}`} id="stats" role="tabpanel" aria-labelledby="stats-tab">
               <dl ref={statsRef} className="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-white sm:grid-cols-4 xl:grid-cols-4 sm:p-8">
@@ -132,9 +132,9 @@ const About = () => {
                   { icon: Activity, label: "Telemetry System", textValue: "Custom", unit: "", suffix: " Built" },
                   { icon: Droplets, label: "Emission Target", number: 0, unit: "", suffix: " %" },
                 ].map((stat, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-out ${statsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
+                  <div
+                    key={idx}
+                    className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-out ${statsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                     style={{ transitionDelay: `${idx * 150}ms` }}
                   >
                     <dt className="mb-2 text-3xl md:text-4xl font-extrabold text-white flex items-baseline justify-center">
@@ -154,7 +154,7 @@ const About = () => {
                 ))}
               </dl>
             </div>
-            
+
             <div className={`p-4 bg-khad-dark rounded-b-lg md:p-8 ${activeTab === 'about' ? 'block' : 'hidden'}`} id="about" role="tabpanel" aria-labelledby="about-tab">
               <div className="text-center max-w-3xl mx-auto py-6">
                 <h2 className="mb-4 text-2xl md:text-3xl font-extrabold tracking-tight text-white">K.H Ahmad Dahlan Team</h2>
@@ -163,7 +163,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className={`p-4 bg-khad-dark rounded-b-lg md:p-8 ${activeTab === 'achievements' ? 'block' : 'hidden'}`} id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-khad-card border border-khad-border p-6 rounded-xl hover:border-emerald-500/50 transition-colors">
@@ -178,10 +178,10 @@ const About = () => {
                     2021 Lingsar EV -  Penghargaan Kendaraan Paling Handal <br></br>
                     2023 Lingsar EV - 3rd Kontes Mobil Hemat Energi <br></br>
                     2025 Aruna Diesel - 4th Kontes Mobil Hemat Energi
-                    
+
                   </p>
                 </div>
-                
+
                 <div className="bg-khad-card border border-khad-border p-6 rounded-xl hover:border-cyan-500/50 transition-colors">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-cyan-500/10 rounded-lg">
@@ -203,7 +203,7 @@ const About = () => {
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-2xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
-           Building The Future <br className="hidden md:block" />
+            Building The Future <br className="hidden md:block" />
           </h1>
           <p className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
         </div>
@@ -213,19 +213,19 @@ const About = () => {
           <div className="w-full lg:w-5/12 relative flex">
             {/* Glowing Line */}
             <div className="absolute left-0 top-6 bottom-6 w-1 bg-khad-border/50 rounded-full overflow-hidden hidden sm:block">
-              <div 
-                className="absolute left-0 w-full bg-emerald-500 shadow-[0_0_15px_#10b981] transition-all duration-500 ease-in-out rounded-full" 
-                style={{ 
-                  top: `${(activePhase * 25)}%`, 
-                  height: '25%' 
+              <div
+                className="absolute left-0 w-full bg-emerald-500 shadow-[0_0_15px_#10b981] transition-all duration-500 ease-in-out rounded-full"
+                style={{
+                  top: `${(activePhase * 25)}%`,
+                  height: '25%'
                 }}
               ></div>
             </div>
 
             <div className="flex flex-col justify-between w-full sm:pl-8 space-y-4">
               {phases.map((phase, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className={`flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl cursor-pointer transition-all duration-300 ${activePhase === idx ? 'bg-khad-card/80 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.1)]' : 'hover:bg-khad-card/40 border border-transparent opacity-60 hover:opacity-100'}`}
                   onMouseEnter={() => setActivePhase(idx)}
                   onClick={() => setActivePhase(idx)}
@@ -246,11 +246,11 @@ const About = () => {
           <div className="w-full lg:w-7/12 flex flex-col">
             <div className="relative rounded-3xl overflow-hidden bg-khad-card border border-khad-border aspect-[4/3] sm:aspect-video mb-8 group shadow-lg">
               {phases.map((phase, idx) => (
-                <img 
+                <img
                   key={idx}
-                  src={phase.image} 
-                  alt={phase.subtitle} 
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${activePhase === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                  src={phase.image}
+                  alt={phase.subtitle}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${activePhase === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
                 />
               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-transparent to-transparent z-20"></div>
@@ -260,7 +260,7 @@ const About = () => {
 
             <div className="grid grid-cols-1 bg-khad-card/30 rounded-2xl border border-khad-border/50 items-start">
               {phases.map((phase, idx) => (
-                <div 
+                <div
                   key={idx}
                   className={`col-start-1 row-start-1 p-6 sm:p-8 transition-all duration-500 ease-in-out ${activePhase === idx ? 'opacity-100 translate-y-0 pointer-events-auto z-10' : 'opacity-0 translate-y-4 pointer-events-none z-0'}`}
                 >
@@ -282,8 +282,8 @@ const About = () => {
       {/* 4. Bottom CTA Banner */}
       <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-khad-border">
         <h1 className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
-           Be Part of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">the Future</span> <br className="hidden md:block" />
-          </h1>
+          Be Part of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">the Future</span> <br className="hidden md:block" />
+        </h1>
         <p className="text-lg text-slate-400 mb-10">
           Tertarik untuk mengetahui spesifikasi kendaraan kami lebih detail atau ingin berkolaborasi sebagai partner sponsor?
         </p>
@@ -297,7 +297,7 @@ const About = () => {
           </button>
         </div>
       </section>
-      
+
     </div>
   );
 };
