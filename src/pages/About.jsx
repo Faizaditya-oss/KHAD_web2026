@@ -2,42 +2,44 @@ import React, { useState } from 'react';
 import { Target, Flag, Zap, Users, ShieldCheck, ChevronRight, Activity, Battery, MoveRight, Droplets, Flame } from 'lucide-react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.default ? CountUp.default : CountUp;
 
-import bgHome from '../assets/bgHome/LandPage.jpg';
+import bgHome from '../assets/mobil/LingsarNews.png';
 import bgCard from '../assets/bgHome/bgCard.jpg';
 import lingsarBg from '../assets/mobil/vision.JPG';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
+import bgHero from '../assets/bgHome/LandPage.JPG';
 
 const phases = [
   {
     id: 'phase-01',
-    title: 'Phase 01',
+    title: 'Software Technical',
     subtitle: 'CAD & Aerodynamic Simulation',
     description: 'Tahap awal perancangan di mana ide diubah menjadi model 3D presisi tinggi. Tim kami menghadapi tantangan kompleks dalam mengoptimalkan aerodinamika menggunakan simulasi CFD (Computational Fluid Dynamics) pada SolidWorks dan ANSYS untuk mencapai drag coefficient serendah mungkin tanpa mengorbankan downforce.',
-    image: lingsarBg,
+    image: bgHome,
   },
   {
     id: 'phase-02',
-    title: 'Phase 02',
-    subtitle: 'Chassis & Composite Fabrication',
-    description: 'Beralih dari layar monitor ke workshop UMY, tahap ini membutuhkan akurasi tingkat tinggi dalam pengelasan rangka aluminium dan pencetakan bodi komposit serat karbon. Tantangan utama adalah menjaga rasio kekuatan terhadap berat (strength-to-weight ratio) agar struktur tetap kokoh melindungi pengemudi namun sangat ringan.',
+    title: 'Electrical & Technology',
+    subtitle: 'Development of a BLDC motor controller',
+    description: 'Membangun sistem kendali motor BLDC dari nol memerlukan keahlian tinggi dalam elektronika daya dan pemrograman mikrokontroler. Tantangan utamanya adalah merancang algoritma kontrol yang efisien untuk memaksimalkan torsi pada putaran rendah sambil menjaga suhu motor tetap stabil saat berakselerasi pada kecepatan tinggi.',
     image: bgCard,
   },
   {
     id: 'phase-03',
-    title: 'Phase 03',
+    title: 'Electrical & Technology',
     subtitle: 'Telemetry & ECU Wiring',
     description: 'Jantung dan otak kendaraan mulai dihidupkan. Tim kelistrikan secara teliti merakit sistem controller, Battery Management System (BMS), dan jaringan sensor telemetri dari nol. Tantangannya adalah merancang arsitektur kelistrikan yang efisien, stabil, dan tahan terhadap noise elektromagnetik di area sasis yang sangat terbatas.',
     image: arunaBg,
   },
   {
     id: 'phase-04',
-    title: 'Phase 04',
+    title: 'Software Technical',
     subtitle: 'Dyno Test & Track Testing',
     description: 'Momen pembuktian. Kendaraan diuji secara ekstrem di atas dynamometer dan aspal lintasan nyata untuk mengukur efisiensi riil dan mengkalibrasi ulang parameter ECU. Tantangan terbesarnya adalah menemukan titik puncak efisiensi (sweet spot) kinerja motor dan mesin di berbagai kondisi cuaca dan suhu lintasan ekstrem.',
-    image: bgHome,
+    image: lingsarBg,
   }
 ];
 
@@ -55,7 +57,7 @@ const About = () => {
       {/* 1. Hero Section */}
       <section data-aos="fade-up" className="relative overflow-hidden h-screen min-h-[500px] flex items-center justify-center">
         <div className="absolute inset-0 w-full h-full z-0">
-          <img data-aos="fade-up" src={bgHome} alt="KHAD Team Hero" className="w-full h-full object-cover" />
+          <img data-aos="fade-up" src={bgHero} alt="KHAD Team Hero" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent"></div>
         </div>
         <div className="relative z-10 px-4 text-center w-full">
@@ -190,6 +192,7 @@ const About = () => {
                     <h3 data-aos="fade-up" className="text-xl font-bold text-white">Shell Eco Marathon</h3>
                   </div>
                   <p data-aos="fade-up" className="text-slate-400 leading-relaxed">
+                    2023 Lingsar EV - 7th Shell Eco-Marathon Asia Pacific & Middle East <br></br>
                     2024 Lingsar EV - 3rd Shell Eco-Marathon Asia Pacific & Middle East
                   </p>
                 </div>
@@ -202,10 +205,10 @@ const About = () => {
       {/* 3. Engineering Phases Section */}
       <section data-aos="fade-up" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 data-aos="fade-up" className="text-2xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
+          <h1 className="text-2xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
             Building The Future <br className="hidden md:block" />
           </h1>
-          <p data-aos="fade-up" className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
+          <p className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
@@ -234,8 +237,8 @@ const About = () => {
                     0{idx + 1}
                   </div>
                   <div>
-                    <h3 data-aos="fade-up" className={`text-lg sm:text-xl font-bold font-heading transition-colors duration-300 leading-tight ${activePhase === idx ? 'text-emerald-400' : 'text-white'}`}>{phase.subtitle}</h3>
-                    <p data-aos="fade-up" className={`mt-1 text-xs sm:text-sm font-medium transition-colors duration-300 ${activePhase === idx ? 'text-slate-300' : 'text-slate-500'}`}>{phase.title}</p>
+                    <h3 className={`text-lg sm:text-xl font-bold font-heading transition-colors duration-300 leading-tight ${activePhase === idx ? 'text-emerald-400' : 'text-white'}`}>{phase.subtitle}</h3>
+                    <p className={`mt-1 text-xs sm:text-sm font-medium transition-colors duration-300 ${activePhase === idx ? 'text-slate-300' : 'text-slate-500'}`}>{phase.title}</p>
                   </div>
                 </div>
               ))}
@@ -246,7 +249,7 @@ const About = () => {
           <div className="w-full lg:w-7/12 flex flex-col">
             <div className="relative rounded-3xl overflow-hidden bg-khad-card border border-khad-border aspect-[4/3] sm:aspect-video mb-8 group shadow-lg">
               {phases.map((phase, idx) => (
-                <img data-aos="fade-up"
+                <img
                   key={idx}
                   src={phase.image}
                   alt={phase.subtitle}
@@ -269,7 +272,7 @@ const About = () => {
                     Technical Challenge
                   </div>
                   <h4 className="text-xl sm:text-2xl font-bold text-white font-heading mb-3">{phase.subtitle}</h4>
-                  <p data-aos="fade-up" className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                  <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
                     {phase.description}
                   </p>
                 </div>
@@ -285,16 +288,16 @@ const About = () => {
           Be Part of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">the Future</span> <br className="hidden md:block" />
         </h1>
         <p data-aos="fade-up" className="text-lg text-slate-400 mb-10">
-          Tertarik untuk mengetahui spesifikasi kendaraan kami lebih detail atau ingin berkolaborasi sebagai partner sponsor?
+          Interested in learning more about our vehicle specifications or collaborating as a sponsor?
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-khad-dark font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2 group">
+          <Link to="/vehicles" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-khad-dark font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2 group">
             Explore Vehicles
             <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="w-full sm:w-auto px-8 py-4 rounded-full border border-khad-border hover:border-emerald-500/50 bg-khad-card hover:bg-khad-card/80 text-white font-medium transition-all duration-300 flex items-center justify-center gap-2">
+          </Link>
+          <Link to="/sponsors" className="w-full sm:w-auto px-8 py-4 rounded-full border border-khad-border hover:border-emerald-500/50 bg-khad-card hover:bg-khad-card/80 text-white font-medium transition-all duration-300 flex items-center justify-center gap-2">
             Sponsorship Info
-          </button>
+          </Link>
         </div>
       </section>
 

@@ -22,8 +22,9 @@ import sponsor4 from '../assets/sponsor/sponsor4.png';
 import sponsor5 from '../assets/sponsor/sponsor5.png';
 import sponsor6 from '../assets/sponsor/sponsor6.png';
 import sponsor7 from '../assets/sponsor/sponsor7.png';
+import sponsor8 from '../assets/sponsor/sponsor8.png';
 
-const sponsorImages = [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5, sponsor6, sponsor7];
+const sponsorImages = [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5, sponsor6, sponsor7, sponsor8];
 
 const metrics = [
   { label: 'Total Competition', number: 10, suffix: '+', icon: ClipboardCheck },
@@ -39,23 +40,7 @@ const Home = () => {
     threshold: 0.1,
   });
 
-  // Hero reveal: show text after background image is visible or after a short delay
-  const [heroVisible, setHeroVisible] = React.useState(false);
-  const { ref: heroRef, inView: heroInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
 
-  React.useEffect(() => {
-    // If the hero background is in view, reveal immediately; otherwise reveal after 1s
-    let t = null;
-    if (heroInView) {
-      t = setTimeout(() => setHeroVisible(true), 1200); // small delay for nice effect
-    } else {
-      t = setTimeout(() => setHeroVisible(true), 1000);
-    }
-    return () => clearTimeout(t);
-  }, [heroInView]);
 
   return (
     <div className="min-h-screen bg-khad-dark">
@@ -67,7 +52,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-khad-dark/40 to-khad-dark"></div>
         </div>
 
-        <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
           <div className="inline-flex items-center gap-2 px-2 py-2 rounded-full border border-khad-border/50 bg-khad-card/70 backdrop-blur-md mb-8 shadow-xl">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span className="text-xs font-bold text-slate-100 tracking-widest uppercase drop-shadow-md">
@@ -75,17 +60,17 @@ const Home = () => {
             </span>
           </div>
 
-          <h1 data-aos="fade-up" className={`text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight transition-all duration-700 ease-out drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h1 data-aos="fade-up" className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
             Pushing the Ultimate Boundaries <br className="hidden md:block" />
             of <span className="text-emerald-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">Vehicle Efficiency</span>
           </h1>
 
-          <p data-aos="fade-up" className={`max-w-xl mx-auto text-lg md:text-xl text-slate-100 font-medium mb-12 leading-relaxed transition-all duration-900 ease-out drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p data-aos="fade-up" className="max-w-3xl mx-auto text-lg md:text-xl text-slate-100 font-medium mb-12 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             Pioneering the future of sustainable mobility through advanced research
             and development of ultra-efficient prototype vehicles.
           </p>
 
-          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-900 ease-out ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/vehicles" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-white text-khad-dark font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]  flex items-center justify-center gap-2 group">
               Explore Vehicles
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -108,8 +93,7 @@ const Home = () => {
             {metrics.map((metric, idx) => (
               <div
                 key={idx}
-                className={`flex flex-col items-center text-center transition-all duration-700 ease-out ${metricsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="flex flex-col items-center text-center"
               >
                 <metric.icon className="w-5 h-5 md:w-6 md:h-6 text-emerald-400 mb-1.5 md:mb-2 opacity-80" />
                 <div className="text-xl md:text-3xl font-bold font-heading text-white mb-1 flex flex-col md:flex-row items-center md:items-baseline gap-1">
@@ -231,7 +215,7 @@ const Home = () => {
             {/* Image (Left) */}
             <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] order-1 md:order-none">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-red-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-red-500/30 transition-all duration-700"></div>
-              <img data-aos="fade-up" src={arunaImage} alt="Aruna Diesel" className="relative z-10 w-full max-w-[600px] scale-110 h-auto object-contain group-hover:scale-125 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
+              <img data-aos="fade-up" src={arunaImage} alt="Aruna Diesel" className="relative z-10 w-full max-w-[600px] scale-[1.4] h-auto object-contain group-hover:scale-[1.55] group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
             </div>
             {/* Description (Right) */}
             <div className="w-full md:w-1/2 flex flex-col items-start justify-center order-2 md:order-none">
@@ -501,14 +485,14 @@ const Home = () => {
           <div className="flex animate-[marquee_25s_linear_infinite] items-center gap-8 md:gap-16 pr-8 md:pr-16 flex-shrink-0">
             {sponsorImages.map((src, idx) => (
               <div key={`sponsor-1-${idx}`} className="flex-shrink-0 flex items-center justify-center h-24 w-52 md:h-32 md:w-72 bg-transparent transition-all duration-300 cursor-default p-4 md:p-6 hover:scale-105">
-                <img data-aos="fade-up" src={src} alt={`Sponsor ${idx + 1}`} className="max-h-full max-w-full object-contain drop-shadow-md" />
+                <img data-aos="fade-up" src={src} alt={`Sponsor ${idx + 1}`} className={`max-h-full max-w-full object-contain drop-shadow-md ${idx === 7 ? 'scale-[1.5]' : ''}`} />
               </div>
             ))}
           </div>
           <div className="flex animate-[marquee_25s_linear_infinite] items-center gap-8 md:gap-16 pr-8 md:pr-16 flex-shrink-0" aria-hidden="true">
             {sponsorImages.map((src, idx) => (
               <div key={`sponsor-2-${idx}`} className="flex-shrink-0 flex items-center justify-center h-24 w-52 md:h-32 md:w-72 bg-transparent transition-all duration-300 cursor-default p-4 md:p-6 hover:scale-105">
-                <img data-aos="fade-up" src={src} alt={`Sponsor ${idx + 1}`} className="max-h-full max-w-full object-contain drop-shadow-md" />
+                <img data-aos="fade-up" src={src} alt={`Sponsor ${idx + 1}`} className={`max-h-full max-w-full object-contain drop-shadow-md ${idx === 7 ? 'scale-[1.5]' : ''}`} />
               </div>
             ))}
           </div>
