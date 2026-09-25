@@ -10,7 +10,7 @@ import bgHome from '../assets/mobil/LingsarNews.png';
 import bgCard from '../assets/bgHome/bgCard.jpg';
 import lingsarBg from '../assets/mobil/vision.JPG';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
-import bgHero from '../assets/bgHome/LandPage.JPG';
+import bgHero from '../assets/bgHome/LandPage.jpg';
 
 const phases = [
   {

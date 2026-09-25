@@ -72,7 +72,7 @@ const Home = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/vehicles" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-white text-khad-dark font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]  flex items-center justify-center gap-2 group">
-              Explore Cars
+              Explore Vehicles
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <button
