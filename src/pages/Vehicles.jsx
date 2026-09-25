@@ -173,12 +173,18 @@ const Vehicles = () => {
 
             <div className={`relative bg-[#0B2A1E] border border-[#133E2B] p-4 sm:p-6 rounded-[2.5rem] overflow-hidden transition-all duration-500 ${activeData.accentGlow}`}>
               {/* Photo Frame */}
-              <div className="relative h-64 sm:h-96 rounded-[1.5rem] overflow-hidden bg-black/40 border border-[#133E2B]/50 group">
-                <img data-aos="fade-up"
-                  src={activeData.image}
-                  alt={activeData.name}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
+              <div data-aos="fade-up" className="relative h-64 sm:h-96 rounded-[1.5rem] overflow-hidden bg-[#061E14]/40 border border-[#133E2B]/50 group">
+                {Object.values(vehicleData).map((data) => (
+                  <img 
+                    key={data.id}
+                    src={data.image}
+                    alt={data.name}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ willChange: 'transform, opacity' }}
+                    className={`absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-1000 ease-out ${activeTab === data.id ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                  />
+                ))}
 
                 {/* Tech HUD Grid overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061E14]/90 via-transparent to-transparent"></div>

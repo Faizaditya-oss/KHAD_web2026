@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Target, Flag, Zap, Users, ShieldCheck, ChevronRight, Activity, Battery, MoveRight, Droplets, Flame } from 'lucide-react';
+import { Target, Flag, Zap, Users, ShieldCheck, ChevronRight, Activity, Battery, MoveRight, Droplets, Flame, Trophy, Medal } from 'lucide-react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
@@ -7,10 +7,74 @@ import { Link } from 'react-router-dom';
 const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.default ? CountUp.default : CountUp;
 
 import bgHome from '../assets/mobil/LingsarNews.png';
-import bgCard from '../assets/bgHome/bgCard.jpg';
+import bgCard from '../assets/mobil/controller.jpg';
 import lingsarBg from '../assets/mobil/vision.JPG';
-import arunaBg from '../assets/mobil/DesignBody.jpeg';
+import arunaBg from '../assets/mobil/telemetry.png';
 import bgHero from '../assets/bgHome/LandPage.jpg';
+import kmhe2025 from '../assets/SEM24/kmhe25.JPG';
+import kmli2019 from '../assets/SEM24/kmli19.jpg';
+import kmhe2019 from '../assets/SEM24/kmhe19.JPG';
+import kmhe2021 from '../assets/SEM24/kmhe21.jpg';
+import kmhe2024 from '../assets/SEM24/kmhe24.jpg';
+
+const timelineEvents = [
+  {
+    year: '2019',
+    title: 'Kontes Mobil Listrik Indonesia',
+    subtitle: '3rd Place Gradeability Category',
+    description: '',
+    image: kmli2019,
+  },
+  {
+    year: '2019',
+    title: 'Kontes Mobil Hemat Energi',
+    subtitle: 'Debut EV Prototype Category in KMHE',
+    description: '',
+    image: kmhe2019,
+  },
+  {
+    year: '2021',
+    title: 'Kontes Mobil Hemat Energi',
+    subtitle: '4th National Place EV Prototype Category',
+    description: '',
+    image: kmhe2021,
+  },
+  {
+    year: '2023',
+    title: 'Shell Eco Marathon Asia Pasific & Middle East',
+    subtitle: '3rd Place Asia Pacific & Middle East EV Prototype Category',
+    description: '',
+    image: bgCard,
+    highlight: 'gold',
+  },
+  {
+    year: '2024',
+    title: 'Kontes Mobil Hemat Energi',
+    subtitle: '5th National Place EV Prototype Category',
+    description: '',
+    image: kmhe2024,
+  },
+  {
+    year: '2024',
+    title: 'Shell Eco Marathon Asia Pasific & Middle East',
+    subtitle: '5th Place Asia Pacific & Middle East EV Prototype Category',
+    description: '',
+    image: bgHero,
+  },
+  {
+    year: '2025',
+    title: 'Kontes Mobil Hemat Energi',
+    subtitle: '4th National Place Diesel Prototype Category',
+    description: '',
+    image: kmhe2025,
+  },
+  {
+    year: '2026',
+    title: 'Kontes Mobil Hemat Energi',
+    subtitle: '3rd National Place',
+    description: '',
+  }
+];
 
 const phases = [
   {
@@ -36,8 +100,8 @@ const phases = [
   },
   {
     id: 'phase-04',
-    title: 'Software Technical',
-    subtitle: 'Dyno Test & Track Testing',
+    title: 'Technical Division',
+    subtitle: 'Track Testing',
     description: 'Momen pembuktian. Kendaraan diuji secara ekstrem di atas dynamometer dan aspal lintasan nyata untuk mengukur efisiensi riil dan mengkalibrasi ulang parameter ECU. Tantangan terbesarnya adalah menemukan titik puncak efisiensi (sweet spot) kinerja motor dan mesin di berbagai kondisi cuaca dan suhu lintasan ekstrem.',
     image: lingsarBg,
   }
@@ -282,7 +346,67 @@ const About = () => {
         </div>
       </section>
 
-      {/* 4. Bottom CTA Banner */}
+      {/* 4. Competition Journey Timeline */}
+      <section data-aos="fade-up" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-khad-dark">
+        <div className="text-center mb-16 md:mb-24">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500 mb-4 tracking-tight">
+            Our Journey
+          </h1>
+        </div>
+
+        <div className="relative">
+          {/* The vertical timeline line */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald-500/20 via-emerald-500/50 to-emerald-500/10 rounded-full"></div>
+          {/* Mobile vertical line */}
+          <div className="md:hidden absolute left-6 w-1 h-full bg-gradient-to-b from-emerald-500/20 via-emerald-500/50 to-emerald-500/10 rounded-full"></div>
+
+          <div className="space-y-12 md:space-y-24">
+            {timelineEvents.map((event, idx) => (
+              <div key={idx} className={`relative flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+
+                {/* Timeline Endpoint (Dot) */}
+                <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 md:translate-y-0 w-5 h-5 bg-khad-dark border-4 ${event.highlight === 'gold' ? 'border-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.5)]' : 'border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]'} rounded-full z-10 top-0 md:top-1/2`}></div>
+
+                {/* Year Badge (Mobile only, on top of dot) */}
+                <div className={`md:hidden absolute left-14 top-[-2px] ${event.highlight === 'gold' ? 'text-yellow-400' : 'text-emerald-400'} font-bold font-heading text-lg`}>
+                  {event.year}
+                </div>
+
+                {/* Content - Text Section */}
+                <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:text-right'} pl-14 pt-8 md:pt-0`}>
+                  <div data-aos={idx % 2 === 0 ? "fade-left" : "fade-right"}>
+                    {/* Desktop Year Badge */}
+                    <div className={`hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full border text-sm font-bold tracking-wider mb-4 ${event.highlight === 'gold' ? 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400' : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'}`}>
+                      {event.highlight === 'gold' ? <Trophy className="w-4 h-4" /> : <Medal className="w-4 h-4" />}
+                      {event.year}
+                    </div>
+
+                    <h3 className={`text-2xl font-bold mb-1 ${event.highlight === 'gold' ? 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600' : 'text-white'}`}>{event.title}</h3>
+                    <h4 className={`font-semibold mb-4 text-sm md:text-base ${event.highlight === 'gold' ? 'text-yellow-400/90' : 'text-emerald-400/80'}`}>{event.subtitle}</h4>
+                    {event.description && (
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+                        {event.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Content - Image Section */}
+                <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pr-16' : 'md:pl-16'} pl-14 pt-6 md:pt-0`}>
+                  {event.image && (
+                    <div data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"} className={`relative w-full aspect-video rounded-xl overflow-hidden border ${event.highlight === 'gold' ? 'border-yellow-400/50 shadow-[0_0_30px_rgba(250,204,21,0.2)]' : 'border-khad-border/30 shadow-lg'}`}>
+                      <img src={event.image} alt={event.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-khad-dark/60 to-transparent pointer-events-none"></div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Bottom CTA Banner */}
       <section data-aos="fade-up" className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-khad-border">
         <h1 data-aos="fade-up" className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
           Be Part of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">the Future</span> <br className="hidden md:block" />
