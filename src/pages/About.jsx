@@ -7,15 +7,16 @@ import { Link } from 'react-router-dom';
 const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.default ? CountUp.default : CountUp;
 
 import bgHome from '../assets/mobil/LingsarNews.png';
-import bgCard from '../assets/mobil/controller.jpg';
+import bgCard from '../assets/SEM24/sem23.JPG';
 import lingsarBg from '../assets/mobil/vision.JPG';
 import arunaBg from '../assets/mobil/telemetry.png';
-import bgHero from '../assets/bgHome/LandPage.jpg';
+import bgHero from '../assets/SEM24/lingsarsem.JPG';
 import kmhe2025 from '../assets/SEM24/kmhe25.JPG';
 import kmli2019 from '../assets/SEM24/kmli19.jpg';
 import kmhe2019 from '../assets/SEM24/kmhe19.jpg';
 import kmhe2021 from '../assets/SEM24/kmhe21.jpg';
 import kmhe2024 from '../assets/SEM24/kmhe24.jpg';
+import controller from '../assets/mobil/controller.jpg';
 
 const timelineEvents = [
   {
@@ -52,14 +53,14 @@ const timelineEvents = [
     title: 'Kontes Mobil Hemat Energi',
     subtitle: '5th National Place EV Prototype Category',
     description: '',
-    image: kmhe2024,
+    image: bgHero,
   },
   {
     year: '2024',
     title: 'Shell Eco Marathon Asia Pasific & Middle East',
     subtitle: '5th Place Asia Pacific & Middle East EV Prototype Category',
     description: '',
-    image: bgHero,
+    image: kmhe2024,
   },
   {
     year: '2025',
@@ -89,7 +90,7 @@ const phases = [
     title: 'Electrical & Technology',
     subtitle: 'Development of a BLDC motor controller',
     description: 'Membangun sistem kendali motor BLDC dari nol memerlukan keahlian tinggi dalam elektronika daya dan pemrograman mikrokontroler. Tantangan utamanya adalah merancang algoritma kontrol yang efisien untuk memaksimalkan torsi pada putaran rendah sambil menjaga suhu motor tetap stabil saat berakselerasi pada kecepatan tinggi.',
-    image: bgCard,
+    image: controller,
   },
   {
     id: 'phase-03',
