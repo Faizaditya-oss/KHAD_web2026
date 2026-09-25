@@ -13,7 +13,7 @@ import arunaBg from '../assets/mobil/telemetry.png';
 import bgHero from '../assets/bgHome/LandPage.jpg';
 import kmhe2025 from '../assets/SEM24/kmhe25.JPG';
 import kmli2019 from '../assets/SEM24/kmli19.jpg';
-import kmhe2019 from '../assets/SEM24/kmhe19.JPG';
+import kmhe2019 from '../assets/SEM24/kmhe19.jpg';
 import kmhe2021 from '../assets/SEM24/kmhe21.jpg';
 import kmhe2024 from '../assets/SEM24/kmhe24.jpg';
 
