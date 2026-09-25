@@ -10,7 +10,7 @@ import bgHome from '../assets/mobil/LingsarNews.png';
 import bgCard from '../assets/SEM24/sem23.JPG';
 import lingsarBg from '../assets/mobil/vision.JPG';
 import arunaBg from '../assets/mobil/telemetry.png';
-import bgHero from '../assets/bgHome/LandPage.JPG';
+import bgHero from '../assets/bgHome/LandPage.jpg';
 import kmhe2025 from '../assets/SEM24/kmhe25.JPG';
 import kmli2019 from '../assets/SEM24/kmli19.jpg';
 import kmhe2019 from '../assets/SEM24/kmhe19.jpg';
