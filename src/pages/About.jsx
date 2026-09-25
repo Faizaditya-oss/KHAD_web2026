@@ -17,6 +17,7 @@ import kmhe2019 from '../assets/SEM24/kmhe19.jpg';
 import kmhe2021 from '../assets/SEM24/kmhe21.jpg';
 import kmhe2024 from '../assets/SEM24/kmhe24.jpg';
 import controller from '../assets/mobil/controller.jpg';
+import kmhe24 from '../assets/SEM24/lingsarsem.JPG';
 
 const timelineEvents = [
   {
@@ -53,7 +54,7 @@ const timelineEvents = [
     title: 'Kontes Mobil Hemat Energi',
     subtitle: '5th National Place EV Prototype Category',
     description: '',
-    image: bgHero,
+    image: kmhe24,
   },
   {
     year: '2024',
