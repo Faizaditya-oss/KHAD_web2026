@@ -7,7 +7,9 @@ import {
   Cog,
   BrickWallFire,
   Handshake,
-  Zap
+  Zap,
+  Hammer,
+  CarIcon
 } from 'lucide-react';
 
 const GithubIcon = ({ className }) => (
@@ -44,6 +46,25 @@ const LinkedinIcon = ({ className }) => (
 );
 import bgHome from '../assets/bgHome/LandPage.jpg';
 import khadTeamGroup from '../assets/divisions/Innovators.JPG';
+import baniElec from '../assets/electrical/bani.JPG';
+import faizElec from '../assets/electrical/faiz.JPG';
+import saktiElec from '../assets/electrical/sakti.JPG';
+import bimaImg from '../assets/managers/bima.JPG';
+import dawaiImg from '../assets/managers/dawai.JPG';
+import majidImg from '../assets/managers/majid.JPG';
+import ramadhanImg from '../assets/managers/ramadhan.JPG';
+import aydinImg from '../assets/mechanic/aydin.JPG';
+import farisImg from '../assets/mechanic/faris.JPG';
+import firmanImg from '../assets/mechanic/firman.JPG';
+import ilhamImg from '../assets/mechanic/ilham.JPG';
+import ulinImg from '../assets/mechanic/ulin.JPG';
+import yusufImg from '../assets/mechanic/yusuf.JPG';
+import beniImg from '../assets/body/beni.JPG';
+import fatihImg from '../assets/body/fatih.JPG';
+import imronImg from '../assets/body/imron.JPG';
+import bagusImg from '../assets/nonteknis/bagus.JPG';
+import erjiImg from '../assets/nonteknis/erji.JPG';
+import hisyamImg from '../assets/nonteknis/hisyam.JPG';
 
 // TechAvatar fallback component for professional look
 const TechAvatar = ({ initials, accentClass }) => {
@@ -100,130 +121,247 @@ const MemberImage = ({ src, initials, alt, accentClass }) => {
 };
 
 const teamMembers = [
-  // Executive Division
+  // Managers Division
   {
-    name: 'Faiz Aditya',
+    name: 'Majid',
     role: 'General Manager',
-    division: 'Executive',
-    initials: 'FA',
-    isLead: true,
-    skills: ['Leadership', 'Vehicle Dynamics', 'Project Planning', 'Strategy'],
-    bio: 'Memimpin arah strategis KHAD Team UMY dalam riset kendaraan hemat energi global dan koordinasi divisi teknis.',
-    photo: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=400&h=400',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
-  },
-  {
-    name: 'Daffa Zhalif',
-    role: 'Project Manager',
-    division: 'Executive',
-    initials: 'DZ',
+    division: 'Managers',
+    initials: 'MJ',
     isLead: false,
-    skills: ['Scrum', 'Operations Management', 'Budgeting', 'Public Relations'],
-    bio: 'Mengelola lini masa proyek, perizinan, dan logistik pembuatan mobil dari fase simulasi hingga testing.',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400',
+    skills: ['Technical Strategy', 'Quality Control'],
+    bio: 'Memimpin arah strategis KHAD Team UMY dalam riset kendaraan hemat energi global dan koordinasi divisi teknis. ',
+    photo: majidImg,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
 
-  // Mechanical Division
   {
-    name: 'Rizky Perdana',
-    role: 'Chief Mechanical Engineer',
-    division: 'Mechanical',
-    initials: 'RP',
-    isLead: true,
-    skills: ['SolidWorks', 'CFD Simulation', 'FEA Analysis', 'Carbon Fabrication'],
-    bio: 'Bertanggung jawab atas desain sasis monocoque serat karbon dan simulasi aerodinamika kendaraan.',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400&h=400',
+    name: 'Dawai',
+    role: 'Vice Manager',
+    division: 'Managers',
+    initials: 'DW',
+    isLead: false,
+    skills: ['Scrum', 'Operations Management', 'Budgeting', 'Public Relations'],
+    bio: 'Mengelola lini masa proyek, perizinan, dan logistik pembuatan mobil dari fase simulasi hingga testing.',
+    photo: dawaiImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+
+  {
+    name: 'Bima',
+    role: 'Aruna Prototype Manager',
+    division: 'Managers',
+    initials: 'BM',
+    isLead: false,
+    skills: ['Leadership', 'Vehicle Dynamics', 'Project Planning', 'Strategy'],
+    bio: 'Bertanggung jawab pada operasional harian tim Aruna Diesel Prototype',
+    photo: bimaImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+
+  {
+    name: 'Ramadhan',
+    role: 'Lingsar Prototype Manager',
+    division: 'Managers',
+    initials: 'RM',
+    isLead: false,
+    skills: ['Operations', 'Logistics'],
+    bio: 'Bertanggung jawab pada operasional harian tim Lingsar Prototype EV 3.0.',
+    photo: ramadhanImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+
+  // Mechanic & Engine Division
+
+  {
+    name: 'Yusuf',
+    role: 'Engine',
+    division: 'Mechanic & Engine',
+    initials: 'YS',
+    isLead: false,
+    skills: ['Pneumatics', 'Drive Train'],
+    bio: 'Meningkatkan efisiensi sistem roda gigi dan penggerak utama.',
+    photo: yusufImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+
+
+  {
+    name: 'Ilham',
+    role: 'Mechanic',
+    division: 'Mechanic & Engine',
+    initials: 'IH',
+    isLead: false,
+    skills: ['CAD Modeling', 'CNC Machining'],
+    bio: 'Merancang dan mengembangkan bagian kaki-kaki kendaraan',
+    photo: ilhamImg,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
-    name: 'Bagas Adi',
-    role: 'Aerodynamics Specialist',
-    division: 'Mechanical',
-    initials: 'BA',
+    name: 'Ulin',
+    role: 'Engine',
+    division: 'Mechanic & Engine',
+    initials: 'UL',
     isLead: false,
-    skills: ['ANSYS Fluent', 'CAD Modeling', 'Additive Manufacturing'],
-    bio: 'Mengembangkan model aerodinamis kendaraan dengan koefisien hambatan udara minimal untuk hemat energi.',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400',
+    skills: ['TIG Welding', 'Chassis Tuning'],
+    bio: 'Merancang dan mengembangkan sistem laju kendaraan.',
+    photo: ulinImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+
+  {
+    name: 'Aydin',
+    role: 'Engine',
+    division: 'Mechanic & Engine',
+    initials: 'AD',
+    isLead: false,
+    skills: ['SolidWorks', 'Engine Tuning'],
+    bio: 'Fokus pada mekanikal dan mesin kendaraan.',
+    photo: aydinImg,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
-    name: 'Hendra Wijaya',
-    role: 'Chassis & Body Fabricator',
-    division: 'Mechanical',
-    initials: 'HW',
+    name: 'Faris',
+    role: 'Mechanic',
+    division: 'Mechanic & Engine',
+    initials: 'FR',
     isLead: false,
-    skills: ['TIG Welding', 'Carbon Layup', 'CNC Milling', 'Metrology'],
-    bio: 'Memastikan presisi tinggi pada proses manufaktur bodi serat karbon komposit dan kekuatan struktur sasis.',
-    photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400',
+    skills: ['Mechanical Design', 'Fabrication'],
+    bio: 'Terlibat dalam perakitan komponen mekanis dan transmisi daya.',
+    photo: farisImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+
+  // Body & Manufacturing Division
+  {
+    name: 'Beni',
+    role: 'Manufacturing',
+    division: 'Body & Manufacturing',
+    initials: 'BN',
+    isLead: false,
+    skills: ['Carbon Layup', 'Fiberglass'],
+    bio: 'Fokus pada fabrikasi chasis kendaraan.',
+    photo: beniImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+  {
+    name: 'Firman',
+    role: 'Manufacturing',
+    division: 'Body & Manufacturing',
+    initials: 'FM',
+    isLead: false,
+    skills: ['Engine Maintenance', 'Testing'],
+    bio: 'Memastikan kinerja optimal pada sektor chasis kendaraan',
+    photo: firmanImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+  {
+    name: 'Fatih',
+    role: 'Body ',
+    division: 'Body & Manufacturing',
+    initials: 'FT',
+    isLead: false,
+    skills: ['Surface Finishing', 'Metrology'],
+    bio: 'Memastikan kualitas permukaan bodi dan keselarasan panel.',
+    photo: fatihImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+  {
+    name: 'Imron',
+    role: 'Body',
+    division: 'Body & Manufacturing',
+    initials: 'IM',
+    isLead: false,
+    skills: ['Aerodynamics', 'Mold Making'],
+    bio: 'Merancang cetakan bodi serta pengembangan sistem software body.',
+    photo: imronImg,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
 
   // Electrical & Telemetry Division
   {
-    name: 'Fadhil Muhammad',
-    role: 'Chief Electrical Engineer',
-    division: 'Electrical & Telemetry',
-    initials: 'FM',
-    isLead: true,
-    skills: ['PCB Design', 'STM32 Microcontrollers', 'BMS Design', 'Power Electronics'],
+    name: 'Faiz Aditya',
+    role: 'Electrical & Software Engineer',
+    division: 'Electrical & Technology',
+    initials: 'FZ',
+    isLead: false,
+    skills: ['LoRa Protocols', 'BMS Design', 'Web Developer', 'Microcontroller development'],
     bio: 'Merancang arsitektur kelistrikan kendaraan, modul pengaman BMS baterai, dan integrasi sensor telemetri.',
-    photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400',
+    photo: faizElec,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
-    name: 'Aditya Pratama',
-    role: 'Telemetry & Firmware Developer',
-    division: 'Electrical & Telemetry',
-    initials: 'AP',
+    name: 'Bani Taufick Isya',
+    role: 'Electrical & Electronic Engineer',
+    division: 'Electrical & Technology',
+    initials: 'BN',
     isLead: false,
-    skills: ['ESP32 RTOS', 'C++', 'LoRa Protocols', 'WebSockets'],
-    bio: 'Mengembangkan sistem telemetri berbasis radio frekuensi untuk mentransmisikan data performa mobil secara realtime.',
-    photo: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=400&h=400',
+    skills: ['PCB Design', 'LoRa Protocols', 'WebSockets', 'Electrical Wiring'],
+    bio: 'Mengoptimalkan controller penggerak motor BLDC',
+    photo: baniElec,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
-    name: 'Satria Yudha',
-    role: 'Wiring & Power Distribution',
-    division: 'Electrical & Telemetry',
-    initials: 'SY',
+    name: 'Sakti Wira',
+    role: 'Electrical Engineer',
+    division: 'Electrical & Technology',
+    initials: 'SK',
     isLead: false,
-    skills: ['ECU Tuning', 'Wiring Harness Design', 'Sensors Calibration'],
+    skills: ['Wiring Harness Design', 'Sensors Calibration', 'Electrical Diesel Prototype'],
     bio: 'Mengoptimalkan jalur kabel internal agar minim hambatan dan bebas noise elektromagnetik dari motor listrik.',
-    photo: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=400&h=400',
+    photo: saktiElec,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
 
   // Non-Technical Division
   {
-    name: 'Anisa Nurul',
-    role: 'Head of PR & Sponsorship',
+    name: 'Bagus',
+    role: 'Sponsorship',
     division: 'Non-Technical',
-    initials: 'AN',
-    isLead: true,
-    skills: ['Public Relations', 'B2B Sponsorship', 'Social Media Branding', 'Copywriting'],
-    bio: 'Menghubungkan KHAD Team dengan sponsor industri, mengelola media sosial, dan mengarahkan kampanye branding tim.',
-    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400&h=400',
+    initials: 'BG',
+    isLead: false,
+    skills: ['Public Relations', 'B2B Sponsorship', 'Negotiation'],
+    bio: 'Menghubungkan tim dengan sponsor industri dan mengelola kemitraan.',
+    photo: bagusImg,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   },
   {
-    name: 'Farhan Syah',
-    role: 'Creative Designer & Media',
+    name: 'Erji',
+    role: 'Media & Designer',
     division: 'Non-Technical',
-    initials: 'FS',
+    initials: 'EJ',
     isLead: false,
-    skills: ['Figma UI/UX', 'Video Editing', 'Corporate Identity'],
-    bio: 'Membuat aset media visual, mengedit video dokumentasi tim, dan merancang identitas grafis sponsor.',
-    photo: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&q=80&w=400&h=400',
+    skills: ['Figma UI/UX', 'Video Editing', 'Social Media Management'],
+    bio: 'Membuat aset media visual dan mengelola sosial media tim.',
+    photo: erjiImg,
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com'
+  },
+  {
+    name: 'Hisyam',
+    role: 'Public Relations',
+    division: 'Non-Technical',
+    initials: 'HS',
+    isLead: false,
+    skills: ['Communication', 'Event Organizing', 'Branding'],
+    bio: 'Mengelola publisitas dan mengorganisir acara tim.',
+    photo: hisyamImg,
     linkedin: 'https://linkedin.com',
     github: 'https://github.com'
   }
@@ -232,12 +370,10 @@ const teamMembers = [
 const divisionData = [
   { name: 'All', icon: Layers },
   { name: 'Managers', icon: Shield },
-  { name: 'Engine', icon: Wrench },
-  { name: 'Electrical ', icon: Zap },
-  { name: 'Mechanic', icon: Wrench },
-  { name: 'Manufacturing', icon: BrickWallFire },
-  { name: 'Sponsorship', icon: Handshake },
-  { name: 'Media', icon: Video }
+  { name: 'Mechanic & Engine', icon: Wrench },
+  { name: 'Electrical & Technology', icon: Zap },
+  { name: 'Non-Technical', icon: Handshake },
+  { name: 'Body & Manufacturing', icon: CarIcon }
 ];
 
 const Team = () => {

@@ -60,12 +60,12 @@ const Home = () => {
             </span>
           </div>
 
-          <h1 data-aos="fade-up" className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
+          <h1 data-aos="fade-up" className="text-4xl md:text-6xl font-semibold text-white mb-4 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
             Pushing the Ultimate Boundaries <br className="hidden md:block" />
             of <span className="text-emerald-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">Vehicle Efficiency</span>
           </h1>
 
-          <p data-aos="fade-up" className="max-w-3xl mx-auto text-lg md:text-xl text-slate-100 font-medium mb-12 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <p data-aos="fade-up" className="max-w-3xl mx-auto text-lg md:text-xl text-slate-100 font-light mb-12 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             Pioneering the future of sustainable mobility through advanced research
             and development of ultra-efficient prototype vehicles.
           </p>
