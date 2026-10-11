@@ -44,7 +44,7 @@ const LinkedinIcon = ({ className }) => (
     <circle cx="4" cy="4" r="2" />
   </svg>
 );
-import bgHome from '../assets/bgHome/LandPage.jpg';
+import bgHome from '../assets/bgHome/umy.jpg';
 import khadTeamGroup from '../assets/divisions/Innovators.JPG';
 import baniElec from '../assets/electrical/bani.JPG';
 import faizElec from '../assets/electrical/faiz.JPG';
@@ -412,6 +412,9 @@ const Team = () => {
               <img data-aos="fade-up"
                 src={khadTeamGroup}
                 alt="KHAD Team Group Photo"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full aspect-[16/9] md:aspect-[21/9] object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700"
               />
               {/* Overlay gradient */}
