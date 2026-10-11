@@ -14,6 +14,7 @@ import khadTeamGroup from '../assets/divisions/Managers.jpg';
 
 import lingsarImage from '../assets/bgHome/LingsarEV.png';
 import arunaImage from '../assets/bgHome/ArunaHD.png';
+import bimasenaImage from '../assets/mobil/bimasenaa.png';
 
 import sponsor1 from '../assets/sponsor/sponsor1bnr.png';
 import sponsor2 from '../assets/sponsor/sponsor2.png';
@@ -28,7 +29,7 @@ const sponsorImages = [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5, sponsor
 
 const metrics = [
   { label: 'Total Competition', number: 10, suffix: '+', icon: ClipboardCheck },
-  { label: 'Prototypes Built', number: 2, icon: Car },
+  { label: 'Prototypes Built', number: 3, icon: Car },
   { label: 'Active Crew', number: 35, suffix: '+', icon: Users },
   { label: 'Top Record', number: 3, unit: 'rd SEM', icon: Medal },
 ];
@@ -185,7 +186,7 @@ const Home = () => {
           <p data-aos="fade-up" className="text-slate-400 max-w-4xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
         </div>
 
-        <div className="flex flex-col gap-24 mt-16">
+        <div className="flex flex-col gap-12 md:gap-16 mt-14">
           {/* Electric Prototype - Lingsar EV (Desc Left, Image Right) */}
           <div className="flex flex-col-reverse md:flex-row items-center gap-12 group">
             {/* Description (Left) */}
@@ -231,6 +232,30 @@ const Home = () => {
                 View Specifications
                 <MoveRight className="w-5 h-5" />
               </Link>
+            </div>
+          </div>
+
+          {/* Electric Prototype - Bimasena EV (Desc Left, Image Right) */}
+          <div className="flex flex-col-reverse md:flex-row items-center gap-12 group">
+            {/* Description (Left) */}
+            <div className="w-full md:w-1/2 flex flex-col items-start justify-center">
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6 border border-emerald-500/20">
+                <Zap className="w-4 h-4" />
+                Electric Prototype
+              </div>
+              <h3 data-aos="fade-up" className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Bimasena EV</h3>
+              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-10">
+                The historic foundation of KHAD Team's electric vehicle innovation. Engineered for national competition in KMLI, Bimasena pioneered our legacy of lightweight chassis dynamics and electric powertrain efficiency.
+              </p>
+              <Link to="/about" className="w-full md:w-auto px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                Learn Our History
+                <MoveRight className="w-5 h-5" />
+              </Link>
+            </div>
+            {/* Image (Right) */}
+            <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[220px]">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-emerald-500/30 transition-all duration-700"></div>
+              <img data-aos="fade-up" src={bimasenaImage} alt="Bimasena EV" className="relative z-10 w-full max-w-[480px] h-auto object-contain group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
             </div>
           </div>
         </div>
