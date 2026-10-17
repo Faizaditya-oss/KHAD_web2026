@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-khad-dark">
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-32" style={{ backgroundImage: `url(${bgHome})`, backgroundSize: 'cover', backgroundPosition: 'center 80%', backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat' }}>
+      <section className="relative pt-32 pb-32" style={{ backgroundImage: `url(${bgHome})`, backgroundSize: 'cover', backgroundPosition: 'center  60%', backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat' }}>
         {/* Background Overlay */}
         <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-b from-black/40 via-khad-dark/40 to-khad-dark"></div>
 
