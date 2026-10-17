@@ -7,7 +7,7 @@ import navLogo from '../assets/navbar/navbarbenar.png';
 
 const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.default ? CountUp.default : CountUp;
 
-import bgHome from '../assets/bgHome/LP.png';
+import bgHome from '../assets/bgHome/LP2.png';
 import lingsarBg from '../assets/mobil/LingsarNews.png';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
 import khadTeamGroup from '../assets/divisions/Managers.jpg';
@@ -177,7 +177,7 @@ const Home = () => {
           <p data-aos="fade-up" className="text-slate-400 max-w-4xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
         </div>
 
-        <div className="flex flex-col gap-12 md:gap-10 mt-14">
+        <div className="flex flex-col gap-6 md:gap-6 mt-8">
           {/* Electric Prototype - Lingsar EV (Desc Left, Image Right) */}
           <div className="flex flex-col-reverse md:flex-row items-center gap-12 group">
             {/* Description (Left) */}
@@ -187,7 +187,7 @@ const Home = () => {
                 Electric Class
               </div>
               <h3 data-aos="fade-up" className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Lingsar EV 3.0</h3>
-              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-10">
+              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-6">
                 Our flagship electric vehicle, designed with state-of-the-art aerodynamics and an ultra-efficient electric powertrain. Lingsar EV pushes the boundaries of battery-powered mobility.
               </p>
               <Link to="/vehicles" state={{ activeTab: 'lingsar' }} className="w-full md:w-auto px-4 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
@@ -216,7 +216,7 @@ const Home = () => {
                 Diesel Class
               </div>
               <h3 data-aos="fade-up" className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Aruna Diesel</h3>
-              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-10">
+              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-6">
                 A masterpiece of internal combustion engineering. Aruna Diesel utilizes advanced tuning and thermal management to squeeze every last drop of energy from its fuel.
               </p>
               <Link to="/vehicles" state={{ activeTab: 'aruna' }} className="w-full md:w-auto px-8 py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white shadow-[0_0_20px_rgba(239,68,68,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
@@ -235,7 +235,7 @@ const Home = () => {
                 Electric Vehicle
               </div>
               <h3 data-aos="fade-up" className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Bimasena EV</h3>
-              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-10">
+              <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-6">
                 The historic foundation of KHAD Team's electric vehicle innovation. Engineered for national competition in KMLI, Bimasena pioneered our legacy of lightweight chassis dynamics and electric powertrain efficiency.
               </p>
               <Link to="/about" className="w-full md:w-auto px-4 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
