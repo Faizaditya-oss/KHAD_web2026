@@ -12,8 +12,8 @@ import lingsarBg from '../assets/mobil/LingsarNews.png';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
 import khadTeamGroup from '../assets/divisions/Managers.jpg';
 
-import lingsarImage from '../assets/bgHome/LingsarEV.png';
-import arunaImage from '../assets/bgHome/ArunaHD.png';
+import lingsarImage from '../assets/mobil/LingsarEV2.png';
+import arunaImage from '../assets/mobil/arunaHD.png';
 import bimasenaImage from '../assets/mobil/bimasenaa.png';
 
 import sponsor1 from '../assets/sponsor/sponsor1bnr.png';
@@ -46,20 +46,11 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-khad-dark">
       {/* 1. Hero Section */}
-      <section data-aos="fade-up" className="relative overflow-hidden pt-32 pb-32">
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <img data-aos="fade-up" src={bgHome} alt="Hero Background" className="w-full h-full object-cover object-[center_80%] opacity-100" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-khad-dark/40 to-khad-dark"></div>
-        </div>
+      <section className="relative pt-32 pb-32" style={{ backgroundImage: `url(${bgHome})`, backgroundSize: 'cover', backgroundPosition: 'center 80%', backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat' }}>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-b from-black/40 via-khad-dark/40 to-khad-dark"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
-          <div className="inline-flex items-center gap-2 px-2 py-2 rounded-full border border-khad-border/50 bg-khad-card/70 backdrop-blur-md mb-8 shadow-xl">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span className="text-xs font-bold text-slate-100 tracking-widest uppercase drop-shadow-md">
-              Muhammadiyah University of Yogyakarta
-            </span>
-          </div>
 
           <h1 data-aos="fade-up" className="text-4xl md:text-6xl font-semibold text-white mb-4 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
             Pushing the Ultimate Boundaries <br className="hidden md:block" />
@@ -186,7 +177,7 @@ const Home = () => {
           <p data-aos="fade-up" className="text-slate-400 max-w-4xl mx-auto">Engineering marvels designed to extract the absolute maximum distance from minimum energy.</p>
         </div>
 
-        <div className="flex flex-col gap-12 md:gap-16 mt-14">
+        <div className="flex flex-col gap-12 md:gap-10 mt-14">
           {/* Electric Prototype - Lingsar EV (Desc Left, Image Right) */}
           <div className="flex flex-col-reverse md:flex-row items-center gap-12 group">
             {/* Description (Left) */}
@@ -207,7 +198,7 @@ const Home = () => {
             {/* Image (Right) */}
             <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px]">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/30 transition-all duration-700"></div>
-              <img data-aos="fade-up" src={lingsarImage} alt="Lingsar EV" className="relative z-10 w-full max-w-[500px] h-auto object-contain group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
+              <img data-aos="fade-up" src={lingsarImage} alt="Lingsar EV" className="relative z-10 w-full max-w-[600px] scale[1.4] h-auto object-contain group-hover:scale-[1.55] group-hover:-translate-y-2 transition-all duration-700 drop-shadow-2xl" />
             </div>
           </div>
 
@@ -239,15 +230,15 @@ const Home = () => {
           <div className="flex flex-col-reverse md:flex-row items-center gap-12 group">
             {/* Description (Left) */}
             <div className="w-full md:w-1/2 flex flex-col items-start justify-center">
-              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6 border border-emerald-500/20">
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6 border border-emerald-500/20">
                 <Zap className="w-4 h-4" />
-                Electric Prototype
+                Electric Vehicle
               </div>
               <h3 data-aos="fade-up" className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Bimasena EV</h3>
               <p data-aos="fade-up" className="text-slate-300 text-md leading-relaxed mb-10">
                 The historic foundation of KHAD Team's electric vehicle innovation. Engineered for national competition in KMLI, Bimasena pioneered our legacy of lightweight chassis dynamics and electric powertrain efficiency.
               </p>
-              <Link to="/about" className="w-full md:w-auto px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+              <Link to="/about" className="w-full md:w-auto px-4 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] font-semibold transition-all duration-300 flex items-center justify-center gap-2">
                 Learn Our History
                 <MoveRight className="w-5 h-5" />
               </Link>

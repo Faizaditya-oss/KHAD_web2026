@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { 
-  Newspaper, Search, Calendar, Clock, User, ArrowRight, X, 
+import {
+  Newspaper, Search, Calendar, Clock, User, ArrowRight, X,
   Share2, ChevronRight, Sparkles, CheckCircle2, Bell, Send
 } from 'lucide-react';
 
@@ -152,7 +152,7 @@ const News = () => {
   // Filter articles based on Category and Search Query
   const filteredArticles = newsArticles.filter(article => {
     const matchesCategory = selectedCategory === 'All' || article.category === selectedCategory;
-    const matchesSearch = searchQuery === '' || 
+    const matchesSearch = searchQuery === '' ||
       article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       article.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
       article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -172,7 +172,7 @@ const News = () => {
 
   return (
     <div className="pt-20 min-h-screen bg-[#061E14] text-slate-300 font-sans selection:bg-emerald-500/30 selection:text-white">
-      
+
       {/* 1. Hero Header */}
       <section data-aos="fade-up" className="relative overflow-hidden pt-28 pb-16 border-b border-[#133E2B]">
         {/* Ambient Backlight Glow */}
@@ -208,7 +208,7 @@ const News = () => {
                 className="w-full pl-12 pr-10 py-3.5 bg-[#0B2A1E] border border-[#133E2B] rounded-2xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/60 shadow-lg text-sm md:text-base transition-all duration-300"
               />
               {searchQuery && (
-                <button 
+                <button
                   onClick={() => setSearchQuery('')}
                   className="absolute right-4 text-slate-400 hover:text-white transition-colors"
                 >
@@ -228,7 +228,7 @@ const News = () => {
             Featured Article
           </div>
 
-          <div 
+          <div
             onClick={() => setActiveModalArticle(featuredArticle)}
             className="group relative bg-[#0B2A1E] border border-[#133E2B] rounded-3xl overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)] transition-all duration-500 cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-0"
           >
@@ -238,13 +238,13 @@ const News = () => {
 
             {/* Image Banner */}
             <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden bg-[#061E14]">
-              <img data-aos="fade-up" 
-                src={featuredArticle.image} 
+              <img data-aos="fade-up"
+                src={featuredArticle.image}
                 alt={featuredArticle.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A1E] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0B2A1E]"></div>
-              
+
               <div className="absolute top-4 left-4 z-10">
                 <span className="px-3.5 py-1.5 rounded-full bg-emerald-500 text-[#061E14] font-mono font-extrabold text-xs uppercase tracking-wider shadow-md">
                   {featuredArticle.category}
@@ -317,11 +317,10 @@ const News = () => {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all duration-300 border ${
-                    isSelected
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all duration-300 border ${isSelected
                       ? 'bg-emerald-500 text-[#061E14] border-white shadow-[0_0_20px_rgba(16,185,129,0.25)]'
                       : 'bg-[#0B2A1E] text-slate-400 hover:text-white border-[#133E2B] hover:border-emerald-500/30'
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
@@ -354,7 +353,7 @@ const News = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article) => (
-              <div 
+              <div
                 key={article.id}
                 onClick={() => setActiveModalArticle(article)}
                 className="group relative bg-[#0B2A1E] border border-[#133E2B] rounded-3xl overflow-hidden hover:border-emerald-500/40 hover:-translate-y-1.5 hover:shadow-[0_0_25px_rgba(16,185,129,0.12)] transition-all duration-300 flex flex-col justify-between cursor-pointer"
@@ -366,13 +365,13 @@ const News = () => {
                 <div>
                   {/* Card Header Image */}
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#061E14]">
-                    <img data-aos="fade-up" 
-                      src={article.image} 
+                    <img data-aos="fade-up"
+                      src={article.image}
                       alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A1E] via-transparent to-transparent"></div>
-                    
+
                     <div className="absolute top-3 left-3">
                       <span className="px-2.5 py-1 rounded-lg bg-[#061E14]/80 backdrop-blur-md text-emerald-400 border border-[#133E2B] font-mono font-bold text-[10px] uppercase">
                         {article.category}
@@ -444,23 +443,23 @@ const News = () => {
             </div>
 
             <h2 data-aos="fade-up" className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
-           Get Notifications from <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">KHAD Team</span> <br className="hidden md:block" />
-          </h2>
+              Get Notifications from <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">KHAD Team</span> <br className="hidden md:block" />
+            </h2>
 
             <p data-aos="fade-up" className="text-sm sm:text-base text-slate-300 leading-relaxed">
               Dapatkan rilis pers resmi, jadwal kompetisi, serta laporan riset teknologi terbaru langsung ke kotak masuk email Anda.
             </p>
 
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 pt-2">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 required
                 placeholder="Masukkan email Anda (contoh: name@domain.com)"
                 value={subscribedEmail}
                 onChange={(e) => setSubscribedEmail(e.target.value)}
                 className="flex-grow px-5 py-3.5 bg-[#061E14] border border-[#133E2B] rounded-xl text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500/60"
               />
-              <button 
+              <button
                 type="submit"
                 className="px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#061E14] font-heading font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.25)] flex items-center justify-center gap-2"
               >
@@ -482,7 +481,7 @@ const News = () => {
       {/* 6. Article Detail Modal View */}
       {activeModalArticle && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-fade-in">
-          <div 
+          <div
             className="relative w-full max-w-4xl bg-[#0B2A1E] border border-[#133E2B] rounded-3xl overflow-hidden shadow-2xl my-8 max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
@@ -497,7 +496,7 @@ const News = () => {
                 </span>
               </div>
 
-              <button 
+              <button
                 onClick={() => setActiveModalArticle(null)}
                 className="p-2 rounded-xl bg-[#0B2A1E] text-slate-400 hover:text-white border border-[#133E2B] hover:border-emerald-500/40 transition-colors"
               >
@@ -539,9 +538,9 @@ const News = () => {
 
               {/* Main Banner Image */}
               <div className="rounded-2xl overflow-hidden aspect-[16/9] border border-[#133E2B] bg-[#061E14]">
-                <img data-aos="fade-up" 
-                  src={activeModalArticle.image} 
-                  alt={activeModalArticle.title} 
+                <img data-aos="fade-up"
+                  src={activeModalArticle.image}
+                  alt={activeModalArticle.title}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -561,7 +560,7 @@ const News = () => {
                   ))}
                 </div>
 
-                <button 
+                <button
                   onClick={() => {
                     if (navigator.clipboard) {
                       navigator.clipboard.writeText(window.location.href);
