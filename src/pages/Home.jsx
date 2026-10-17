@@ -7,7 +7,7 @@ import navLogo from '../assets/navbar/navbarbenar.png';
 
 const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.default ? CountUp.default : CountUp;
 
-import bgHome from '../assets/bgHome/LP3.JPG';
+import bgHome from '../assets/bgHome/LP4.jpeg';
 import lingsarBg from '../assets/mobil/LingsarNews.png';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
 import khadTeamGroup from '../assets/divisions/Managers.jpg';
@@ -45,68 +45,68 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-khad-dark">
-      {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-32" style={{ backgroundImage: `url(${bgHome})`, backgroundSize: 'cover', backgroundPosition: 'center  60%', backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat' }}>
-        {/* Background Overlay */}
-        <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-b from-black/40 via-khad-dark/40 to-khad-dark"></div>
+      {/* 1. Hero Section + Metrics */}
+      <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
+        {/* Full Screen Background Image */}
+        <img
+          src={bgHome}
+          alt="Hero Background"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-khad-dark/40 to-khad-dark"></div>
 
-          <h1 data-aos="fade-up" className="text-4xl md:text-6xl font-semibold text-white mb-4 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
-            Pushing the Ultimate Boundaries <br className="hidden md:block" />
-            of <span className="text-emerald-400 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">Vehicle Efficiency</span>
+        {/* Content: Heading + Description + Metrics */}
+        <div className="relative z-10 flex flex-col items-center justify-end flex-1 text-center px-4 pb-12 pt-32" ref={metricsRef}>
+
+          {/* Heading */}
+          <h1
+            data-aos="fade-up"
+            className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
+            style={{ textShadow: '0 0 40px rgba(16,185,129,0.5), 0 4px 24px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,1)' }}
+          >
+            <span className="text-emerald-400">LOW FUEL</span> CONSUMPTION <br className="hidden md:block" />
+            CAR INNOVATION
           </h1>
 
-          <p data-aos="fade-up" className="max-w-3xl mx-auto text-lg md:text-xl text-slate-100 font-light mb-12 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            Pioneering the future of sustainable mobility through advanced research
-            and development of ultra-efficient prototype vehicles.
+          {/* Description */}
+          <p data-aos="fade-up" className="max-w-2xl mx-auto text-base md:text-lg text-slate-200 font-light mb-10 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            K.H Ahmad Dahlan TEAM Muhammadiyah University Of Yogyakarta is Research Efficiency Car Diesel and Electric Vehicle Prototypes
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/vehicles" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-white text-khad-dark font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]  flex items-center justify-center gap-2 group">
-              Explore Vehicles
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto px-8 py-4 rounded-full border border-khad-border hover:border-emerald-500/50 hover:bg-khad-card text-slate-300 font-medium transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <Play className="w-5 h-5" />
-              KHAD Profile
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Key Metrics Banner */}
-      <section data-aos="fade-up" className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 md:-mt-12 mb-12">
-        <div className="bg-khad-card/60 backdrop-blur-xl border border-khad-border/50 shadow-2xl rounded-3xl py-5 md:py-6" ref={metricsRef}>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 md:gap-6">
-            {metrics.map((metric, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center text-center"
-              >
-                <metric.icon className="w-5 h-5 md:w-6 md:h-6 text-emerald-400 mb-1.5 md:mb-2 opacity-80" />
-                <div className="text-xl md:text-3xl font-bold font-heading text-white mb-1 flex flex-col md:flex-row items-center md:items-baseline gap-1">
-                  {metric.number !== undefined ? (
-                    metricsInView ? (
-                      <span className="flex items-baseline">
-                        <CountUpComponent end={metric.number} duration={2.5} />
-                        {metric.suffix && <span>{metric.suffix}</span>}
-                      </span>
-                    ) : (
-                      <span className="flex items-baseline">0{metric.suffix && <span>{metric.suffix}</span>}</span>
-                    )
-                  ) : (
-                    metric.value
-                  )}
-                  {metric.unit && <span className="text-xs md:text-base text-slate-400 font-medium ml-1">{metric.unit}</span>}
-                </div>
-                <div className="text-[10px] md:text-xs font-semibold text-emerald-500/80 uppercase tracking-widest text-center px-2">{metric.label}</div>
+          {/* Key Metrics Banner */}
+          <div data-aos="fade-up" className="w-full max-w-6xl mx-auto">
+            <div className="bg-khad-card/60 backdrop-blur-xl border border-khad-border/50 shadow-2xl rounded-3xl py-5 md:py-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 md:gap-6">
+                {metrics.map((metric, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center text-center"
+                  >
+                    <metric.icon className="w-5 h-5 md:w-6 md:h-6 text-emerald-400 mb-1.5 md:mb-2 opacity-80" />
+                    <div className="text-xl md:text-3xl font-bold font-heading text-white mb-1 flex flex-col md:flex-row items-center md:items-baseline gap-1">
+                      {metric.number !== undefined ? (
+                        metricsInView ? (
+                          <span className="flex items-baseline">
+                            <CountUpComponent end={metric.number} duration={2.5} />
+                            {metric.suffix && <span>{metric.suffix}</span>}
+                          </span>
+                        ) : (
+                          <span className="flex items-baseline">0{metric.suffix && <span>{metric.suffix}</span>}</span>
+                        )
+                      ) : (
+                        metric.value
+                      )}
+                      {metric.unit && <span className="text-xs md:text-base text-slate-400 font-medium ml-1">{metric.unit}</span>}
+                    </div>
+                    <div className="text-[10px] md:text-xs font-semibold text-emerald-500/80 uppercase tracking-widest text-center px-2">{metric.label}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+
         </div>
       </section>
 
