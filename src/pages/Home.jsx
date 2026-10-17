@@ -7,7 +7,7 @@ import navLogo from '../assets/navbar/navbarbenar.png';
 
 const CountUpComponent = CountUp && typeof CountUp === 'object' && CountUp.default ? CountUp.default : CountUp;
 
-import bgHome from '../assets/bgHome/LP2.png';
+import bgHome from '../assets/bgHome/LP3.JPG';
 import lingsarBg from '../assets/mobil/LingsarNews.png';
 import arunaBg from '../assets/mobil/DesignBody.jpeg';
 import khadTeamGroup from '../assets/divisions/Managers.jpg';
@@ -262,7 +262,7 @@ const Home = () => {
 
           {/* Managers Card */}
           <div className="group relative rounded-2xl border border-khad-border bg-khad-dark p-8 overflow-hidden hover:border-amber-500/40 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
-            <img data-aos="fade-up" src={khadTeamGroup} alt="Managers Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
+            <img src={khadTeamGroup} alt="Managers Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/80 to-transparent"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl group-hover:bg-amber-500/10 transition-colors duration-500"></div>
             <div className="relative z-10 mt-auto">
@@ -287,7 +287,7 @@ const Home = () => {
 
           {/* Technical Card */}
           <div className="group relative rounded-2xl border border-khad-border bg-khad-dark p-8 overflow-hidden hover:border-cyan-500/40 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
-            <img data-aos="fade-up" src={khadTeamGroup} alt="Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
+            <img src={khadTeamGroup} alt="Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/80 to-transparent"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl group-hover:bg-cyan-500/10 transition-colors duration-500"></div>
             <div className="relative z-10 mt-auto">
@@ -313,7 +313,7 @@ const Home = () => {
 
           {/* Non Technical Card */}
           <div className="group relative rounded-2xl border border-khad-border bg-khad-dark p-8 overflow-hidden hover:border-violet-500/40 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
-            <img data-aos="fade-up" src={khadTeamGroup} alt="Non Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
+            <img src={khadTeamGroup} alt="Non Technical Team" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 grayscale group-hover:grayscale-0 mix-blend-luminosity" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/80 to-transparent"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-3xl group-hover:bg-violet-500/10 transition-colors duration-500"></div>
             <div className="relative z-10 mt-auto">
