@@ -5,8 +5,8 @@ import {
   Trophy, ArrowRight, Download, Radio, Network, Activity,
   Ruler, Eye, Settings, Terminal, Wifi
 } from 'lucide-react';
-import lingsarBg from '../assets/vehicles/lingsar.JPG';
-import arunaBg from '../assets/sponsor/ArunaDiesel.JPG';
+import lingsarBg from '../assets/vehicles/LingsarDark.png';
+import arunaBg from '../assets/bgHome/Aruna.JPG';
 
 const vehicleData = {
   lingsar: {
@@ -52,7 +52,7 @@ const vehicleData = {
     floatingSpecs: [
       { label: 'Body Materials', value: 'Carbon Fiber' },
       { label: 'Competitions', value: 'KMHE' },
-      { label: 'Top Record', number: 4, unit: 'th KMHE' }
+      { label: 'Top Record', number: 3, unit: 'rd KMHE' }
     ],
     specs: [
       { label: 'Class Category', value: 'Prototype Diesel' },
@@ -175,7 +175,7 @@ const Vehicles = () => {
               {/* Photo Frame */}
               <div data-aos="fade-up" className="relative h-64 sm:h-96 rounded-[1.5rem] overflow-hidden bg-[#061E14]/40 border border-[#133E2B]/50 group">
                 {Object.values(vehicleData).map((data) => (
-                  <img 
+                  <img
                     key={data.id}
                     src={data.image}
                     alt={data.name}
@@ -220,7 +220,12 @@ const Vehicles = () => {
             {activeData.specs.map((item, idx) => (
               <div key={idx} className="bg-[#0B2A1E] border border-[#133E2B] rounded-2xl p-5 hover:border-emerald-500/20 transition-all duration-300">
                 <span className="text-[10px] text-slate-500 block uppercase mb-1 font-body font-medium">{item.label}</span>
-                <span className={`text-base font-semibold font-mono ${activeData.accentText}`}>{item.value}</span>
+                <span
+                  className={`text-base font-semibold ${activeData.accentText}`}
+                  style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: '0.03em' }}
+                >
+                  {item.value}
+                </span>
               </div>
             ))}
           </div>

@@ -44,7 +44,6 @@ const LinkedinIcon = ({ className }) => (
     <circle cx="4" cy="4" r="2" />
   </svg>
 );
-import bgHome from '../assets/bgHome/umy.jpg';
 import khadTeamGroup from '../assets/divisions/Innovators.JPG';
 import baniElec from '../assets/electrical/bani.JPG';
 import faizElec from '../assets/electrical/faiz.JPG';
@@ -392,38 +391,22 @@ const Team = () => {
     <div className="pt-20 min-h-screen bg-[#061E14] text-slate-300 font-sans selection:bg-emerald-500/30 selection:text-white">
 
       {/* 1. Hero Section */}
-      <section data-aos="fade-up" className="relative overflow-hidden pt-10 pb-20 border-b border-[#133E2B]">
-        {/* Background Grid & Gradient */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <img data-aos="fade-up" src={bgHome} alt="KHAD Team Workshop" className="w-full h-full object-cover opacity-10 mix-blend-luminosity" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061E14] via-[#061E14]/90 to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-
-
-          {/* Core Team Group Photo */}
-          <div className="max-w-5xl mx-auto relative group mt-12">
-            {/* Ambient Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-emerald-800 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-700"></div>
-
-            {/* Image Border framee */}
-            <div className="relative bg-[#0B2A1E] rounded-3xl border border-[#133E2B] overflow-hidden shadow-2xl">
-              <img data-aos="fade-up"
-                src={khadTeamGroup}
-                alt="KHAD Team Group Photo"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full aspect-[16/9] md:aspect-[21/9] object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700"
-              />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* Full Screen Background Image */}
+        <img
+          src={khadTeamGroup}
+          alt="KHAD Team Innovators"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
 
 
-            </div>
-          </div>
-        </div>
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#061E14]/50 to-[#061E14]"></div>
+        {/* <div className="absolute inset-0 z-10 flex items-center justify-center px-4 text-center">
+          <h1 data-aos="fade-up" className="text-5xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
+            THE INNOVATORS
+          </h1>
+        </div> */}
       </section>
 
       {/* 2. Filter Tabs Section */}
@@ -625,13 +608,10 @@ const Team = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-              JOIN THE CREW
-            </div>
+
 
             <h2 data-aos="fade-up" className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-wide text-white">
-              BUILD THE CARS OF TOMORROW
+              JOIN OUR TEAM
             </h2>
 
             <p data-aos="fade-up" className="font-sans leading-relaxed text-slate-300 text-sm md:text-base">
