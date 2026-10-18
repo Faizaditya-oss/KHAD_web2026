@@ -129,7 +129,7 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent"></div>
         </div>
         <div className="relative z-10 px-4 text-center w-full">
-          <h1 data-aos="fade-up" className="text-5xl md:text-3xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
+          <h1 data-aos="fade-up" className="text-5xl md:text-3xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
             About Us
           </h1>
         </div>
@@ -272,13 +272,12 @@ const About = () => {
 
       {/* 3. Engineering Phases Section */}
       <section data-aos="fade-up" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-2xl md:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
-            Building The Future <br className="hidden md:block" />
+        <div className="text-center mb-16 md:mb-24">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500 mb-4 tracking-tight">
+            Build The Future
           </h1>
           <p className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
         </div>
-
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
           {/* Left: Vertical Steps */}
           <div className="w-full lg:w-5/12 relative flex">
@@ -301,11 +300,11 @@ const About = () => {
                   onMouseEnter={() => setActivePhase(idx)}
                   onClick={() => setActivePhase(idx)}
                 >
-                  <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-bold text-base sm:text-lg font-heading transition-colors duration-300 ${activePhase === idx ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50' : 'bg-khad-dark border border-khad-border text-slate-500'}`}>
+                  {/* <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-bold text-base sm:text-lg font-heading transition-colors duration-300 ${activePhase === idx ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50' : 'bg-khad-dark border border-khad-border text-slate-500'}`}>
                     0{idx + 1}
-                  </div>
+                  </div> */}
                   <div>
-                    <h3 className={`text-lg sm:text-xl font-bold font-heading transition-colors duration-300 leading-tight ${activePhase === idx ? 'text-emerald-400' : 'text-white'}`}>{phase.subtitle}</h3>
+                    <h3 className={`text-lg sm:text-xl font-bold font-heading transition-colors duration-300 leading-tight ${activePhase === idx ? 'text-emerald-400' : 'text-white'}`} style={{ fontFamily: "'Oswald', sans-serif" }}>{phase.subtitle}</h3>
                     <p className={`mt-1 text-xs sm:text-sm font-medium transition-colors duration-300 ${activePhase === idx ? 'text-slate-300' : 'text-slate-500'}`}>{phase.title}</p>
                   </div>
                 </div>
@@ -339,7 +338,7 @@ const About = () => {
                     <Zap className="w-3.5 h-3.5" />
                     Technical Challenge
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-bold text-white font-heading mb-3">{phase.subtitle}</h4>
+                  <h4 className="text-xl sm:text-2xl font-bold text-white font-heading mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>{phase.subtitle}</h4>
                   <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
                     {phase.description}
                   </p>

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import LoadingScreen from './components/LoadingScreen';
 import Lenis from 'lenis';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AOS from 'aos';
@@ -13,6 +14,7 @@ import Sponsors from './pages/Sponsors';
 import News from './pages/News';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -43,20 +45,23 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="font-sans min-h-screen bg-[#061E14] text-slate-50 overflow-x-hidden">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/vehicles" element={<Vehicles />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/news" element={<News />} />
-        </Routes>
-      </div>
-    </Router>
+    <>
+      {isLoading && <LoadingScreen onFinished={() => setIsLoading(false)} />}
+      <Router>
+        <ScrollToTop />
+        <div className="font-sans min-h-screen bg-[#061E14] text-slate-50 overflow-x-hidden">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/vehicles" element={<Vehicles />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/sponsors" element={<Sponsors />} />
+            <Route path="/news" element={<News />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 
