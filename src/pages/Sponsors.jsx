@@ -91,100 +91,170 @@ const Sponsors = () => {
         </div>
       </section>
 
-      {/* Sponsorship Tiers Preview */}
+      {/* Sponsorship Tiers — Pricing Card Style */}
       <section data-aos="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
         <div className="text-center mb-16">
           <h2 data-aos="fade-up" className="text-3xl font-bold text-white mb-4">Partnership Tiers</h2>
-          <p data-aos="fade-up" className="text-slate-400 max-w-2xl mx-auto">We offer flexible partnership packages designed to provide maximum value and visibility for your brand.</p>
+          <p data-aos="fade-up" className="text-slate-400 max-w-2xl mx-auto">
+            We offer flexible partnership packages designed to provide maximum value and visibility for your brand.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 perspective-[1000px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-          {/* Platinum Tier */}
-          <div className="card bg-gradient-to-b from-[#0B2A1E] to-khad-dark border border-emerald-500/50 shadow-[0_10px_30px_rgba(16,185,129,0.1)] hover:shadow-[0_30px_60px_rgba(16,185,129,0.4)] transition-all duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:rotate-y-[-5deg] hover:rotate-x-[5deg] group relative overflow-hidden transform-gpu w-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/20 blur-3xl rounded-full group-hover:bg-emerald-500/30 transition-all duration-500"></div>
-            <div className="card-body p-5 sm:p-6 lg:p-7 relative z-10 flex flex-col h-full overflow-hidden">
-              <div className="badge badge-success text-[10px] sm:text-xs absolute top-3 right-3 sm:top-4 sm:right-4 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)] border-none whitespace-nowrap">Most Popular</div>
-              <h2 data-aos="fade-up" className="card-title text-2xl sm:text-3xl font-extrabold text-emerald-400 mb-1 drop-shadow-md break-words">Platinum</h2>
-              <p data-aos="fade-up" className="text-xs sm:text-sm text-slate-300 border-b border-emerald-500/20 pb-4 mb-4 flex-grow-0 break-words">Maximum exposure & integration.</p>
-              <ul className="space-y-2 sm:space-y-3 flex-grow mb-6">
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-200 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0 drop-shadow-sm" /> <span>Extra large logo on vehicle</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-200 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0 drop-shadow-sm" /> <span>Exclusive media coverage</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-200 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0 drop-shadow-sm" /> <span>VIP access to paddock</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-200 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0 drop-shadow-sm" /> <span>Prime spot on apparel & website</span></li>
+          {/* ── BRONZE ── */}
+          {[
+            {
+              name: 'Bronze',
+              icon: '🥉',
+              tagline: 'A great starting point for new partners.',
+              color: 'text-orange-400',
+              border: 'border-orange-700/40',
+              borderHover: 'hover:border-orange-500/60',
+              glow: 'hover:shadow-[0_0_30px_rgba(194,65,12,0.15)]',
+              badgeBg: '',
+              badge: null,
+              ctaClass: 'bg-white/5 hover:bg-orange-500/10 text-white border border-white/10 hover:border-orange-500/40',
+              checkColor: 'text-orange-400',
+              benefits: [
+                'Small logo on vehicle body',
+                'Logo listed on our website',
+                'Social media mention (1x post)',
+                'Digital certificate of partnership',
+              ]
+            },
+            {
+              name: 'Silver',
+              icon: '🥈',
+              tagline: 'Perfect for growing brands seeking visibility.',
+              color: 'text-slate-300',
+              border: 'border-slate-500/40',
+              borderHover: 'hover:border-slate-400/60',
+              glow: 'hover:shadow-[0_0_30px_rgba(148,163,184,0.15)]',
+              badge: null,
+              ctaClass: 'bg-white/5 hover:bg-slate-400/10 text-white border border-white/10 hover:border-slate-400/40',
+              checkColor: 'text-slate-400',
+              benefits: [
+                'All Bronze Benefits',
+                'Medium logo on vehicle body',
+                'Logo on team jersey & apparel',
+                'Featured on website sponsor page',
+                'Monthly social media post (2x)',
+                'Mentioned in competition press releases',
+              ]
+            },
+            {
+              name: 'Gold',
+              icon: '🥇',
+              tagline: 'Excellent visibility and brand integration.',
+              color: 'text-amber-400',
+              border: 'border-amber-500/50',
+              borderHover: 'hover:border-amber-400/70',
+              glow: 'hover:shadow-[0_0_35px_rgba(251,191,36,0.2)]',
+              badge: 'Most Popular',
+              badgeBg: 'bg-amber-400/10 border border-amber-400/30 text-amber-400',
+              ctaClass: 'bg-amber-400 hover:bg-amber-300 text-[#061E14] font-bold',
+              checkColor: 'text-amber-400',
+              benefits: [
+                'All Silver Benefits',
+                'Large logo on vehicle body (prime area)',
+                'Logo on banner & pit display',
+                'Dedicated feature article on website',
+                'Weekly social media exposure',
+                'Invitation to competition event',
+                'Co-branded content production',
+              ]
+            },
+            {
+              name: 'Platinum',
+              icon: '💎',
+              tagline: 'Maximum exposure & full brand integration.',
+              color: 'text-emerald-400',
+              border: 'border-emerald-500/60',
+              borderHover: 'hover:border-emerald-400/80',
+              glow: 'hover:shadow-[0_0_40px_rgba(16,185,129,0.2)]',
+              badge: 'Premium',
+              badgeBg: 'bg-emerald-400/10 border border-emerald-400/30 text-emerald-400',
+              ctaClass: 'bg-emerald-500 hover:bg-emerald-400 text-[#061E14] font-bold',
+              checkColor: 'text-emerald-400',
+              benefits: [
+                'All Gold Benefits',
+                'Extra-large logo — vehicle hood & side',
+                'Naming rights on one vehicle',
+                'VIP access to all competition paddocks',
+                'Exclusive media feature & press release',
+                'Custom activation booth at competitions',
+                'Direct access to KHAD team engineers',
+                'Annual partnership report & analytics',
+              ]
+            },
+          ].map((tier, idx) => (
+            <div
+              key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 80}
+              className={`relative flex flex-col rounded-2xl border bg-khad-card p-6 transition-all duration-300 ${tier.border} ${tier.borderHover} ${tier.glow}`}
+            >
+              {/* Badge */}
+              {tier.badge && (
+                <span className={`absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${tier.badgeBg}`}>
+                  {tier.badge}
+                </span>
+              )}
+
+              {/* Header */}
+              <div className="mb-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-xl">{tier.icon}</span>
+                  <span className={`text-sm font-bold uppercase tracking-widest ${tier.color}`}>{tier.name}</span>
+                </div>
+
+                {/* Tier "price" label */}
+                <div className={`text-3xl font-extrabold mb-1 ${tier.color}`} style={{ fontFamily: "'Oswald', sans-serif" }}>
+                  {tier.name}
+                </div>
+                <p className="text-slate-500 text-xs">Partnership</p>
+              </div>
+
+              {/* CTA Button */}
+              <a
+                href="mailto:khadteam@umy.ac.id"
+                className={`w-full text-center py-2.5 rounded-xl text-sm transition-all duration-300 mb-6 block ${tier.ctaClass}`}
+              >
+                Become a Partner
+              </a>
+
+              {/* Tagline */}
+              <p className="text-slate-500 text-xs mb-5 leading-relaxed border-t border-khad-border pt-4">
+                {tier.tagline}
+              </p>
+
+              {/* Benefits List */}
+              <ul className="space-y-3 flex-grow">
+                {tier.benefits.map((benefit, bIdx) => (
+                  <li key={bIdx} className="flex items-start gap-2.5 text-xs text-slate-300 leading-relaxed">
+                    <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${tier.checkColor}`} />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
               </ul>
-
             </div>
-          </div>
-
-          {/* Gold Tier */}
-          <div className="card bg-khad-card border border-amber-500/30 shadow-[0_10px_30px_rgba(251,191,36,0.05)] hover:shadow-[0_30px_60px_rgba(251,191,36,0.25)] transition-all duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:rotate-y-[-2deg] hover:rotate-x-[2deg] group relative overflow-hidden transform-gpu w-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute -right-10 -top-10 w-32 h-32 bg-amber-500/10 blur-3xl rounded-full group-hover:bg-amber-500/20 transition-all duration-500"></div>
-            <div className="card-body p-5 sm:p-6 lg:p-7 relative z-10 flex flex-col h-full overflow-hidden">
-              <h2 data-aos="fade-up" className="card-title text-2xl sm:text-3xl font-extrabold text-amber-400 mb-1 drop-shadow-md break-words">Gold</h2>
-              <p data-aos="fade-up" className="text-xs sm:text-sm text-slate-400 border-b border-amber-500/20 pb-4 mb-4 flex-grow-0 break-words">Excellent visibility and reach.</p>
-              <ul className="space-y-2 sm:space-y-3 flex-grow mb-6">
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" /> <span>Large logo on vehicle</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" /> <span>Logo on team apparel</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" /> <span>Prominent social media presence</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" /> <span>Logo on website</span></li>
-              </ul>
-
-            </div>
-          </div>
-
-          {/* Silver Tier */}
-          <div className="card bg-khad-card border border-slate-400/30 shadow-[0_10px_30px_rgba(148,163,184,0.05)] hover:shadow-[0_30px_60px_rgba(148,163,184,0.2)] transition-all duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:rotate-y-[2deg] hover:rotate-x-[2deg] group relative overflow-hidden transform-gpu w-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute -right-10 -top-10 w-32 h-32 bg-slate-400/10 blur-3xl rounded-full group-hover:bg-slate-400/20 transition-all duration-500"></div>
-            <div className="card-body p-5 sm:p-6 lg:p-7 relative z-10 flex flex-col h-full overflow-hidden">
-              <h2 data-aos="fade-up" className="card-title text-2xl sm:text-3xl font-extrabold text-slate-300 mb-1 drop-shadow-md break-words">Silver</h2>
-              <p data-aos="fade-up" className="text-xs sm:text-sm text-slate-400 border-b border-slate-500/20 pb-4 mb-4 flex-grow-0 break-words">Perfect for emerging brands.</p>
-              <ul className="space-y-2 sm:space-y-3 flex-grow mb-6">
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 shrink-0" /> <span>Medium logo on vehicle</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 shrink-0" /> <span>Social media mentions</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 shrink-0" /> <span>Logo on website</span></li>
-              </ul>
-
-            </div>
-          </div>
-
-          {/* Bronze Tier */}
-          <div className="card bg-khad-card border border-orange-700/30 shadow-[0_10px_30px_rgba(194,65,12,0.05)] hover:shadow-[0_30px_60px_rgba(194,65,12,0.2)] transition-all duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:rotate-y-[5deg] hover:rotate-x-[5deg] group relative overflow-hidden transform-gpu w-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-700/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute -right-10 -top-10 w-32 h-32 bg-orange-700/10 blur-3xl rounded-full group-hover:bg-orange-600/20 transition-all duration-500"></div>
-            <div className="card-body p-5 sm:p-6 lg:p-7 relative z-10 flex flex-col h-full overflow-hidden">
-              <h2 data-aos="fade-up" className="card-title text-2xl sm:text-3xl font-extrabold text-orange-500 mb-1 drop-shadow-md break-words">Bronze</h2>
-              <p data-aos="fade-up" className="text-xs sm:text-sm text-slate-400 border-b border-orange-700/20 pb-4 mb-4 flex-grow-0 break-words">A great starting point.</p>
-              <ul className="space-y-2 sm:space-y-3 flex-grow mb-6">
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 shrink-0" /> <span>Small logo on vehicle</span></li>
-                <li className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-slate-300 break-words leading-tight"><CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 shrink-0" /> <span>Logo on website</span></li>
-              </ul>
-
-            </div>
-          </div>
+          ))}
 
         </div>
 
-        <div className="mt-16 sm:mt-10 flex justify-center px-4 sm:px-0 w-full">
-          <div className="relative w-full sm:w-max group perspective-[1000px]">
-            {/* Glowing Shadow Layer */}
-            <div className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full blur opacity-40 group-hover:opacity-80 transition duration-500 group-hover:duration-200 animate-pulse"></div>
-
-            {/* Main Button */}
+        {/* Download Proposal CTA */}
+        <div className="mt-12 flex justify-center px-4 sm:px-0 w-full">
+          <div className="relative w-full sm:w-max group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-full blur opacity-40 group-hover:opacity-80 transition duration-500 animate-pulse"></div>
             <a
               href="/sponsorship.pdf"
               download="KHAD_Sponsorship_Proposal.pdf"
-              className="relative flex items-center justify-center gap-3 w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-cyan-500 text-khad-dark px-8 py-4 sm:px-12 sm:py-5 rounded-full font-extrabold text-[15px] sm:text-lg transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 overflow-hidden transform-gpu"
+              className="relative flex items-center justify-center gap-3 w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-cyan-500 text-khad-dark px-10 py-4 sm:px-12 sm:py-5 rounded-full font-extrabold text-sm sm:text-base transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 overflow-hidden"
             >
-              {/* Shine Effect */}
               <div className="absolute top-0 -left-[150%] w-[150%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[30deg] group-hover:left-[100%] transition-all duration-1000 ease-out"></div>
-
-              {/* Icon & Text */}
-              <Download className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-500 group-hover:translate-y-1" />
-              <span className="whitespace-nowrap z-10">Download Proposal</span>
+              <Download className="w-5 h-5 shrink-0" />
+              <span className="z-10 whitespace-nowrap">Download Sponsorship Proposal</span>
             </a>
           </div>
         </div>

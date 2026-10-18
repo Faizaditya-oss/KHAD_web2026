@@ -12,7 +12,7 @@ import {
   CarIcon
 } from 'lucide-react';
 
-const GithubIcon = ({ className }) => (
+const InstagramIcon = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -23,25 +23,9 @@ const GithubIcon = ({ className }) => (
     strokeLinejoin="round"
     className={className}
   >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
-
-const LinkedinIcon = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </svg>
 );
 import khadTeamGroup from '../assets/divisions/Innovators.JPG';
@@ -123,246 +107,229 @@ const teamMembers = [
   // Managers Division
   {
     name: 'Majid',
-    role: 'General Manager',
+    role: 'Mechanical Engineering 23',
     division: 'Managers',
     initials: 'MJ',
     isLead: false,
     skills: ['Technical Strategy', 'Quality Control'],
     bio: 'Memimpin arah strategis KHAD Team UMY dalam riset kendaraan hemat energi global dan koordinasi divisi teknis. ',
     photo: majidImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   {
     name: 'Dawai',
-    role: 'Vice Manager',
+    role: 'Mechanical Engineering 23',
     division: 'Managers',
     initials: 'DW',
     isLead: false,
     skills: ['Scrum', 'Operations Management', 'Budgeting', 'Public Relations'],
     bio: 'Mengelola lini masa proyek, perizinan, dan logistik pembuatan mobil dari fase simulasi hingga testing.',
     photo: dawaiImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   {
     name: 'Bima',
-    role: 'Aruna Prototype Manager',
+    role: 'Mechanical Engineering 23',
     division: 'Managers',
     initials: 'BM',
     isLead: false,
     skills: ['Leadership', 'Vehicle Dynamics', 'Project Planning', 'Strategy'],
     bio: 'Bertanggung jawab pada operasional harian tim Aruna Diesel Prototype',
     photo: bimaImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   {
     name: 'Ramadhan',
-    role: 'Lingsar Prototype Manager',
+    role: 'Mechanical Engineering 23',
     division: 'Managers',
     initials: 'RM',
     isLead: false,
     skills: ['Operations', 'Logistics'],
     bio: 'Bertanggung jawab pada operasional harian tim Lingsar Prototype EV 3.0.',
     photo: ramadhanImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   // Mechanic & Engine Division
 
   {
     name: 'Yusuf',
-    role: 'Engine',
+    role: 'Mechanical Engineering 24',
     division: 'Mechanic & Engine',
     initials: 'YS',
     isLead: false,
     skills: ['Pneumatics', 'Drive Train'],
     bio: 'Meningkatkan efisiensi sistem roda gigi dan penggerak utama.',
     photo: yusufImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
 
   {
     name: 'Ilham',
-    role: 'Mechanic',
+    role: 'Automotive Engineering 24',
     division: 'Mechanic & Engine',
     initials: 'IH',
     isLead: false,
     skills: ['CAD Modeling', 'CNC Machining'],
     bio: 'Merancang dan mengembangkan bagian kaki-kaki kendaraan',
     photo: ilhamImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
   {
     name: 'Ulin',
-    role: 'Engine',
+    role: 'Electrical Engineering 24',
     division: 'Mechanic & Engine',
     initials: 'UL',
     isLead: false,
     skills: ['TIG Welding', 'Chassis Tuning'],
     bio: 'Merancang dan mengembangkan sistem laju kendaraan.',
     photo: ulinImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   {
     name: 'Aydin',
-    role: 'Engine',
+    role: 'Mechanical Engineering 25',
     division: 'Mechanic & Engine',
     initials: 'AD',
     isLead: false,
     skills: ['SolidWorks', 'Engine Tuning'],
     bio: 'Fokus pada mekanikal dan mesin kendaraan.',
     photo: aydinImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
   {
     name: 'Faris',
-    role: 'Mechanic',
+    role: 'Electrical Engineering 25',
     division: 'Mechanic & Engine',
     initials: 'FR',
     isLead: false,
     skills: ['Mechanical Design', 'Fabrication'],
     bio: 'Terlibat dalam perakitan komponen mekanis dan transmisi daya.',
     photo: farisImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   // Body & Manufacturing Division
   {
     name: 'Beni',
-    role: 'Manufacturing',
+    role: 'Mechanical Engineering 24',
     division: 'Body & Manufacturing',
     initials: 'BN',
     isLead: false,
     skills: ['Carbon Layup', 'Fiberglass'],
     bio: 'Fokus pada fabrikasi chasis kendaraan.',
     photo: beniImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
   {
     name: 'Firman',
-    role: 'Manufacturing',
+    role: 'Mechanical Engineering 24',
     division: 'Body & Manufacturing',
     initials: 'FM',
     isLead: false,
     skills: ['Engine Maintenance', 'Testing'],
     bio: 'Memastikan kinerja optimal pada sektor chasis kendaraan',
     photo: firmanImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
   {
     name: 'Fatih',
-    role: 'Body ',
+    role: 'Mechanical Engineering 24',
     division: 'Body & Manufacturing',
     initials: 'FT',
     isLead: false,
     skills: ['Surface Finishing', 'Metrology'],
     bio: 'Memastikan kualitas permukaan bodi dan keselarasan panel.',
     photo: fatihImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
   {
     name: 'Imron',
-    role: 'Body',
+    role: 'Mechanical Engineering 25',
     division: 'Body & Manufacturing',
     initials: 'IM',
     isLead: false,
     skills: ['Aerodynamics', 'Mold Making'],
     bio: 'Merancang cetakan bodi serta pengembangan sistem software body.',
     photo: imronImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   // Electrical & Telemetry Division
   {
     name: 'Faiz Aditya',
-    role: 'Electrical & Software Engineer',
+    role: 'Technology Information 24',
     division: 'Electrical & Technology',
     initials: 'FZ',
     isLead: false,
     skills: ['LoRa Protocols', 'BMS Design', 'Web Developer', 'Microcontroller development'],
     bio: 'Merancang arsitektur kelistrikan kendaraan, modul pengaman BMS baterai, dan integrasi sensor telemetri.',
     photo: faizElec,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
   {
     name: 'Bani Taufick Isya',
-    role: 'Electrical & Electronic Engineer',
+    role: 'Electrical Engineering 24',
     division: 'Electrical & Technology',
     initials: 'BN',
     isLead: false,
     skills: ['PCB Design', 'LoRa Protocols', 'WebSockets', 'Electrical Wiring'],
     bio: 'Mengoptimalkan controller penggerak motor BLDC',
     photo: baniElec,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
   {
     name: 'Sakti Wira',
-    role: 'Electrical Engineer',
+    role: 'Electrical Engineering 25',
     division: 'Electrical & Technology',
     initials: 'SK',
     isLead: false,
     skills: ['Wiring Harness Design', 'Sensors Calibration', 'Electrical Diesel Prototype'],
     bio: 'Mengoptimalkan jalur kabel internal agar minim hambatan dan bebas noise elektromagnetik dari motor listrik.',
     photo: saktiElec,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
 
   // Non-Technical Division
   {
-    name: 'Bagus',
-    role: 'Sponsorship',
-    division: 'Non-Technical',
-    initials: 'BG',
-    isLead: false,
-    skills: ['Public Relations', 'B2B Sponsorship', 'Negotiation'],
-    bio: 'Menghubungkan tim dengan sponsor industri dan mengelola kemitraan.',
-    photo: bagusImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
-  },
-  {
     name: 'Erji',
-    role: 'Media & Designer',
+    role: 'Mechanical Engineering 23',
     division: 'Non-Technical',
     initials: 'EJ',
     isLead: false,
-    skills: ['Figma UI/UX', 'Video Editing', 'Social Media Management'],
-    bio: 'Membuat aset media visual dan mengelola sosial media tim.',
+    skills: ['Social Media Management', 'CapCut', 'Canva', 'Instagram', 'TikTok', 'Gmail', 'Sponsorship'],
+    bio: 'Mengelola sosial media dan partnership',
     photo: erjiImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   },
+
+  {
+    name: 'Bagus',
+    role: 'Mechanical Engineering 23',
+    division: 'Non-Technical',
+    initials: 'BG',
+    isLead: false,
+    skills: ['CapCut', 'Canva', 'Instagram', 'TikTok', 'Gmail', 'Sponsorship'],
+    bio: 'Membuat dan mengedit video ',
+    photo: bagusImg,
+    instagram: 'https://instagram.com'
+  },
+
   {
     name: 'Hisyam',
-    role: 'Public Relations',
+    role: 'Automotive Engineering 25',
     division: 'Non-Technical',
     initials: 'HS',
     isLead: false,
-    skills: ['Communication', 'Event Organizing', 'Branding'],
-    bio: 'Mengelola publisitas dan mengorganisir acara tim.',
+    skills: ['CapCut', 'Canva', 'Instagram', 'TikTok', 'Gmail', 'Sponsorship'],
+    bio: 'Mengelola konten media dan branding',
     photo: hisyamImg,
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    instagram: 'https://instagram.com'
   }
 ];
 
@@ -500,11 +467,8 @@ const Team = () => {
 
                     {/* Social links */}
                     <div className="flex items-center gap-3 pt-2">
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors duration-300 transform hover:scale-110">
-                        <LinkedinIcon className="w-4 h-4" />
-                      </a>
-                      <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors duration-300 transform hover:scale-110">
-                        <GithubIcon className="w-4 h-4" />
+                      <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors duration-300 transform hover:scale-110">
+                        <InstagramIcon className="w-4 h-4" />
                       </a>
                     </div>
                   </div>
@@ -580,16 +544,12 @@ const Team = () => {
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
-                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors duration-300 transform hover:scale-110">
-                          <LinkedinIcon className="w-3.5 h-3.5" />
-                        </a>
-                        <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors duration-300 transform hover:scale-110">
-                          <GithubIcon className="w-3.5 h-3.5" />
+                        <p className='text-white text-xs font-space-mono font-medium uppercase tracking-wide'>Instagram</p>
+                        <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-white transition-colors duration-300 transform hover:scale-110">
+                          <InstagramIcon className="w-3.5 h-3.5" />
                         </a>
                       </div>
-                      <span className="text-[8px] font-space-mono text-emerald-500/30 uppercase tracking-widest">
-                        KHAD_MEMBER
-                      </span>
+
                     </div>
                   </div>
                 </div>
@@ -610,12 +570,12 @@ const Team = () => {
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
 
 
-            <h2 data-aos="fade-up" className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-wide text-white">
+            <h2 data-aos="fade-up" className="text-3xl md:text-5xl font-heading font-extrabold uppercase tracking-wide text-white italic">
               JOIN OUR TEAM
             </h2>
 
-            <p data-aos="fade-up" className="font-sans leading-relaxed text-slate-300 text-sm md:text-base">
-              Pendaftaran anggota baru KHAD TEAM UMY dibuka setiap awal semester. Kami mencari talenta terbaik di bidang perancangan sasis, simulasi CFD, pemrograman mikrokontroler, telemetri, serta manajemen relasi sponsor.
+            <p data-aos="fade-up" className="font-sans leading-relaxed text-slate-300 text-sm md:text-base text-red-600">
+              BUILD TOGETHER & BECOMING CHAMPIONS TOGETHER
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -19,9 +19,9 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['"Space Grotesk"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
-        'space-mono': ['"Space Mono"', 'monospace'],
+        heading: ['"Oswald"', 'sans-serif'],
+        mono: ['"Oswald"', 'sans-serif'],
+        'space-mono': ['"Oswald"', 'sans-serif'],
         body: ['"Plus Jakarta Sans"', 'sans-serif'],
       }
     },
