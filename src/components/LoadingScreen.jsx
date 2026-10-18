@@ -6,8 +6,8 @@ const LoadingScreen = ({ onFinished }) => {
 
   useEffect(() => {
     const enterTimer = setTimeout(() => setPhase('hold'), 500);
-    const holdTimer  = setTimeout(() => setPhase('exit'), 2300);
-    const exitTimer  = setTimeout(() => onFinished(), 3100);
+    const holdTimer = setTimeout(() => setPhase('exit'), 2300);
+    const exitTimer = setTimeout(() => onFinished(), 3100);
     return () => {
       clearTimeout(enterTimer);
       clearTimeout(holdTimer);
@@ -105,7 +105,7 @@ const LoadingScreen = ({ onFinished }) => {
           opacity: phase === 'enter' ? 0 : 1,
         }}
       >
-        Engineering the Future
+        Energy Efficient Vehicle Research Team
       </p>
 
       <style>{`

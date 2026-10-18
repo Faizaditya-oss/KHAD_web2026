@@ -71,8 +71,8 @@ const Home = () => {
           </h1>
 
           {/* Description */}
-          <p data-aos="fade-up" className="max-w-2xl mx-auto text-base md:text-lg text-slate-200 font-light mb-10 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            K.H Ahmad Dahlan TEAM Muhammadiyah University Of Yogyakarta is Research Efficiency Car Diesel and Electric Vehicle Prototypes
+          <p data-aos="fade-up" className="max-w-6xl mx-auto text-base md:text-lg text-slate-200 font-light mb-10 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            The K.H Ahmad Dahlan Team is an energy efficient vehicle research team dedicated to developing future innovations for the world
           </p>
 
           {/* Key Metrics Banner */}
