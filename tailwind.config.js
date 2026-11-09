@@ -23,7 +23,16 @@ export default {
         mono: ['"Oswald"', 'sans-serif'],
         'space-mono': ['"Oswald"', 'sans-serif'],
         body: ['"Plus Jakarta Sans"', 'sans-serif'],
-      }
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateX(-12px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.45s ease-out forwards',
+      },
     },
   },
   plugins: [

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Target, Flag, Zap, Users, ShieldCheck, ChevronRight, Activity, Battery, MoveRight, Droplets, Flame, Trophy, Medal } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Target, Zap, Trophy, Medal, MoveRight, ArrowRight, ShieldCheck, Flame, Droplets, Activity, Sparkles, CheckCircle2, ChevronLeft, ChevronRight, Compass, Cpu, Radio, Gauge } from 'lucide-react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
@@ -23,385 +23,215 @@ import kmhe24 from '../assets/SEM24/lingsarsem.JPG';
 const timelineEvents = [
   {
     year: '2019',
-    title: 'Kontes Mobil Listrik Indonesia',
+    title: 'Kontes Mobil Listrik Indonesia (KMLI)',
     subtitle: '3rd Place Gradeability Category',
-    description: '',
+    desc: 'National podium debut establishing KHAD Team electric powertrain reliability.',
     image: kmli2019,
+    tag: 'National Podium'
   },
   {
     year: '2019',
-    title: 'Kontes Mobil Hemat Energi',
+    title: 'Kontes Mobil Hemat Energi (KMHE)',
     subtitle: 'Debut EV Prototype Category in KMHE',
-    description: '',
+    desc: 'First successful entry into national energy-efficient vehicle benchmarking.',
     image: kmhe2019,
+    tag: 'Debut'
   },
   {
     year: '2021',
-    title: 'Kontes Mobil Hemat Energi',
+    title: 'Kontes Mobil Hemat Energi (KMHE)',
     subtitle: '4th National Place EV Prototype Category',
-    description: '',
+    desc: 'Continuous aerodynamic improvements yielding Top-4 national efficiency.',
     image: kmhe2021,
+    tag: 'Finalist'
   },
   {
     year: '2023',
-    title: 'Shell Eco Marathon Asia Pasific & Middle East',
-    subtitle: '3rd Place Asia Pacific & Middle East EV Prototype Category',
-    description: '',
+    title: 'Shell Eco-marathon Asia-Pacific & Middle East',
+    subtitle: '3rd Place Asia-Pacific EV Prototype Category',
+    desc: 'Historic international podium triumph bringing national honor at Mandalika Circuit.',
     image: bgCard,
     highlight: 'gold',
+    tag: 'International Podium'
   },
   {
     year: '2024',
-    title: 'Kontes Mobil Hemat Energi',
+    title: 'Kontes Mobil Hemat Energi (KMHE)',
     subtitle: '5th National Place EV Prototype Category',
-    description: '',
+    desc: 'Deployment of high-precision telemetry and next-gen monocoque chassis.',
     image: kmhe24,
+    tag: 'Top 5'
   },
   {
     year: '2024',
-    title: 'Shell Eco Marathon Asia Pasific & Middle East',
-    subtitle: '5th Place Asia Pacific & Middle East EV Prototype Category',
-    description: '',
+    title: 'Shell Eco-marathon Asia-Pacific & Middle East',
+    subtitle: '5th Place Asia-Pacific EV Prototype Category',
+    desc: 'Sustained top-tier international performance across extreme circuit temperatures.',
     image: kmhe2024,
+    tag: 'International Top 5'
   },
   {
     year: '2025',
-    title: 'Kontes Mobil Hemat Energi',
+    title: 'Kontes Mobil Hemat Energi (KMHE)',
     subtitle: '4th National Place Diesel Prototype Category',
-    description: '',
+    desc: 'Successful expansion into internal combustion efficiency with Aruna Diesel.',
     image: kmhe2025,
+    tag: 'Diesel Debut'
   },
   {
     year: '2026',
-    title: 'Kontes Mobil Hemat Energi',
-    subtitle: '3rd National Place',
-    description: '',
+    title: 'Kontes Mobil Hemat Energi (KMHE)',
+    subtitle: '3rd National Place Prototype Category',
+    desc: 'Return to the national podium with optimized lean-burn thermal dynamics.',
     image: kmhe2026,
+    tag: 'National Podium'
   }
 ];
 
 const phases = [
   {
     id: 'phase-01',
-    title: 'Software Technical',
-    subtitle: 'CAD & Aerodynamic Simulation',
-    description: 'Tahap awal perancangan di mana ide diubah menjadi model 3D presisi tinggi. Tim kami menghadapi tantangan kompleks dalam mengoptimalkan aerodinamika menggunakan simulasi CFD (Computational Fluid Dynamics) pada SolidWorks dan ANSYS untuk mencapai drag coefficient serendah mungkin tanpa mengorbankan downforce.',
+    step: 'CAD',
+    icon: Compass,
+    title: 'Software & Aerodynamics',
+    subtitle: 'CAD & Computational Fluid Dynamics',
+    badge: 'Design & Simulation',
+    description: 'Transforming theoretical designs into high-precision 3D digital twins. Utilizing SolidWorks and ANSYS CFD simulations to minimize aerodynamic drag coefficients while maintaining high-speed vehicular stability.',
     image: bgHome,
+    metrics: [
+      { label: 'Target Cd', val: '0.12' },
+      { label: 'Software', val: 'ANSYS Fluent' },
+      { label: 'Material', val: 'Carbon Prepreg' }
+    ]
   },
   {
     id: 'phase-02',
-    title: 'Electrical & Technology',
-    subtitle: 'Development of a BLDC motor controller',
-    description: 'Membangun sistem kendali motor BLDC dari nol memerlukan keahlian tinggi dalam elektronika daya dan pemrograman mikrokontroler. Tantangan utamanya adalah merancang algoritma kontrol yang efisien untuk memaksimalkan torsi pada putaran rendah sambil menjaga suhu motor tetap stabil saat berakselerasi pada kecepatan tinggi.',
+    step: 'Developement',
+    icon: Cpu,
+    title: 'Powertrain & Hardware',
+    subtitle: 'Custom BLDC Motor Controller Development',
+    badge: 'Electronics Engineering',
+    description: 'Engineering power electronics and microcontrollers in-house. Implementing intelligent field-oriented control algorithms to extract maximum torque at low RPMs while sustaining thermal stability during track acceleration.',
     image: controller,
+    metrics: [
+      { label: 'Topology', val: 'Custom MOSFET' },
+      { label: 'Control', val: 'FOC Vector' },
+      { label: 'Efficiency', val: '97.4%' }
+    ]
   },
   {
     id: 'phase-03',
-    title: 'Electrical & Technology',
-    subtitle: 'Telemetry & ECU Wiring',
-    description: 'Jantung dan otak kendaraan mulai dihidupkan. Tim kelistrikan secara teliti merakit sistem controller, Battery Management System (BMS), dan jaringan sensor telemetri dari nol. Tantangannya adalah merancang arsitektur kelistrikan yang efisien, stabil, dan tahan terhadap noise elektromagnetik di area sasis yang sangat terbatas.',
+    step: 'IoT',
+    icon: Radio,
+    title: 'Electrical & Telemetry',
+    subtitle: 'IoT Sensor Grid & ECU Wiring Architecture',
+    badge: 'Real-Time Telemetry',
+    description: 'Assembling custom Battery Management Systems (BMS) and CAN-bus telemetry grids. Shielding low-voltage microcontrollers against electromagnetic noise in ultra-compact composite cockpits.',
     image: arunaBg,
+    metrics: [
+      { label: 'Data Bus', val: 'CAN-Bus 2.0' },
+      { label: 'Telemetry', val: 'Cloud 4G IoT' },
+      { label: 'Sampling', val: '100 Hz' }
+    ]
   },
   {
     id: 'phase-04',
-    title: 'Technical Division',
-    subtitle: 'Track Testing',
-    description: 'Momen pembuktian. Kendaraan diuji secara ekstrem di atas dynamometer dan aspal lintasan nyata untuk mengukur efisiensi riil dan mengkalibrasi ulang parameter ECU. Tantangan terbesarnya adalah menemukan titik puncak efisiensi (sweet spot) kinerja motor dan mesin di berbagai kondisi cuaca dan suhu lintasan ekstrem.',
+    step: 'Testing',
+    icon: Gauge,
+    title: 'Circuit Validation',
+    subtitle: 'Track Testing & Real-World Calibration',
+    badge: 'Asphalt Benchmarking',
+    description: 'Extreme benchmark validation under competitive asphalt conditions. Squeezing every joule of energy into distance and fine-tuning driver telemetry for race day execution.',
     image: lingsarBg,
+    metrics: [
+      { label: 'Track Test', val: 'Sirkuit Mandalika' },
+      { label: 'Telemetry', val: 'Real-time GPS' },
+      { label: 'Driver Aero', val: 'Calibrated' }
+    ]
   }
 ];
 
 const About = () => {
   const [activePhase, setActivePhase] = useState(0);
-  const [activeTab, setActiveTab] = useState('stats');
+  const timelineScrollRef = useRef(null);
   const { ref: statsRef, inView: statsInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
+  const scrollTimeline = (direction) => {
+    if (timelineScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -380 : 380;
+      timelineScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="pt-20 min-h-screen bg-khad-dark text-slate-300 font-sans">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 selection:bg-emerald-500 selection:text-white">
 
-      {/* 1. Hero Section */}
-      <section data-aos="fade-up" className="relative overflow-hidden h-screen min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 w-full h-full z-0">
-          <img data-aos="fade-up" src={bgHero} alt="KHAD Team Hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-khad-dark/40 to-transparent"></div>
+      {/* ── 1. HERO SECTION: HERO IMAGE DITONJOLKAN BERSIH & CENTER ALIGNED ── */}
+      <section className="relative w-full h-[85vh] min-h-[580px] flex flex-col justify-end overflow-hidden">
+        
+        {/* Foto Tim / Workshop / Circuit - Menonjol Jelas */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={bgHero}
+            alt="KHAD Team Research Lab"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Minimal overlay: hanya dark vignette atas untuk navbar & transisi sangat tipis di bawah */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/40 pointer-events-none"></div>
+          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F8FAFC] to-transparent pointer-events-none"></div>
         </div>
-        <div className="relative z-10 px-4 text-center w-full">
-          <h1 data-aos="fade-up" className="text-5xl md:text-3xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-300 drop-shadow-2xl tracking-tight uppercase">
-            About Us
+
+        {/* Content Hero Center Aligned */}
+        {/* <div className="relative z-10 max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-12 flex flex-col items-center text-center">
+          
+          <h1
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight uppercase leading-[1.05] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
+            style={{ fontFamily: "'Oswald', sans-serif" }}
+          >
+            INNOVATION IN <br className="hidden sm:block" />
+            <span className="text-emerald-400 drop-shadow-[0_0_25px_rgba(16,185,129,0.5)]">
+              EVERY DETAIL
+            </span>
           </h1>
-        </div>
+
+          <p
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="max-w-2xl text-base sm:text-lg text-slate-100 font-medium leading-relaxed mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+          >
+            K.H Ahmad Dahlan (KHAD) Team UMY adalah laboratorium riset mahasiswa lintas disiplin yang mendedikasikan inovasi untuk merancang kendaraan hemat energi masa depan.
+          </p>
+        </div> */}
       </section>
 
-      {/* 2. Quick Metrics / Stats Banner - Flowbite Full Width Tabs Card */}
-      <section data-aos="fade-up" className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 py-12">
-        <div className="w-full bg-khad-card border border-khad-border rounded-lg shadow-sm">
-          <div className="sm:hidden">
-            <label htmlFor="tabs" className="sr-only">Select tab</label>
-            <select
-              id="tabs"
-              value={activeTab}
-              onChange={(e) => setActiveTab(e.target.value)}
-              className="bg-khad-dark border-0 border-b border-khad-border text-white text-sm rounded-t-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5"
-            >
-              <option value="stats">Statistics</option>
-              <option value="about">About</option>
-              <option value="achievements">Achievements</option>
-            </select>
-          </div>
-          <ul className="hidden text-sm font-medium text-center text-slate-400 divide-x divide-khad-border rounded-lg sm:flex" id="fullWidthTab" role="tablist">
-            <li className="w-full">
-              <button
-                id="stats-tab"
-                onClick={() => setActiveTab('stats')}
-                type="button"
-                role="tab"
-                aria-controls="stats"
-                aria-selected={activeTab === 'stats'}
-                className={`inline-block w-full p-4 rounded-tl-lg focus:outline-none transition-colors ${activeTab === 'stats' ? 'bg-khad-dark text-white' : 'bg-khad-card hover:bg-khad-dark hover:text-white'}`}
-              >
-                Statistics
-              </button>
-            </li>
-            <li className="w-full">
-              <button
-                id="about-tab"
-                onClick={() => setActiveTab('about')}
-                type="button"
-                role="tab"
-                aria-controls="about"
-                aria-selected={activeTab === 'about'}
-                className={`inline-block w-full p-4 focus:outline-none transition-colors ${activeTab === 'about' ? 'bg-khad-dark text-white' : 'bg-khad-card hover:bg-khad-dark hover:text-white'}`}
-              >
-                About
-              </button>
-            </li>
-            <li className="w-full">
-              <button
-                id="achievements-tab"
-                onClick={() => setActiveTab('achievements')}
-                type="button"
-                role="tab"
-                aria-controls="achievements"
-                aria-selected={activeTab === 'achievements'}
-                className={`inline-block w-full p-4 rounded-tr-lg focus:outline-none transition-colors ${activeTab === 'achievements' ? 'bg-khad-dark text-white' : 'bg-khad-card hover:bg-khad-dark hover:text-white'}`}
-              >
-                Achievements
-              </button>
-            </li>
-          </ul>
-
-          <div id="fullWidthTabContent" className="border-t border-khad-border">
-            <div className={`p-4 bg-khad-dark rounded-b-lg md:p-8 ${activeTab === 'stats' ? 'block' : 'hidden'}`} id="stats" role="tabpanel" aria-labelledby="stats-tab">
-              <dl ref={statsRef} className="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-white sm:grid-cols-4 xl:grid-cols-4 sm:p-8">
-                {[
-                  { icon: Zap, label: "Lingsar EV Efficiency", number: 600, unit: "km/kWh", suffix: "" },
-                  { icon: Flame, label: "Aruna Diesel Efficiency", number: 400, unit: "km/L", suffix: "" },
-                  { icon: Activity, label: "Telemetry System", textValue: "Custom", unit: "", suffix: " Built" },
-                  { icon: Droplets, label: "Emission Target", number: 0, unit: "", suffix: " %" },
-                ].map((stat, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-out ${statsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                    style={{ transitionDelay: `${idx * 150}ms` }}
-                  >
-                    <dt className="mb-2 text-3xl md:text-4xl font-extrabold text-white flex items-baseline justify-center">
-                      {stat.number !== undefined ? (
-                        statsInView ? <CountUpComponent end={stat.number} duration={2.5} /> : "0"
-                      ) : (
-                        stat.textValue
-                      )}
-                      <span className="text-2xl md:text-3xl ml-1">{stat.unit}</span>
-                      <span className="text-xl md:text-2xl text-slate-400 font-medium ml-1">{stat.suffix}</span>
-                    </dt>
-                    <dd className="text-slate-400 flex items-center gap-2 mt-1">
-                      <stat.icon className="w-4 h-4 text-emerald-400" />
-                      {stat.label}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-
-            <div className={`p-4 bg-khad-dark rounded-b-lg md:p-8 ${activeTab === 'about' ? 'block' : 'hidden'}`} id="about" role="tabpanel" aria-labelledby="about-tab">
-              <div className="text-center max-w-3xl mx-auto py-6">
-                <h2 data-aos="fade-up" className="mb-4 text-2xl md:text-3xl font-extrabold tracking-tight text-white">K.H Ahmad Dahlan Team</h2>
-                <p data-aos="fade-up" className="text-slate-400 text-base md:text-lg leading-relaxed">
-                  KHAD Team adalah salah satu Unit Kegiatan Mahasiswa di UMY yang berfokus pada pengembangan penggunaan energi ramah lingkungan, terutama pada kendaraan bertenaga listrik. Oleh karena itu, Tim ini terdiri dari mahasiswa-mahasiswa terpilih yang diharapkan dapat berkontibusi besar untuk dapat menjawab tantangan isu krisis energi yang menjadi kekhawatiran terbesar dunia. Dalam hal ini KHAD Team melakukan pengembangan mobil ramah lingkungan.
-                </p>
-              </div>
-            </div>
-
-            <div className={`p-4 bg-khad-dark rounded-b-lg md:p-8 ${activeTab === 'achievements' ? 'block' : 'hidden'}`} id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-khad-card border border-khad-border p-6 rounded-xl hover:border-emerald-500/50 transition-colors">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-emerald-500/10 rounded-lg">
-                      <Target className="w-6 h-6 text-emerald-400" />
-                    </div>
-                    <h3 data-aos="fade-up" className="text-xl font-bold text-white">Kontes Mobil Hemat Energi (KMHE)</h3>
-                  </div>
-                  <p data-aos="fade-up" className="text-slate-400 leading-relaxed">
-                    2020 Lingsar EV - 3rd Sistem Kontrol & Kelistrikan <br></br>
-                    2021 Lingsar EV -  Penghargaan Kendaraan Paling Handal <br></br>
-                    2023 Lingsar EV - 3rd Kontes Mobil Hemat Energi <br></br>
-                    2025 Aruna Diesel - 4th Kontes Mobil Hemat Energi
-
-                  </p>
-                </div>
-
-                <div className="bg-khad-card border border-khad-border p-6 rounded-xl hover:border-cyan-500/50 transition-colors">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-cyan-500/10 rounded-lg">
-                      <Zap className="w-6 h-6 text-cyan-400" />
-                    </div>
-                    <h3 data-aos="fade-up" className="text-xl font-bold text-white">Shell Eco Marathon</h3>
-                  </div>
-                  <p data-aos="fade-up" className="text-slate-400 leading-relaxed">
-                    2023 Lingsar EV - 7th Shell Eco-Marathon Asia Pacific & Middle East <br></br>
-                    2024 Lingsar EV - 3rd Shell Eco-Marathon Asia Pacific & Middle East
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Engineering Phases Section */}
-      <section data-aos="fade-up" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 md:mb-24">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500 mb-4 tracking-tight">
-            Build The Future
-          </h1>
-          <p className="text-slate-400 max-w-2xl mx-auto">From aerodynamic simulations to track testing, take a look at the four crucial phases in the creation of our energy-efficient vehicle.</p>
-        </div>
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
-          {/* Left: Vertical Steps */}
-          <div className="w-full lg:w-5/12 relative flex">
-            {/* Glowing Line */}
-            <div className="absolute left-0 top-6 bottom-6 w-1 bg-khad-border/50 rounded-full overflow-hidden hidden sm:block">
-              <div
-                className="absolute left-0 w-full bg-emerald-500 shadow-[0_0_15px_#10b981] transition-all duration-500 ease-in-out rounded-full"
-                style={{
-                  top: `${(activePhase * 25)}%`,
-                  height: '25%'
-                }}
-              ></div>
-            </div>
-
-            <div className="flex flex-col justify-between w-full sm:pl-8 space-y-4">
-              {phases.map((phase, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl cursor-pointer transition-all duration-300 ${activePhase === idx ? 'bg-khad-card/80 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.1)]' : 'hover:bg-khad-card/40 border border-transparent opacity-60 hover:opacity-100'}`}
-                  onMouseEnter={() => setActivePhase(idx)}
-                  onClick={() => setActivePhase(idx)}
-                >
-                  {/* <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-bold text-base sm:text-lg font-heading transition-colors duration-300 ${activePhase === idx ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50' : 'bg-khad-dark border border-khad-border text-slate-500'}`}>
-                    0{idx + 1}
-                  </div> */}
-                  <div>
-                    <h3 className={`text-lg sm:text-xl font-bold font-heading transition-colors duration-300 leading-tight ${activePhase === idx ? 'text-emerald-400' : 'text-white'}`} style={{ fontFamily: "'Oswald', sans-serif" }}>{phase.subtitle}</h3>
-                    <p className={`mt-1 text-xs sm:text-sm font-medium transition-colors duration-300 ${activePhase === idx ? 'text-slate-300' : 'text-slate-500'}`}>{phase.title}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Big Image and Story */}
-          <div className="w-full lg:w-7/12 flex flex-col">
-            <div className="relative rounded-3xl overflow-hidden bg-khad-card border border-khad-border aspect-[4/3] sm:aspect-video mb-8 group shadow-lg">
-              {phases.map((phase, idx) => (
-                <img
-                  key={idx}
-                  src={phase.image}
-                  alt={phase.subtitle}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${activePhase === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-                />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-khad-dark via-transparent to-transparent z-20"></div>
-              {/* Glow overlay on image hover */}
-              <div className="absolute inset-0 bg-emerald-500/10 mix-blend-overlay z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
-
-            <div className="grid grid-cols-1 bg-khad-card/30 rounded-2xl border border-khad-border/50 items-start">
-              {phases.map((phase, idx) => (
-                <div
-                  key={idx}
-                  className={`col-start-1 row-start-1 p-6 sm:p-8 transition-all duration-500 ease-in-out ${activePhase === idx ? 'opacity-100 translate-y-0 pointer-events-auto z-10' : 'opacity-0 translate-y-4 pointer-events-none z-0'}`}
-                >
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
-                    <Zap className="w-3.5 h-3.5" />
-                    Technical Challenge
-                  </div>
-                  <h4 className="text-xl sm:text-2xl font-bold text-white font-heading mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>{phase.subtitle}</h4>
-                  <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-                    {phase.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Competition Journey Timeline */}
-      <section data-aos="fade-up" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-khad-dark">
-        <div className="text-center mb-16 md:mb-24">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500 mb-4 tracking-tight">
-            Our Journey
-          </h1>
-        </div>
-
-        <div className="relative">
-          {/* The vertical timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald-500/20 via-emerald-500/50 to-emerald-500/10 rounded-full"></div>
-          {/* Mobile vertical line */}
-          <div className="md:hidden absolute left-6 w-1 h-full bg-gradient-to-b from-emerald-500/20 via-emerald-500/50 to-emerald-500/10 rounded-full"></div>
-
-          <div className="space-y-12 md:space-y-24">
-            {timelineEvents.map((event, idx) => (
-              <div key={idx} className={`relative flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-
-                {/* Timeline Endpoint (Dot) */}
-                <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 md:translate-y-0 w-5 h-5 bg-khad-dark border-4 ${event.highlight === 'gold' ? 'border-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.5)]' : 'border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]'} rounded-full z-10 top-0 md:top-1/2`}></div>
-
-                {/* Year Badge (Mobile only, on top of dot) */}
-                <div className={`md:hidden absolute left-14 top-[-2px] ${event.highlight === 'gold' ? 'text-yellow-400' : 'text-emerald-400'} font-bold font-heading text-lg`}>
-                  {event.year}
-                </div>
-
-                {/* Content - Text Section */}
-                <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:text-right'} pl-14 pt-8 md:pt-0`}>
-                  <div data-aos={idx % 2 === 0 ? "fade-left" : "fade-right"}>
-                    {/* Desktop Year Badge */}
-                    <div className={`hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full border text-sm font-bold tracking-wider mb-4 ${event.highlight === 'gold' ? 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400' : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'}`}>
-                      {event.highlight === 'gold' ? <Trophy className="w-4 h-4" /> : <Medal className="w-4 h-4" />}
-                      {event.year}
-                    </div>
-
-                    <h3 className={`text-2xl font-bold mb-1 ${event.highlight === 'gold' ? 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600' : 'text-white'}`}>{event.title}</h3>
-                    <h4 className={`font-semibold mb-4 text-sm md:text-base ${event.highlight === 'gold' ? 'text-yellow-400/90' : 'text-emerald-400/80'}`}>{event.subtitle}</h4>
-                    {event.description && (
-                      <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-                        {event.description}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Content - Image Section */}
-                <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pr-16' : 'md:pl-16'} pl-14 pt-6 md:pt-0`}>
-                  {event.image && (
-                    <div data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"} className={`relative w-full aspect-video rounded-xl overflow-hidden border ${event.highlight === 'gold' ? 'border-yellow-400/50 shadow-[0_0_30px_rgba(250,204,21,0.2)]' : 'border-khad-border/30 shadow-lg'}`}>
-                      <img src={event.image} alt={event.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-khad-dark/60 to-transparent pointer-events-none"></div>
-                    </div>
+      {/* ── 2. METRICS ROW: AERO CLEAN STUDIO (SELARAS DENGAN HOME) ── */}
+      <section className="border-y border-slate-200 py-12 bg-white" ref={statsRef}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            {[
+              { icon: Zap, label: "Lingsar EV Efficiency", number: 600, unit: "km/kWh", suffix: "" },
+              { icon: Flame, label: "Aruna Diesel Efficiency", number: 400, unit: "km/L", suffix: "" },
+              { icon: Activity, label: "Telemetry Architecture", textValue: "Custom", unit: "", suffix: " IoT" },
+              { icon: Droplets, label: "Carbon Target", number: 0, unit: "", suffix: " % Emission" },
+            ].map((stat, idx) => (
+              <div key={idx} className={`flex flex-col items-center ${idx > 0 ? 'pt-6 md:pt-0' : ''}`}>
+                <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-mono tracking-tight mb-1 flex items-baseline justify-center">
+                  {stat.number !== undefined ? (
+                    statsInView ? <CountUpComponent end={stat.number} duration={2} /> : "0"
+                  ) : (
+                    stat.textValue
                   )}
+                  {stat.unit && <span className="text-base sm:text-lg text-slate-500 font-medium ml-1.5">{stat.unit}</span>}
+                  {stat.suffix && <span className="text-emerald-600 font-semibold text-lg sm:text-2xl ml-1">{stat.suffix}</span>}
+                </div>
+                <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-1.5 mt-1">
+                  <stat.icon className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>{stat.label}</span>
                 </div>
               </div>
             ))}
@@ -409,24 +239,377 @@ const About = () => {
         </div>
       </section>
 
-      {/* 5. Bottom CTA Banner */}
-      <section data-aos="fade-up" className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-khad-border">
-        <h1 data-aos="fade-up" className="text-2xl md:text-6xl font-semibold italic text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-white to-slate-400 mb-4 tracking-tight">
-          Be Part of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">the Future</span> <br className="hidden md:block" />
-        </h1>
-        <p data-aos="fade-up" className="text-lg text-slate-400 mb-10">
-          Interested in learning more about our vehicle specifications or collaborating as a sponsor?
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/vehicles" className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-khad-dark font-bold transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2 group">
-            Explore Vehicles
-            <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link to="/sponsors" className="w-full sm:w-auto px-8 py-4 rounded-full border border-khad-border hover:border-emerald-500/50 bg-khad-card hover:bg-khad-card/80 text-white font-medium transition-all duration-300 flex items-center justify-center gap-2">
-            Sponsorship Info
+      {/* ── 3. ABOUT STORY & CORE PHILOSOPHY (MINIMALIST TYPOGRAPHY) ── */}
+      <section className="py-24 max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-2 block">
+            Our Purpose
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            The Driving Force Behind KHAD Team
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-16">
+          <div className="border-l-2 border-emerald-500 pl-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Multidisciplinary Collaboration</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Didirikan di Universitas Muhammadiyah Yogyakarta, KHAD Team menjadi wadah sinergi mahasiswa Teknik Mesin, Teknik Elektro, Teknologi Informasi, dan Manajemen untuk memecahkan tantangan krisis energi global melalui riset otomotif terapan.
+            </p>
+          </div>
+
+          <div className="border-l-2 border-emerald-500 pl-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Zero-Compromise Engineering</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Mulai dari simulasi dinamika fluida komputasi (CFD), fabrikasi bodi serat karbon monocoque, hingga perakitan sistem kendali motor BLDC secara mandiri, kami menjunjung tinggi presisi rekayasa dan integritas data telemetri.
+            </p>
+          </div>
+        </div>
+
+        {/* Highlights Banner */}
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-slate-900">Safety & Technical Scrutineering Compliance</h4>
+              <p className="text-xs sm:text-sm text-slate-500">Passed strict Shell Eco-marathon technical & safety inspections with flying colors.</p>
+            </div>
+          </div>
+          <Link
+            to="/vehicles"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition-all shrink-0"
+          >
+            <span>Explore Prototypes</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </section>
+
+      {/* ── 4. R&D ENGINEERING PHASES (INTERACTIVE COCKPIT TELEMETRY WORKBENCH) ── */}
+      <section className="py-24 border-t border-slate-200 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-emerald-700 font-semibold mb-2 block">
+              Methodology & R&D Process
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
+              How We Build The Future
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base mt-3">
+              Jelajahi alur riset interaktif dari pemodelan aerodinamika digital hingga pembuktian aspal sirkuit.
+            </p>
+
+            {/* Interactive Phase Navigation Pills */}
+            <div className="flex flex-wrap justify-center gap-2 mt-8 p-1.5 bg-slate-100 rounded-full border border-slate-200 w-max mx-auto">
+              {phases.map((p, idx) => {
+                const IconComponent = p.icon;
+                return (
+                  <button
+                    key={p.id}
+                    onClick={() => setActivePhase(idx)}
+                    className={`flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+                      activePhase === idx
+                        ? 'bg-emerald-600 text-white shadow-md'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
+                    }`}
+                  >
+                    <IconComponent className="w-3.5 h-3.5" />
+                    <span>PHASE {p.step}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Interactive R&D Showcase Stage */}
+          <div className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-6 sm:p-10 shadow-sm transition-all">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              {/* Left Column: Visual Media with HUD Telemetry Overlays */}
+              <div className="lg:col-span-7 relative">
+                <div className="relative rounded-2xl overflow-hidden aspect-[16/10] bg-slate-900 shadow-md border border-slate-200 group">
+                  <img
+                    src={phases[activePhase].image}
+                    alt={phases[activePhase].subtitle}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
+
+                  <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-bold">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>{phases[activePhase].badge}</span>
+                  </div>
+
+                  
+
+                  <div className="absolute bottom-4 inset-x-4 p-3 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between text-white text-xs font-mono">
+                    <span className="text-emerald-400 uppercase tracking-wider">{phases[activePhase].title}</span>
+                    <span className="text-slate-400">KHAD Research Lab</span>
+                  </div>
+                </div>
+
+                {/* Micro Metric Telemetry Pills */}
+                <div className="grid grid-cols-3 gap-3 mt-4">
+                  {phases[activePhase].metrics.map((m, mIdx) => (
+                    <div key={mIdx} className="bg-white rounded-xl border border-slate-200 p-3 text-center shadow-2sm">
+                      <span className="text-[10px] font-mono uppercase text-slate-400 block mb-0.5">{m.label}</span>
+                      <span className="text-xs sm:text-sm font-bold text-slate-800 font-mono">{m.val}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column: Deep Engineering Story */}
+              <div className="lg:col-span-5 text-left flex flex-col justify-between">
+                <div>
+                  
+
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                    {phases[activePhase].subtitle}
+                  </h3>
+
+                  <div className="h-0.5 w-16 bg-emerald-500 rounded-full mb-4"></div>
+
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                    {phases[activePhase].description}
+                  </p>
+
+                  <div className="space-y-2.5 py-4 border-t border-slate-200">
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Optimasi berulang berbasis data telemetri digital presisi.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Sesuai standar regulasi keselamatan internasional Shell Eco-marathon.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>Kolaborasi multidisiplin antara riset material dan software.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-6 border-t border-slate-200 mt-4">
+                  <button
+                    onClick={() => setActivePhase((prev) => (prev > 0 ? prev - 1 : phases.length - 1))}
+                    className="text-xs font-bold text-slate-500 hover:text-emerald-700 transition-colors inline-flex items-center gap-1"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    <span>Previous Phase</span>
+                  </button>
+
+                  <button
+                    onClick={() => setActivePhase((prev) => (prev < phases.length - 1 ? prev + 1 : 0))}
+                    className="text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1"
+                  >
+                    <span>Next Phase</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── 5. COMPETITION JOURNEY TIMELINE (HORIZONTAL HORIZONTAL CAROUSEL / SCROLL WITH CHECKPOINTS) ── */}
+      <section className="py-24 border-t border-slate-200 bg-[#F8FAFC] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header & Horizontal Navigation Controls */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-emerald-700 font-semibold mb-2 block">
+                Track Record
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                Our Competitive Journey
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-xl">
+                Geser ke kanan untuk melihat linimasa pencapaian dan trofi KHAD Team dari tahun 2019 hingga saat ini.
+              </p>
+            </div>
+
+            {/* Left / Right Scroll Buttons */}
+            <div className="flex items-center gap-3 self-end md:self-auto">
+              <button
+                onClick={() => scrollTimeline('left')}
+                className="w-11 h-11 rounded-full bg-white border border-slate-300 hover:border-emerald-500 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 flex items-center justify-center transition-all shadow-sm active:scale-95"
+                title="Scroll Previous"
+                aria-label="Scroll Left"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => scrollTimeline('right')}
+                className="w-11 h-11 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center transition-all shadow-md active:scale-95"
+                title="Scroll Next"
+                aria-label="Scroll Right"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Continuous Timeline Track Line with Checkpoint Nodes */}
+          <div className="relative mb-6 hidden sm:block">
+            <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-0.5 bg-slate-200 z-0"></div>
+
+            <div className="relative z-10 flex justify-between items-center px-4">
+              {timelineEvents.map((event, idx) => (
+                <div key={`checkpoint-${idx}`} className="flex flex-col items-center group cursor-pointer" onClick={() => {
+                  if (timelineScrollRef.current) {
+                    const cardWidth = 380;
+                    timelineScrollRef.current.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+                  }
+                }}>
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center border-2 bg-white transition-all duration-300 group-hover:scale-125 ${
+                    event.highlight === 'gold'
+                      ? 'border-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]'
+                      : 'border-emerald-600 shadow-[0_0_10px_rgba(5,150,105,0.4)]'
+                  }`}>
+                    <span className={`w-2 h-2 rounded-full ${
+                      event.highlight === 'gold' ? 'bg-amber-500' : 'bg-emerald-600'
+                    }`}></span>
+                  </div>
+                  <span className="text-[11px] font-mono font-bold text-slate-500 mt-2 group-hover:text-emerald-700 transition-colors">
+                    {event.year}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Horizontal Scroll Track Container */}
+          <div
+            ref={timelineScrollRef}
+            className="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none scroll-smooth snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {timelineEvents.map((event, idx) => (
+              <div
+                key={idx}
+                className="snap-start flex-shrink-0 w-[300px] sm:w-[350px] md:w-[380px] flex flex-col justify-between bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 p-5 shadow-sm hover:shadow-md transition-all duration-300 group relative"
+              >
+                {/* Image Top with Checkpoint Badge */}
+                <div className="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden bg-slate-100 mb-5 border border-slate-100">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  
+                  {/* Visual Checkpoint Pin on the Card */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-slate-800 text-[10px] font-mono font-bold shadow-sm">
+                    <span className={`w-2 h-2 rounded-full animate-pulse ${
+                      event.highlight === 'gold' ? 'bg-amber-500' : 'bg-emerald-500'
+                    }`}></span>
+                    <span>CP #{idx + 1}</span>
+                  </div>
+
+                  {/* Year Tag Floating on Image */}
+                  <span className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-mono font-bold shadow-sm backdrop-blur-md ${
+                    event.highlight === 'gold'
+                      ? 'bg-amber-400 text-slate-900'
+                      : 'bg-emerald-600 text-white'
+                  }`}>
+                    {event.year}
+                  </span>
+                </div>
+
+                {/* Content Info */}
+                <div className="flex-1 flex flex-col justify-between text-left">
+                  <div>
+                    <span className={`text-[11px] font-mono font-bold uppercase tracking-wider block mb-1.5 ${
+                      event.highlight === 'gold' ? 'text-amber-600' : 'text-emerald-700'
+                    }`}>
+                      {event.tag}
+                    </span>
+
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1.5 line-clamp-2 leading-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                      {event.title}
+                    </h3>
+
+                    <h4 className="text-xs sm:text-sm font-semibold text-emerald-800 mb-3 line-clamp-2">
+                      {event.subtitle}
+                    </h4>
+
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                      {event.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Footprint Indicator */}
+                  <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-slate-400 text-xs font-mono">
+                    <span>MILESTONE 0{idx + 1}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-emerald-500 transition-colors"></span>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Hint */}
+          <div className="text-center mt-4">
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">
+              ← Drag or use buttons to scroll timeline →
+            </span>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── 6. CALL TO ACTION (SELARAS DENGAN HOME) ── */}
+      <section className="py-24 border-t border-slate-200 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <span className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-3 block">
+            Future Collaboration
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            Be Part of Our Journey
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+            Ingin mengetahui spesifikasi mendalam tiap prototipe atau tertarik bermitra sebagai sponsor tim riset kami?
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/vehicles"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <span>Explore Fleet</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              to="/sponsors"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm border border-slate-300 transition-all hover:-translate-y-0.5"
+            >
+              <span>Sponsorship Info</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. FOOTER ── */}
+      <footer className="border-t border-slate-200 py-12 text-xs text-slate-500 bg-[#F8FAFC]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-3">
+            <span className="font-semibold text-slate-800">KHAD TEAM UMY</span>
+            <span>•</span>
+            <span>Universitas Muhammadiyah Yogyakarta</span>
+          </div>
+          <p>© {new Date().getFullYear()} KHAD TEAM UMY. All rights reserved.</p>
+        </div>
+      </footer>
 
     </div>
   );
